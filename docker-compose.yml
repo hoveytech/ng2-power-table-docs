@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    nginx:
+        build:
+            context: .
+            dockerfile: ./.docker/nginx.dockerfile
+        ports:
+            - 8080:8080
+        links:
+            - node1:node1
+
+    node1:
+        build: 
+            context: .
+            dockerfile: ./.docker/node.dockerfile
+        ports:
+            - 8081:8081

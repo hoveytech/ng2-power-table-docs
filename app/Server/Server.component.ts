@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    templateUrl: './ServerSide.component.html'
+    templateUrl: './Server.component.html'
 })
-export class ServerSideComponent implements OnInit {
+export class ServerComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }

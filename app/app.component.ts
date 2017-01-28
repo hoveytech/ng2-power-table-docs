@@ -19,6 +19,10 @@ import { SortingComponent } from './Sorting/Sorting.component';
 import { SortingExampleComponent } from './Sorting/SortingExample.component';
 import { PagingComponent } from './Paging/Paging.component';
 import { PagingExampleComponent } from './Paging/PagingExample.component';
+import { ServerComponent } from './Server/Server.component';
+import { ServerExampleComponent } from './Server/ServerExample.component';
+import { CustomizeComponent } from './Customize/Customize.component';
+import { CustomizeExampleComponent } from './Customize/CustomizeExample.component';
 
 export var Ng2PowerTableComponents : Array<any> = [
     CodeExampleComponent,
@@ -30,6 +34,10 @@ export var Ng2PowerTableComponents : Array<any> = [
     SortingExampleComponent,
     PagingComponent,
     PagingExampleComponent,
+    ServerComponent,
+    ServerExampleComponent,
+    CustomizeComponent,
+    CustomizeExampleComponent,
 
     AppComponent,
     LoadingFrameComponent

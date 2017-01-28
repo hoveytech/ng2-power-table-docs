@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ServerSideComponent = (function () {
-    function ServerSideComponent() {
+var ServerComponent = (function () {
+    function ServerComponent() {
     }
-    ServerSideComponent.prototype.ngOnInit = function () { };
-    return ServerSideComponent;
+    ServerComponent.prototype.ngOnInit = function () { };
+    return ServerComponent;
 }());
-ServerSideComponent = __decorate([
+ServerComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: './ServerSide.component.html'
+        templateUrl: './Server.component.html'
     }),
     __metadata("design:paramtypes", [])
-], ServerSideComponent);
-exports.ServerSideComponent = ServerSideComponent;
-//# sourceMappingURL=ServerSide.component.js.map
+], ServerComponent);
+exports.ServerComponent = ServerComponent;
+//# sourceMappingURL=Server.component.js.map

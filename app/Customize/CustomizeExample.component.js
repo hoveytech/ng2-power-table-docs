@@ -10,8 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var Person_class_1 = require("./../MockData/Person.class");
+var ng2_power_table_1 = require("ng2-power-table/ng2-power-table");
 var CustomizeExampleComponent = (function () {
     function CustomizeExampleComponent() {
+        this.configuration = ng2_power_table_1.DefaultConfiguration.create();
+        this.configuration.ascendingCssClass = 'pt-sort-asc-custom';
+        this.configuration.descendingCssClass = 'pt-sort-desc-custom';
         this.allPeople = [];
         for (var i = 1; i < 101; i++) {
             var person = Person_class_1.Person.create();
@@ -25,7 +29,8 @@ CustomizeExampleComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'customize-example',
-        templateUrl: './CustomizeExample.component.html'
+        templateUrl: './CustomizeExample.component.html',
+        styleUrls: ['./CustomizeExample.css']
     }),
     __metadata("design:paramtypes", [])
 ], CustomizeExampleComponent);

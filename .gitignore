@@ -6,7 +6,3 @@ node_modules
 bower_components
 
 typings
-
-# Jekyll related
-_site
-.jekyll-metadata

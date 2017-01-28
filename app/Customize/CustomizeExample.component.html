@@ -1,9 +1,9 @@
-<table [ptTable]="allPeople" [(ptDisplayArray)]="people" class="table table-bordered table-stripped">
+<table [ptTable]="allPeople" [(ptDisplayArray)]="people" [ptConfiguration]="configuration" class="table table-bordered table-stripped">
     <thead>
         <tr>
             <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th ptSort="firstName">First Name</th>
+            <th ptSort="lastName">Last Name</th>
             <th>Age</th>
         </tr>
     </thead>

@@ -155,9 +155,15 @@ System.registerDynamic("ng2-power-table/src/Table/Table.directive", ["@angular/c
             if (this.removeConfigListener && this.removeConfigListener.unsubscribe) this.removeConfigListener.unsubscribe();
         };
         TableDirective.prototype.ngOnInit = function () {
+            if (this.tableState) {
+                this.tableStateChange.emit(this.tableState);
+            }
             this.getTableState();
         };
         TableDirective.prototype.ngOnChanges = function (changes) {
+            if (changes['tableState'] && this.tableState) {
+                this.tableStateChange.emit(this.tableState);
+            }
             if (changes['originalArray']) {
                 this.pipe();
             }
@@ -190,14 +196,17 @@ System.registerDynamic("ng2-power-table/src/Table/Table.directive", ["@angular/c
             return this.currentConfiguration;
         };
         TableDirective.prototype.pipe = function () {
+            var _this = this;
             var state = this.getTableState();
             var config = this.getConfiguration();
             if (!this.dataPipeService) {
                 this.dataPipeService = this.injector.get(config.pipeServiceType);
             }
-            this.displayArray = this.dataPipeService.pipe(this.originalArray, state, config);
-            this.displayArrayChange.emit(this.displayArray);
-            this.changeDetectorRef.detectChanges();
+            this.dataPipeService.pipe(this.originalArray, state, config).then(function (array) {
+                _this.displayArray = array;
+                _this.displayArrayChange.emit(_this.displayArray);
+                _this.changeDetectorRef.detectChanges();
+            });
         };
         ;
         return TableDirective;
@@ -261,17 +270,17 @@ System.registerDynamic("ng2-power-table/src/Pagination/Pagination.component", ["
             var start = 1;
             var end;
             var i;
-            //scope.totalItemCount = paginationState.totalItemCount;
+            if (!this.table.tableState || !this.table.tableState.pagination) return;
             var pagination = this.table.tableState.pagination;
+            this.numPages = Math.max(1, Math.ceil(pagination.totalItemCount / pagination.pageSize));
             this.currentPage = Math.floor(pagination.start / pagination.pageSize) + 1;
             start = Math.max(start, this.currentPage - Math.abs(Math.floor(this.displayedPagesCount / 2)));
             end = start + this.displayedPagesCount;
-            if (end > pagination.numberOfPages) {
-                end = pagination.numberOfPages + 1;
+            if (end > this.numPages) {
+                end = this.numPages + 1;
                 start = Math.max(1, end - this.displayedPagesCount);
             }
             this.pages = [];
-            this.numPages = pagination.numberOfPages;
             for (i = start; i < end; i++) {
                 this.pages.push(i);
             }
@@ -302,14 +311,15 @@ System.registerDynamic("ng2-power-table/src/Pagination/Pagination.component", ["
             var _this = this;
             this.unsubscribeToPagination();
             this.rebuildPagination();
-            this.removePaginationListener = tableState.pagination.changed.subscribe(function () {
-                _this.rebuildPagination();
-            });
+            if (tableState && tableState.pagination && tableState.pagination.changed) {
+                this.removePaginationListener = tableState.pagination.changed.subscribe(function () {
+                    _this.rebuildPagination();
+                });
+            }
         };
         return PaginationComponent;
     }();
     PaginationComponent = __decorate([core_1.Component({
-        moduleId: module.id,
         selector: 'pt-pagination',
         template: paginationTemplate
     }), __metadata("design:paramtypes", [Table_directive_1.TableDirective])], PaginationComponent);
@@ -391,10 +401,8 @@ System.registerDynamic("ng2-power-table/src/TableState/DefaultTableState.class",
         function DefaultTableStatePagination() {
             this.changed = new core_1.EventEmitter();
             this.start = 0;
-            this.end = 0;
             this.pageSize = 10;
             this.totalItemCount = 0;
-            this.numberOfPages = 0;
         }
         Object.defineProperty(DefaultTableStatePagination.prototype, "start", {
             get: function () {
@@ -403,19 +411,8 @@ System.registerDynamic("ng2-power-table/src/TableState/DefaultTableState.class",
             set: function (value) {
                 var original = this._start;
                 this._start = value;
+                this.boundsCheck();
                 if (original !== this._start) this.changed.emit();
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(DefaultTableStatePagination.prototype, "end", {
-            get: function () {
-                return this._end;
-            },
-            set: function (value) {
-                var original = this._end;
-                this._end = value;
-                if (original !== this._end) this.changed.emit();
             },
             enumerable: true,
             configurable: true
@@ -439,23 +436,18 @@ System.registerDynamic("ng2-power-table/src/TableState/DefaultTableState.class",
             set: function (value) {
                 var original = this._totalItemCount;
                 this._totalItemCount = value;
+                this.boundsCheck();
                 if (original !== this._totalItemCount) this.changed.emit();
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(DefaultTableStatePagination.prototype, "numberOfPages", {
-            get: function () {
-                return this._numberOfPages;
-            },
-            set: function (value) {
-                var original = this._numberOfPages;
-                this._numberOfPages = value;
-                if (original !== this._numberOfPages) this.changed.emit();
-            },
-            enumerable: true,
-            configurable: true
-        });
+        DefaultTableStatePagination.prototype.boundsCheck = function () {
+            if (this._start >= this._totalItemCount) {
+                var numPages = Math.max(1, Math.ceil(this._totalItemCount / this._pageSize));
+                this._start = (numPages - 1) * this._pageSize;
+            }
+        };
         return DefaultTableStatePagination;
     }();
     exports.DefaultTableStatePagination = DefaultTableStatePagination;
@@ -543,16 +535,16 @@ System.registerDynamic("ng2-power-table/src/Pipe/DefaultDataPipeService.class", 
         function DefaultDataPipeService() {}
         DefaultDataPipeService.prototype.pipe = function (data, tableState, configuration) {
             if (!data || !Array.isArray(data)) {
-                return undefined;
+                return Promise.resolve(undefined);
             }
             var resultArray = [].concat(data);
             resultArray = this.filter(resultArray, tableState, configuration);
             resultArray = this.sort(resultArray, tableState, configuration);
             resultArray = this.page(resultArray, tableState, configuration);
-            return resultArray;
+            return Promise.resolve(resultArray);
         };
         DefaultDataPipeService.prototype.sort = function (data, tableState, configuration) {
-            if (!tableState.sort.predicate || tableState.sort.order === SortOrder_enum_1.SortOrder.NotSet) return data;
+            if (!tableState.sort || !tableState.sort.predicate || tableState.sort.order === SortOrder_enum_1.SortOrder.NotSet) return data;
             return data.sort(function (a, b) {
                 // TODO: Implement configuration setting to help with aggresive minification by consumer
                 var aValue = a[tableState.sort.predicate];
@@ -574,8 +566,7 @@ System.registerDynamic("ng2-power-table/src/Pipe/DefaultDataPipeService.class", 
         };
         DefaultDataPipeService.prototype.page = function (data, tableState, configuration) {
             if (!tableState.pagination || !tableState.pagination.pageSize) return data;
-            tableState.pagination.numberOfPages = data.length > 0 ? Math.ceil(data.length / tableState.pagination.pageSize) : 1;
-            tableState.pagination.start = tableState.pagination.start >= data.length ? (tableState.pagination.numberOfPages - 1) * tableState.pagination.pageSize : tableState.pagination.start;
+            tableState.pagination.totalItemCount = data.length;
             return data.slice(tableState.pagination.start, tableState.pagination.start + tableState.pagination.pageSize);
         };
         return DefaultDataPipeService;

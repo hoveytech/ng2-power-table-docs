@@ -32,6 +32,10 @@ var Sorting_component_1 = require("./Sorting/Sorting.component");
 var SortingExample_component_1 = require("./Sorting/SortingExample.component");
 var Paging_component_1 = require("./Paging/Paging.component");
 var PagingExample_component_1 = require("./Paging/PagingExample.component");
+var Server_component_1 = require("./Server/Server.component");
+var ServerExample_component_1 = require("./Server/ServerExample.component");
+var Customize_component_1 = require("./Customize/Customize.component");
+var CustomizeExample_component_1 = require("./Customize/CustomizeExample.component");
 exports.Ng2PowerTableComponents = [
     CodeView_component_1.CodeExampleComponent,
     Navigation_component_1.NavigationComponent,
@@ -41,6 +45,10 @@ exports.Ng2PowerTableComponents = [
     SortingExample_component_1.SortingExampleComponent,
     Paging_component_1.PagingComponent,
     PagingExample_component_1.PagingExampleComponent,
+    Server_component_1.ServerComponent,
+    ServerExample_component_1.ServerExampleComponent,
+    Customize_component_1.CustomizeComponent,
+    CustomizeExample_component_1.CustomizeExampleComponent,
     AppComponent,
     LoadingFrame_component_1.LoadingFrameComponent
 ];

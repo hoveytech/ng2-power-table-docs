@@ -1,5 +1,3 @@
-/// <reference path="./../../typings/globals/chance/index.d.ts" />
-
 export class Person{
     public id: number;
     public firstName: string;

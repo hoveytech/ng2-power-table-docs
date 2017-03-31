@@ -8,13 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var ServerComponent = (function () {
-    function ServerComponent() {
-    }
-    ServerComponent.prototype.ngOnInit = function () { };
-    return ServerComponent;
-}());
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+let ServerComponent = class ServerComponent {
+    constructor() { }
+    ngOnInit() { }
+};
 ServerComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

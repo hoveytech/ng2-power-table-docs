@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var Person_class_1 = require("./../MockData/Person.class");
-var PagingExampleComponent = (function () {
-    function PagingExampleComponent() {
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const Person_class_1 = require("./../MockData/Person.class");
+let PagingExampleComponent = class PagingExampleComponent {
+    constructor() {
         this.allPeople = [];
         for (var i = 1; i < 101; i++) {
             var person = Person_class_1.Person.create();
@@ -19,8 +20,7 @@ var PagingExampleComponent = (function () {
             this.allPeople.push(person);
         }
     }
-    return PagingExampleComponent;
-}());
+};
 PagingExampleComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

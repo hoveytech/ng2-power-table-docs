@@ -1,5 +1,5 @@
-/// <reference path="../../typings/globals/lodash/index.d.ts" />
 /// <reference path="../../typings-custom/pretty-print/index.d.ts" />
+/// <reference path="../../node_modules/@types/lodash/index.d.ts" />
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,43 +10,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-var CodeExampleComponent = (function () {
-    function CodeExampleComponent(http, element, renderer) {
+//import * as _ from "lodash";
+let CodeExampleComponent = class CodeExampleComponent {
+    constructor(http, element, renderer) {
         this.http = http;
         this.element = element;
         this.renderer = renderer;
     }
-    CodeExampleComponent.prototype.ngOnInit = function () {
+    ngOnInit() {
         this.resolveContent();
-    };
-    CodeExampleComponent.prototype.getContentPromise = function () {
-        var _this = this;
+    }
+    getContentPromise() {
         return this.http.get(this.contentUrl)
-            .map(function (result) {
+            .map(result => {
             return result.text();
         })
             .toPromise()
-            .catch(function () {
-            return Promise.resolve('Could not load content at "' + _this.contentUrl + '"');
+            .catch(() => {
+            return Promise.resolve('Could not load content at "' + this.contentUrl + '"');
         });
-    };
-    CodeExampleComponent.prototype.resolveContent = function () {
-        var _this = this;
-        this.getContentPromise().then(function (content) {
+    }
+    resolveContent() {
+        this.getContentPromise().then(content => {
             content = _.escape(content);
-            var preElement = _this.element.nativeElement.children[0];
+            var preElement = this.element.nativeElement.children[0];
             preElement.innerHTML = content;
-            if (_this.language) {
-                _this.renderer.setElementClass(preElement, _this.language, true);
+            if (this.language) {
+                this.renderer.setElementClass(preElement, this.language, true);
             }
-            prettyPrint(null, _this.element.nativeElement);
+            prettyPrint(null, this.element.nativeElement);
         });
-    };
-    return CodeExampleComponent;
-}());
+    }
+};
 __decorate([
     core_1.Input('content-url'),
     __metadata("design:type", String)

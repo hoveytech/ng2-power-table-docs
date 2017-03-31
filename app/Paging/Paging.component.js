@@ -8,13 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var PagingComponent = (function () {
-    function PagingComponent() {
-    }
-    PagingComponent.prototype.ngOnInit = function () { };
-    return PagingComponent;
-}());
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+let PagingComponent = class PagingComponent {
+    constructor() { }
+    ngOnInit() { }
+};
 PagingComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

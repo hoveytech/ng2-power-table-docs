@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var LoadingFrameComponent = (function () {
-    function LoadingFrameComponent(renderer, elementRef) {
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+let LoadingFrameComponent = class LoadingFrameComponent {
+    constructor(renderer, elementRef) {
         this.renderer = renderer;
         this.elementRef = elementRef;
         var wrapper = document.getElementById('wrapper');
@@ -21,13 +22,12 @@ var LoadingFrameComponent = (function () {
             var loadingFrame = elements[0];
             loadingFrame.classList.add('fadeOut');
             loadingFrame.classList.add('animated');
-            setTimeout(function () {
+            setTimeout(() => {
                 wrapper.removeChild(loadingFrame);
             }, 1000);
         }
     }
-    return LoadingFrameComponent;
-}());
+};
 LoadingFrameComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

@@ -1,9 +1,10 @@
-/// <reference path="../../typings/globals/lodash/index.d.ts" />
 /// <reference path="../../typings-custom/pretty-print/index.d.ts" />
+/// <reference path="../../node_modules/@types/lodash/index.d.ts" />
 
 import { Component, OnInit, Input, ElementRef, Renderer } from '@angular/core';
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/toPromise';
+//import * as _ from "lodash";
 
 @Component({
     moduleId: module.id,
@@ -44,7 +45,7 @@ export class CodeExampleComponent implements OnInit {
     private resolveContent() {
         this.getContentPromise().then(content => {
             content = _.escape(content);
-
+            
             var preElement = this.element.nativeElement.children[0];
             preElement.innerHTML = content;
 

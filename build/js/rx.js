@@ -1,8 +1,7 @@
 System.registerDynamic('rxjs/observable/BoundCallbackObservable', ['rxjs/Observable', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/AsyncSubject'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -56,7 +55,7 @@ System.registerDynamic('rxjs/observable/BoundCallbackObservable', ['rxjs/Observa
          * @see {@link fromPromise}
          *
          * @param {function} func Function with a callback as the last parameter.
-         * @param {function} selector A function which takes the arguments from the
+         * @param {function} [selector] A function which takes the arguments from the
          * callback and maps those a value to emit on the output Observable.
          * @param {Scheduler} [scheduler] The scheduler on which to schedule the
          * callbacks.
@@ -173,39 +172,30 @@ System.registerDynamic('rxjs/observable/BoundCallbackObservable', ['rxjs/Observa
         subject.error(err);
     }
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/bindCallback", ["rxjs/observable/BoundCallbackObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var BoundCallbackObservable_1 = $__require("rxjs/observable/BoundCallbackObservable");
   exports.bindCallback = BoundCallbackObservable_1.BoundCallbackObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/bindCallback', ['rxjs/Observable', 'rxjs/observable/bindCallback'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var bindCallback_1 = $__require('rxjs/observable/bindCallback');
   Observable_1.Observable.bindCallback = bindCallback_1.bindCallback;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/BoundNodeCallbackObservable', ['rxjs/Observable', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/AsyncSubject'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -261,7 +251,7 @@ System.registerDynamic('rxjs/observable/BoundNodeCallbackObservable', ['rxjs/Obs
          * @see {@link fromPromise}
          *
          * @param {function} func Function with a callback as the last parameter.
-         * @param {function} selector A function which takes the arguments from the
+         * @param {function} [selector] A function which takes the arguments from the
          * callback and maps those a value to emit on the output Observable.
          * @param {Scheduler} [scheduler] The scheduler on which to schedule the
          * callbacks.
@@ -387,39 +377,30 @@ System.registerDynamic('rxjs/observable/BoundNodeCallbackObservable', ['rxjs/Obs
         subject.error(err);
     }
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/bindNodeCallback", ["rxjs/observable/BoundNodeCallbackObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var BoundNodeCallbackObservable_1 = $__require("rxjs/observable/BoundNodeCallbackObservable");
   exports.bindNodeCallback = BoundNodeCallbackObservable_1.BoundNodeCallbackObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/bindNodeCallback', ['rxjs/Observable', 'rxjs/observable/bindNodeCallback'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var bindNodeCallback_1 = $__require('rxjs/observable/bindNodeCallback');
   Observable_1.Observable.bindNodeCallback = bindNodeCallback_1.bindNodeCallback;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/combineLatest', ['rxjs/util/isScheduler', 'rxjs/util/isArray', 'rxjs/observable/ArrayObservable', 'rxjs/operator/combineLatest'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var isScheduler_1 = $__require('rxjs/util/isScheduler');
     var isArray_1 = $__require('rxjs/util/isArray');
@@ -449,6 +430,11 @@ System.registerDynamic('rxjs/observable/combineLatest', ['rxjs/util/isScheduler'
      * var height = Rx.Observable.of(1.76, 1.77, 1.78);
      * var bmi = Rx.Observable.combineLatest(weight, height, (w, h) => w / (h * h));
      * bmi.subscribe(x => console.log('BMI is ' + x));
+     *
+     * // With output to console:
+     * // BMI is 24.212293388429753
+     * // BMI is 23.93948099205209
+     * // BMI is 23.671253629592222
      *
      * @see {@link combineAll}
      * @see {@link merge}
@@ -491,52 +477,40 @@ System.registerDynamic('rxjs/observable/combineLatest', ['rxjs/util/isScheduler'
     }
     exports.combineLatest = combineLatest;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/combineLatest', ['rxjs/Observable', 'rxjs/observable/combineLatest'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var combineLatest_1 = $__require('rxjs/observable/combineLatest');
   Observable_1.Observable.combineLatest = combineLatest_1.combineLatest;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/concat", ["rxjs/operator/concat"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var concat_1 = $__require("rxjs/operator/concat");
   exports.concat = concat_1.concatStatic;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/concat', ['rxjs/Observable', 'rxjs/observable/concat'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var concat_1 = $__require('rxjs/observable/concat');
   Observable_1.Observable.concat = concat_1.concat;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/DeferObservable', ['rxjs/Observable', 'rxjs/util/subscribeToResult', 'rxjs/OuterSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -587,6 +561,12 @@ System.registerDynamic('rxjs/observable/DeferObservable', ['rxjs/Observable', 'r
          * });
          * clicksOrInterval.subscribe(x => console.log(x));
          *
+         * // Results in the following behavior:
+         * // If the result of Math.random() is greater than 0.5 it will listen
+         * // for clicks anywhere on the "document"; when document is clicked it
+         * // will log a MouseEvent object to the console. If the result is less
+         * // than 0.5 it will emit ascending numbers, one every second(1000ms).
+         *
          * @see {@link create}
          *
          * @param {function(): Observable|Promise} observableFactory The Observable
@@ -631,64 +611,49 @@ System.registerDynamic('rxjs/observable/DeferObservable', ['rxjs/Observable', 'r
         return DeferSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/defer", ["rxjs/observable/DeferObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var DeferObservable_1 = $__require("rxjs/observable/DeferObservable");
   exports.defer = DeferObservable_1.DeferObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/defer', ['rxjs/Observable', 'rxjs/observable/defer'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var defer_1 = $__require('rxjs/observable/defer');
   Observable_1.Observable.defer = defer_1.defer;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/empty", ["rxjs/observable/EmptyObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var EmptyObservable_1 = $__require("rxjs/observable/EmptyObservable");
   exports.empty = EmptyObservable_1.EmptyObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/empty', ['rxjs/Observable', 'rxjs/observable/empty'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var empty_1 = $__require('rxjs/observable/empty');
   Observable_1.Observable.empty = empty_1.empty;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/ForkJoinObservable', ['rxjs/Observable', 'rxjs/observable/EmptyObservable', 'rxjs/util/isArray', 'rxjs/util/subscribeToResult', 'rxjs/OuterSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -806,64 +771,49 @@ System.registerDynamic('rxjs/observable/ForkJoinObservable', ['rxjs/Observable',
         return ForkJoinSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/forkJoin", ["rxjs/observable/ForkJoinObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var ForkJoinObservable_1 = $__require("rxjs/observable/ForkJoinObservable");
   exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/forkJoin', ['rxjs/Observable', 'rxjs/observable/forkJoin'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var forkJoin_1 = $__require('rxjs/observable/forkJoin');
   Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/from", ["rxjs/observable/FromObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var FromObservable_1 = $__require("rxjs/observable/FromObservable");
   exports.from = FromObservable_1.FromObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/from', ['rxjs/Observable', 'rxjs/observable/from'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var from_1 = $__require('rxjs/observable/from');
   Observable_1.Observable.from = from_1.from;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/FromEventObservable', ['rxjs/Observable', 'rxjs/util/tryCatch', 'rxjs/util/isFunction', 'rxjs/util/errorObject', 'rxjs/Subscription'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -877,6 +827,7 @@ System.registerDynamic('rxjs/observable/FromEventObservable', ['rxjs/Observable'
     var isFunction_1 = $__require('rxjs/util/isFunction');
     var errorObject_1 = $__require('rxjs/util/errorObject');
     var Subscription_1 = $__require('rxjs/Subscription');
+    var toString = Object.prototype.toString;
     function isNodeStyleEventEmmitter(sourceObj) {
         return !!sourceObj && typeof sourceObj.addListener === 'function' && typeof sourceObj.removeListener === 'function';
     }
@@ -884,10 +835,10 @@ System.registerDynamic('rxjs/observable/FromEventObservable', ['rxjs/Observable'
         return !!sourceObj && typeof sourceObj.on === 'function' && typeof sourceObj.off === 'function';
     }
     function isNodeList(sourceObj) {
-        return !!sourceObj && sourceObj.toString() === '[object NodeList]';
+        return !!sourceObj && toString.call(sourceObj) === '[object NodeList]';
     }
     function isHTMLCollection(sourceObj) {
-        return !!sourceObj && sourceObj.toString() === '[object HTMLCollection]';
+        return !!sourceObj && toString.call(sourceObj) === '[object HTMLCollection]';
     }
     function isEventTarget(sourceObj) {
         return !!sourceObj && typeof sourceObj.addEventListener === 'function' && typeof sourceObj.removeEventListener === 'function';
@@ -927,6 +878,10 @@ System.registerDynamic('rxjs/observable/FromEventObservable', ['rxjs/Observable'
          * var clicks = Rx.Observable.fromEvent(document, 'click');
          * clicks.subscribe(x => console.log(x));
          *
+         * // Results in:
+         * // MouseEvent object logged to console everytime a click
+         * // occurs on the document.
+         *
          * @see {@link from}
          * @see {@link fromEventPattern}
          *
@@ -934,7 +889,7 @@ System.registerDynamic('rxjs/observable/FromEventObservable', ['rxjs/Observable'
          * EventEmitter, NodeList or HTMLCollection to attach the event handler to.
          * @param {string} eventName The event name of interest, being emitted by the
          * `target`.
-         * @parm {EventListenerOptions} [options] Options to pass through to addEventListener
+         * @param {EventListenerOptions} [options] Options to pass through to addEventListener
          * @param {SelectorMethodSignature<T>} [selector] An optional function to
          * post-process results. It takes the arguments from the event handler and
          * should return a single value.
@@ -974,6 +929,8 @@ System.registerDynamic('rxjs/observable/FromEventObservable', ['rxjs/Observable'
                 unsubscribe = function () {
                     return source_3.removeListener(eventName, handler);
                 };
+            } else {
+                throw new TypeError('Invalid event target');
             }
             subscriber.add(new Subscription_1.Subscription(unsubscribe));
         };
@@ -1002,39 +959,30 @@ System.registerDynamic('rxjs/observable/FromEventObservable', ['rxjs/Observable'
     }(Observable_1.Observable);
     exports.FromEventObservable = FromEventObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/fromEvent", ["rxjs/observable/FromEventObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var FromEventObservable_1 = $__require("rxjs/observable/FromEventObservable");
   exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/fromEvent', ['rxjs/Observable', 'rxjs/observable/fromEvent'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var fromEvent_1 = $__require('rxjs/observable/fromEvent');
   Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/FromEventPatternObservable', ['rxjs/Observable', 'rxjs/Subscription'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1145,64 +1093,49 @@ System.registerDynamic('rxjs/observable/FromEventPatternObservable', ['rxjs/Obse
     }(Observable_1.Observable);
     exports.FromEventPatternObservable = FromEventPatternObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/fromEventPattern", ["rxjs/observable/FromEventPatternObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var FromEventPatternObservable_1 = $__require("rxjs/observable/FromEventPatternObservable");
   exports.fromEventPattern = FromEventPatternObservable_1.FromEventPatternObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/fromEventPattern', ['rxjs/Observable', 'rxjs/observable/fromEventPattern'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var fromEventPattern_1 = $__require('rxjs/observable/fromEventPattern');
   Observable_1.Observable.fromEventPattern = fromEventPattern_1.fromEventPattern;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/fromPromise", ["rxjs/observable/PromiseObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var PromiseObservable_1 = $__require("rxjs/observable/PromiseObservable");
   exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/fromPromise', ['rxjs/Observable', 'rxjs/observable/fromPromise'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var fromPromise_1 = $__require('rxjs/observable/fromPromise');
   Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/GenerateObservable', ['rxjs/Observable', 'rxjs/util/isScheduler'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1339,27 +1272,21 @@ System.registerDynamic('rxjs/observable/GenerateObservable', ['rxjs/Observable',
     }(Observable_1.Observable);
     exports.GenerateObservable = GenerateObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/generate', ['rxjs/Observable', 'rxjs/observable/GenerateObservable'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var GenerateObservable_1 = $__require('rxjs/observable/GenerateObservable');
   Observable_1.Observable.generate = GenerateObservable_1.GenerateObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/IfObservable', ['rxjs/Observable', 'rxjs/util/subscribeToResult', 'rxjs/OuterSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1427,39 +1354,30 @@ System.registerDynamic('rxjs/observable/IfObservable', ['rxjs/Observable', 'rxjs
         return IfSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/if", ["rxjs/observable/IfObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var IfObservable_1 = $__require("rxjs/observable/IfObservable");
   exports._if = IfObservable_1.IfObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/if', ['rxjs/Observable', 'rxjs/observable/if'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var if_1 = $__require('rxjs/observable/if');
   Observable_1.Observable.if = if_1._if;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/IntervalObservable', ['rxjs/util/isNumeric', 'rxjs/Observable', 'rxjs/scheduler/async'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1560,77 +1478,59 @@ System.registerDynamic('rxjs/observable/IntervalObservable', ['rxjs/util/isNumer
     }(Observable_1.Observable);
     exports.IntervalObservable = IntervalObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/interval", ["rxjs/observable/IntervalObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var IntervalObservable_1 = $__require("rxjs/observable/IntervalObservable");
   exports.interval = IntervalObservable_1.IntervalObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/interval', ['rxjs/Observable', 'rxjs/observable/interval'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var interval_1 = $__require('rxjs/observable/interval');
   Observable_1.Observable.interval = interval_1.interval;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/merge", ["rxjs/operator/merge"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var merge_1 = $__require("rxjs/operator/merge");
   exports.merge = merge_1.mergeStatic;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/merge', ['rxjs/Observable', 'rxjs/observable/merge'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var merge_1 = $__require('rxjs/observable/merge');
   Observable_1.Observable.merge = merge_1.merge;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/race', ['rxjs/Observable', 'rxjs/operator/race'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var race_1 = $__require('rxjs/operator/race');
   Observable_1.Observable.race = race_1.raceStatic;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/NeverObservable', ['rxjs/Observable', 'rxjs/util/noop'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1692,77 +1592,59 @@ System.registerDynamic('rxjs/observable/NeverObservable', ['rxjs/Observable', 'r
     }(Observable_1.Observable);
     exports.NeverObservable = NeverObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/never", ["rxjs/observable/NeverObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var NeverObservable_1 = $__require("rxjs/observable/NeverObservable");
   exports.never = NeverObservable_1.NeverObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/never', ['rxjs/Observable', 'rxjs/observable/never'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var never_1 = $__require('rxjs/observable/never');
   Observable_1.Observable.never = never_1.never;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/of", ["rxjs/observable/ArrayObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var ArrayObservable_1 = $__require("rxjs/observable/ArrayObservable");
   exports.of = ArrayObservable_1.ArrayObservable.of;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/of', ['rxjs/Observable', 'rxjs/observable/of'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var of_1 = $__require('rxjs/observable/of');
   Observable_1.Observable.of = of_1.of;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/onErrorResumeNext', ['rxjs/Observable', 'rxjs/operator/onErrorResumeNext'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var onErrorResumeNext_1 = $__require('rxjs/operator/onErrorResumeNext');
   Observable_1.Observable.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNextStatic;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/PairsObservable", ["rxjs/Observable"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1855,39 +1737,30 @@ System.registerDynamic("rxjs/observable/PairsObservable", ["rxjs/Observable"], t
     }(Observable_1.Observable);
     exports.PairsObservable = PairsObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/pairs", ["rxjs/observable/PairsObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var PairsObservable_1 = $__require("rxjs/observable/PairsObservable");
   exports.pairs = PairsObservable_1.PairsObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/pairs', ['rxjs/Observable', 'rxjs/observable/pairs'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var pairs_1 = $__require('rxjs/observable/pairs');
   Observable_1.Observable.pairs = pairs_1.pairs;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/RangeObservable", ["rxjs/Observable"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1992,39 +1865,30 @@ System.registerDynamic("rxjs/observable/RangeObservable", ["rxjs/Observable"], t
     }(Observable_1.Observable);
     exports.RangeObservable = RangeObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/range", ["rxjs/observable/RangeObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var RangeObservable_1 = $__require("rxjs/observable/RangeObservable");
   exports.range = RangeObservable_1.RangeObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/range', ['rxjs/Observable', 'rxjs/observable/range'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var range_1 = $__require('rxjs/observable/range');
   Observable_1.Observable.range = range_1.range;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/UsingObservable', ['rxjs/Observable', 'rxjs/util/subscribeToResult', 'rxjs/OuterSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -2088,39 +1952,30 @@ System.registerDynamic('rxjs/observable/UsingObservable', ['rxjs/Observable', 'r
         return UsingSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/using", ["rxjs/observable/UsingObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var UsingObservable_1 = $__require("rxjs/observable/UsingObservable");
   exports.using = UsingObservable_1.UsingObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/using', ['rxjs/Observable', 'rxjs/observable/using'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var using_1 = $__require('rxjs/observable/using');
   Observable_1.Observable.using = using_1.using;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/ErrorObservable", ["rxjs/Observable"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -2205,39 +2060,30 @@ System.registerDynamic("rxjs/observable/ErrorObservable", ["rxjs/Observable"], t
     }(Observable_1.Observable);
     exports.ErrorObservable = ErrorObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/throw", ["rxjs/observable/ErrorObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var ErrorObservable_1 = $__require("rxjs/observable/ErrorObservable");
   exports._throw = ErrorObservable_1.ErrorObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/throw', ['rxjs/Observable', 'rxjs/observable/throw'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var throw_1 = $__require('rxjs/observable/throw');
   Observable_1.Observable.throw = throw_1._throw;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/TimerObservable', ['rxjs/util/isNumeric', 'rxjs/Observable', 'rxjs/scheduler/async', 'rxjs/util/isScheduler', 'rxjs/util/isDate'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -2352,128 +2198,99 @@ System.registerDynamic('rxjs/observable/TimerObservable', ['rxjs/util/isNumeric'
     }(Observable_1.Observable);
     exports.TimerObservable = TimerObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/timer", ["rxjs/observable/TimerObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var TimerObservable_1 = $__require("rxjs/observable/TimerObservable");
   exports.timer = TimerObservable_1.TimerObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/timer', ['rxjs/Observable', 'rxjs/observable/timer'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var timer_1 = $__require('rxjs/observable/timer');
   Observable_1.Observable.timer = timer_1.timer;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/zip", ["rxjs/operator/zip"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var zip_1 = $__require("rxjs/operator/zip");
   exports.zip = zip_1.zipStatic;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/zip', ['rxjs/Observable', 'rxjs/observable/zip'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var zip_1 = $__require('rxjs/observable/zip');
   Observable_1.Observable.zip = zip_1.zip;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/dom/ajax", ["rxjs/observable/dom/AjaxObservable"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var AjaxObservable_1 = $__require("rxjs/observable/dom/AjaxObservable");
   exports.ajax = AjaxObservable_1.AjaxObservable.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/dom/ajax', ['rxjs/Observable', 'rxjs/observable/dom/ajax'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var ajax_1 = $__require('rxjs/observable/dom/ajax');
   Observable_1.Observable.ajax = ajax_1.ajax;
   
-
-  return module.exports;
 });
-System.registerDynamic('rxjs/util/assign', ['rxjs/util/root'], true, function ($__require, exports, module) {
+System.registerDynamic("rxjs/util/assign", ["rxjs/util/root"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
-    var root_1 = $__require('rxjs/util/root');
-    var Object = root_1.root.Object;
-    if (typeof Object.assign != 'function') {
-        (function () {
-            Object.assign = function assignPolyfill(target) {
-                var sources = [];
-                for (var _i = 1; _i < arguments.length; _i++) {
-                    sources[_i - 1] = arguments[_i];
+    var root_1 = $__require("rxjs/util/root");
+    function assignImpl(target) {
+        var sources = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            sources[_i - 1] = arguments[_i];
+        }
+        var len = sources.length;
+        for (var i = 0; i < len; i++) {
+            var source = sources[i];
+            for (var k in source) {
+                if (source.hasOwnProperty(k)) {
+                    target[k] = source[k];
                 }
-                if (target === undefined || target === null) {
-                    throw new TypeError('cannot convert undefined or null to object');
-                }
-                var output = Object(target);
-                var len = sources.length;
-                for (var index = 0; index < len; index++) {
-                    var source = sources[index];
-                    if (source !== undefined && source !== null) {
-                        for (var key in source) {
-                            if (source.hasOwnProperty(key)) {
-                                output[key] = source[key];
-                            }
-                        }
-                    }
-                }
-                return output;
-            };
-        })();
+            }
+        }
+        return target;
     }
-    exports.assign = Object.assign;
+    exports.assignImpl = assignImpl;
+    ;
+    function getAssign(root) {
+        return root.Object.assign || assignImpl;
+    }
+    exports.getAssign = getAssign;
+    exports.assign = getAssign(root_1.root);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/dom/WebSocketSubject', ['rxjs/Subject', 'rxjs/Subscriber', 'rxjs/Observable', 'rxjs/Subscription', 'rxjs/util/root', 'rxjs/ReplaySubject', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/util/assign'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -2534,6 +2351,13 @@ System.registerDynamic('rxjs/observable/dom/WebSocketSubject', ['rxjs/Subject', 
             var sock = new WebSocketSubject(this, this.destination);
             sock.operator = operator;
             return sock;
+        };
+        WebSocketSubject.prototype._resetState = function () {
+            this.socket = null;
+            if (!this.source) {
+                this.destination = new ReplaySubject_1.ReplaySubject();
+            }
+            this._output = new Subject_1.Subject();
         };
         // TODO: factor this out to be a proper Operator/Subscriber implementation and eliminate closures
         WebSocketSubject.prototype.multiplex = function (subMsg, unsubMsg, messageFilter) {
@@ -2604,25 +2428,25 @@ System.registerDynamic('rxjs/observable/dom/WebSocketSubject', ['rxjs/Subject', 
                     } else {
                         observer.error(new TypeError('WebSocketSubject.error must be called with an object with an error code, ' + 'and an optional reason: { code: number, reason: string }'));
                     }
-                    _this.destination = new ReplaySubject_1.ReplaySubject();
-                    _this.socket = null;
+                    _this._resetState();
                 }, function () {
                     var closingObserver = _this.closingObserver;
                     if (closingObserver) {
                         closingObserver.next(undefined);
                     }
                     socket.close();
-                    _this.destination = new ReplaySubject_1.ReplaySubject();
-                    _this.socket = null;
+                    _this._resetState();
                 });
                 if (queue && queue instanceof ReplaySubject_1.ReplaySubject) {
                     subscription.add(queue.subscribe(_this.destination));
                 }
             };
             socket.onerror = function (e) {
-                return observer.error(e);
+                _this._resetState();
+                observer.error(e);
             };
             socket.onclose = function (e) {
+                _this._resetState();
                 var closeObserver = _this.closeObserver;
                 if (closeObserver) {
                     closeObserver.next(e);
@@ -2655,9 +2479,11 @@ System.registerDynamic('rxjs/observable/dom/WebSocketSubject', ['rxjs/Subject', 
             subscription.add(this._output.subscribe(subscriber));
             subscription.add(function () {
                 var socket = _this.socket;
-                if (_this._output.observers.length === 0 && socket && socket.readyState === 1) {
-                    socket.close();
-                    _this.socket = null;
+                if (_this._output.observers.length === 0) {
+                    if (socket && socket.readyState === 1) {
+                        socket.close();
+                    }
+                    _this._resetState();
                 }
             });
             return subscription;
@@ -2668,7 +2494,7 @@ System.registerDynamic('rxjs/observable/dom/WebSocketSubject', ['rxjs/Subject', 
                 socket = _a.socket;
             if (socket && socket.readyState === 1) {
                 socket.close();
-                this.socket = null;
+                this._resetState();
             }
             _super.prototype.unsubscribe.call(this);
             if (!source) {
@@ -2679,39 +2505,30 @@ System.registerDynamic('rxjs/observable/dom/WebSocketSubject', ['rxjs/Subject', 
     }(Subject_1.AnonymousSubject);
     exports.WebSocketSubject = WebSocketSubject;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/dom/webSocket", ["rxjs/observable/dom/WebSocketSubject"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var WebSocketSubject_1 = $__require("rxjs/observable/dom/WebSocketSubject");
   exports.webSocket = WebSocketSubject_1.WebSocketSubject.create;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/observable/dom/webSocket', ['rxjs/Observable', 'rxjs/observable/dom/webSocket'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var webSocket_1 = $__require('rxjs/observable/dom/webSocket');
   Observable_1.Observable.webSocket = webSocket_1.webSocket;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/buffer', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -2763,7 +2580,7 @@ System.registerDynamic('rxjs/operator/buffer', ['rxjs/OuterSubscriber', 'rxjs/ut
             this.closingNotifier = closingNotifier;
         }
         BufferOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new BufferSubscriber(subscriber, this.closingNotifier));
+            return source.subscribe(new BufferSubscriber(subscriber, this.closingNotifier));
         };
         return BufferOperator;
     }();
@@ -2790,27 +2607,21 @@ System.registerDynamic('rxjs/operator/buffer', ['rxjs/OuterSubscriber', 'rxjs/ut
         return BufferSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/buffer', ['rxjs/Observable', 'rxjs/operator/buffer'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var buffer_1 = $__require('rxjs/operator/buffer');
   Observable_1.Observable.prototype.buffer = buffer_1.buffer;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/bufferCount", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -2874,7 +2685,7 @@ System.registerDynamic("rxjs/operator/bufferCount", ["rxjs/Subscriber"], true, f
             this.startBufferEvery = startBufferEvery;
         }
         BufferCountOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new BufferCountSubscriber(subscriber, this.bufferSize, this.startBufferEvery));
+            return source.subscribe(new BufferCountSubscriber(subscriber, this.bufferSize, this.startBufferEvery));
         };
         return BufferCountOperator;
     }();
@@ -2889,30 +2700,27 @@ System.registerDynamic("rxjs/operator/bufferCount", ["rxjs/Subscriber"], true, f
             _super.call(this, destination);
             this.bufferSize = bufferSize;
             this.startBufferEvery = startBufferEvery;
-            this.buffers = [[]];
+            this.buffers = [];
             this.count = 0;
         }
         BufferCountSubscriber.prototype._next = function (value) {
-            var count = this.count += 1;
-            var destination = this.destination;
-            var bufferSize = this.bufferSize;
-            var startBufferEvery = this.startBufferEvery == null ? bufferSize : this.startBufferEvery;
-            var buffers = this.buffers;
-            var len = buffers.length;
-            var remove = -1;
-            if (count % startBufferEvery === 0) {
+            var count = this.count++;
+            var _a = this,
+                destination = _a.destination,
+                bufferSize = _a.bufferSize,
+                startBufferEvery = _a.startBufferEvery,
+                buffers = _a.buffers;
+            var startOn = startBufferEvery == null ? bufferSize : startBufferEvery;
+            if (count % startOn === 0) {
                 buffers.push([]);
             }
-            for (var i = 0; i < len; i++) {
+            for (var i = buffers.length; i--;) {
                 var buffer = buffers[i];
                 buffer.push(value);
                 if (buffer.length === bufferSize) {
-                    remove = i;
+                    buffers.splice(i, 1);
                     destination.next(buffer);
                 }
-            }
-            if (remove !== -1) {
-                buffers.splice(remove, 1);
             }
         };
         BufferCountSubscriber.prototype._complete = function () {
@@ -2929,27 +2737,21 @@ System.registerDynamic("rxjs/operator/bufferCount", ["rxjs/Subscriber"], true, f
         return BufferCountSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/bufferCount', ['rxjs/Observable', 'rxjs/operator/bufferCount'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var bufferCount_1 = $__require('rxjs/operator/bufferCount');
   Observable_1.Observable.prototype.bufferCount = bufferCount_1.bufferCount;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/bufferTime', ['rxjs/scheduler/async', 'rxjs/Subscriber', 'rxjs/util/isScheduler'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -2961,6 +2763,7 @@ System.registerDynamic('rxjs/operator/bufferTime', ['rxjs/scheduler/async', 'rxj
     var async_1 = $__require('rxjs/scheduler/async');
     var Subscriber_1 = $__require('rxjs/Subscriber');
     var isScheduler_1 = $__require('rxjs/util/isScheduler');
+    /* tslint:disable:max-line-length */
     /**
      * Buffers the source Observable values for a specific time period.
      *
@@ -3030,7 +2833,7 @@ System.registerDynamic('rxjs/operator/bufferTime', ['rxjs/scheduler/async', 'rxj
             this.scheduler = scheduler;
         }
         BufferTimeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new BufferTimeSubscriber(subscriber, this.bufferTimeSpan, this.bufferCreationInterval, this.maxBufferSize, this.scheduler));
+            return source.subscribe(new BufferTimeSubscriber(subscriber, this.bufferTimeSpan, this.bufferCreationInterval, this.maxBufferSize, this.scheduler));
         };
         return BufferTimeOperator;
     }();
@@ -3104,7 +2907,7 @@ System.registerDynamic('rxjs/operator/bufferTime', ['rxjs/scheduler/async', 'rxj
             var closeAction = context.closeAction;
             closeAction.unsubscribe();
             this.remove(closeAction);
-            if (this.timespanOnly) {
+            if (!this.closed && this.timespanOnly) {
                 context = this.openContext();
                 var bufferTimeSpan = this.bufferTimeSpan;
                 var timeSpanOnlyState = { subscriber: this, context: context, bufferTimeSpan: bufferTimeSpan };
@@ -3155,27 +2958,21 @@ System.registerDynamic('rxjs/operator/bufferTime', ['rxjs/scheduler/async', 'rxj
         subscriber.closeContext(context);
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/bufferTime', ['rxjs/Observable', 'rxjs/operator/bufferTime'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var bufferTime_1 = $__require('rxjs/operator/bufferTime');
   Observable_1.Observable.prototype.bufferTime = bufferTime_1.bufferTime;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/bufferToggle', ['rxjs/Subscription', 'rxjs/util/subscribeToResult', 'rxjs/OuterSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -3235,7 +3032,7 @@ System.registerDynamic('rxjs/operator/bufferToggle', ['rxjs/Subscription', 'rxjs
             this.closingSelector = closingSelector;
         }
         BufferToggleOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new BufferToggleSubscriber(subscriber, this.openings, this.closingSelector));
+            return source.subscribe(new BufferToggleSubscriber(subscriber, this.openings, this.closingSelector));
         };
         return BufferToggleOperator;
     }();
@@ -3329,27 +3126,21 @@ System.registerDynamic('rxjs/operator/bufferToggle', ['rxjs/Subscription', 'rxjs
         return BufferToggleSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/bufferToggle', ['rxjs/Observable', 'rxjs/operator/bufferToggle'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var bufferToggle_1 = $__require('rxjs/operator/bufferToggle');
   Observable_1.Observable.prototype.bufferToggle = bufferToggle_1.bufferToggle;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/bufferWhen', ['rxjs/Subscription', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -3405,7 +3196,7 @@ System.registerDynamic('rxjs/operator/bufferWhen', ['rxjs/Subscription', 'rxjs/u
             this.closingSelector = closingSelector;
         }
         BufferWhenOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new BufferWhenSubscriber(subscriber, this.closingSelector));
+            return source.subscribe(new BufferWhenSubscriber(subscriber, this.closingSelector));
         };
         return BufferWhenOperator;
     }();
@@ -3472,105 +3263,21 @@ System.registerDynamic('rxjs/operator/bufferWhen', ['rxjs/Subscription', 'rxjs/u
         return BufferWhenSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/bufferWhen', ['rxjs/Observable', 'rxjs/operator/bufferWhen'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var bufferWhen_1 = $__require('rxjs/operator/bufferWhen');
   Observable_1.Observable.prototype.bufferWhen = bufferWhen_1.bufferWhen;
   
-
-  return module.exports;
-});
-System.registerDynamic('rxjs/operator/cache', ['rxjs/Observable', 'rxjs/ReplaySubject'], true, function ($__require, exports, module) {
-    "use strict";
-
-    var define,
-        global = this || self,
-        GLOBAL = global;
-    var Observable_1 = $__require('rxjs/Observable');
-    var ReplaySubject_1 = $__require('rxjs/ReplaySubject');
-    /**
-     * @param bufferSize
-     * @param windowTime
-     * @param scheduler
-     * @return {Observable<any>}
-     * @method cache
-     * @owner Observable
-     */
-    function cache(bufferSize, windowTime, scheduler) {
-        if (bufferSize === void 0) {
-            bufferSize = Number.POSITIVE_INFINITY;
-        }
-        if (windowTime === void 0) {
-            windowTime = Number.POSITIVE_INFINITY;
-        }
-        var subject;
-        var source = this;
-        var refs = 0;
-        var outerSub;
-        var getSubject = function () {
-            subject = new ReplaySubject_1.ReplaySubject(bufferSize, windowTime, scheduler);
-            return subject;
-        };
-        return new Observable_1.Observable(function (observer) {
-            if (!subject) {
-                subject = getSubject();
-                outerSub = source.subscribe(function (value) {
-                    return subject.next(value);
-                }, function (err) {
-                    var s = subject;
-                    subject = null;
-                    s.error(err);
-                }, function () {
-                    return subject.complete();
-                });
-            }
-            refs++;
-            if (!subject) {
-                subject = getSubject();
-            }
-            var innerSub = subject.subscribe(observer);
-            return function () {
-                refs--;
-                if (innerSub) {
-                    innerSub.unsubscribe();
-                }
-                if (refs === 0) {
-                    outerSub.unsubscribe();
-                }
-            };
-        });
-    }
-    exports.cache = cache;
-    
-
-    return module.exports;
-});
-System.registerDynamic('rxjs/add/operator/cache', ['rxjs/Observable', 'rxjs/operator/cache'], true, function ($__require, exports, module) {
-  "use strict";
-
-  var define,
-      global = this || self,
-      GLOBAL = global;
-  var Observable_1 = $__require('rxjs/Observable');
-  var cache_1 = $__require('rxjs/operator/cache');
-  Observable_1.Observable.prototype.cache = cache_1.cache;
-  
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/catch', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -3589,6 +3296,7 @@ System.registerDynamic('rxjs/operator/catch', ['rxjs/OuterSubscriber', 'rxjs/uti
      * @return {Observable} an observable that originates from either the source or the observable returned by the
      *  catch `selector` function.
      * @method catch
+     * @name catch
      * @owner Observable
      */
     function _catch(selector) {
@@ -3602,7 +3310,7 @@ System.registerDynamic('rxjs/operator/catch', ['rxjs/OuterSubscriber', 'rxjs/uti
             this.selector = selector;
         }
         CatchOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new CatchSubscriber(subscriber, this.selector, this.caught));
+            return source.subscribe(new CatchSubscriber(subscriber, this.selector, this.caught));
         };
         return CatchOperator;
     }();
@@ -3637,28 +3345,22 @@ System.registerDynamic('rxjs/operator/catch', ['rxjs/OuterSubscriber', 'rxjs/uti
         return CatchSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/catch', ['rxjs/Observable', 'rxjs/operator/catch'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var catch_1 = $__require('rxjs/operator/catch');
   Observable_1.Observable.prototype.catch = catch_1._catch;
   Observable_1.Observable.prototype._catch = catch_1._catch;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/combineAll", ["rxjs/operator/combineLatest"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var combineLatest_1 = $__require("rxjs/operator/combineLatest");
   /**
@@ -3706,27 +3408,21 @@ System.registerDynamic("rxjs/operator/combineAll", ["rxjs/operator/combineLatest
   }
   exports.combineAll = combineAll;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/combineAll', ['rxjs/Observable', 'rxjs/operator/combineAll'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var combineAll_1 = $__require('rxjs/operator/combineAll');
   Observable_1.Observable.prototype.combineAll = combineAll_1.combineAll;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/combineLatest', ['rxjs/observable/ArrayObservable', 'rxjs/util/isArray', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -3740,6 +3436,7 @@ System.registerDynamic('rxjs/operator/combineLatest', ['rxjs/observable/ArrayObs
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
     var none = {};
+    /* tslint:disable:max-line-length */
     /**
      * Combines multiple Observables to create an Observable whose values are
      * calculated from the latest values of each of its input Observables.
@@ -3763,6 +3460,11 @@ System.registerDynamic('rxjs/operator/combineLatest', ['rxjs/observable/ArrayObs
      * var height = Rx.Observable.of(1.76, 1.77, 1.78);
      * var bmi = weight.combineLatest(height, (w, h) => w / (h * h));
      * bmi.subscribe(x => console.log('BMI is ' + x));
+     *
+     * // With output to console:
+     * // BMI is 24.212293388429753
+     * // BMI is 23.93948099205209
+     * // BMI is 23.671253629592222
      *
      * @see {@link combineAll}
      * @see {@link merge}
@@ -3793,16 +3495,15 @@ System.registerDynamic('rxjs/operator/combineLatest', ['rxjs/observable/ArrayObs
             observables = observables[0];
         }
         observables.unshift(this);
-        return new ArrayObservable_1.ArrayObservable(observables).lift(new CombineLatestOperator(project));
+        return this.lift.call(new ArrayObservable_1.ArrayObservable(observables), new CombineLatestOperator(project));
     }
     exports.combineLatest = combineLatest;
-    /* tslint:enable:max-line-length */
     var CombineLatestOperator = function () {
         function CombineLatestOperator(project) {
             this.project = project;
         }
         CombineLatestOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new CombineLatestSubscriber(subscriber, this.project));
+            return source.subscribe(new CombineLatestSubscriber(subscriber, this.project));
         };
         return CombineLatestOperator;
     }();
@@ -3871,42 +3572,34 @@ System.registerDynamic('rxjs/operator/combineLatest', ['rxjs/observable/ArrayObs
     }(OuterSubscriber_1.OuterSubscriber);
     exports.CombineLatestSubscriber = CombineLatestSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/combineLatest', ['rxjs/Observable', 'rxjs/operator/combineLatest'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var combineLatest_1 = $__require('rxjs/operator/combineLatest');
   Observable_1.Observable.prototype.combineLatest = combineLatest_1.combineLatest;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/concat', ['rxjs/Observable', 'rxjs/operator/concat'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var concat_1 = $__require('rxjs/operator/concat');
   Observable_1.Observable.prototype.concat = concat_1.concat;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/concatAll", ["rxjs/operator/mergeAll"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var mergeAll_1 = $__require("rxjs/operator/mergeAll");
+  /* tslint:disable:max-line-length */
   /**
    * Converts a higher-order Observable into a first-order Observable by
    * concatenating the inner Observables in order.
@@ -3935,6 +3628,12 @@ System.registerDynamic("rxjs/operator/concatAll", ["rxjs/operator/mergeAll"], tr
    * var firstOrder = higherOrder.concatAll();
    * firstOrder.subscribe(x => console.log(x));
    *
+   * // Results in the following:
+   * // (results are not concurrent)
+   * // For every click on the "document" it will emit values 0 to 3 spaced
+   * // on a 1000ms interval
+   * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
+   *
    * @see {@link combineAll}
    * @see {@link concat}
    * @see {@link concatMap}
@@ -3954,29 +3653,24 @@ System.registerDynamic("rxjs/operator/concatAll", ["rxjs/operator/mergeAll"], tr
   }
   exports.concatAll = concatAll;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/concatAll', ['rxjs/Observable', 'rxjs/operator/concatAll'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var concatAll_1 = $__require('rxjs/operator/concatAll');
   Observable_1.Observable.prototype.concatAll = concatAll_1.concatAll;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/concatMap", ["rxjs/operator/mergeMap"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var mergeMap_1 = $__require("rxjs/operator/mergeMap");
+  /* tslint:disable:max-line-length */
   /**
    * Projects each source value to an Observable which is merged in the output
    * Observable, in a serialized fashion waiting for each one to complete before
@@ -4004,6 +3698,12 @@ System.registerDynamic("rxjs/operator/concatMap", ["rxjs/operator/mergeMap"], tr
    * var clicks = Rx.Observable.fromEvent(document, 'click');
    * var result = clicks.concatMap(ev => Rx.Observable.interval(1000).take(4));
    * result.subscribe(x => console.log(x));
+   *
+   * // Results in the following:
+   * // (results are not concurrent)
+   * // For every click on the "document" it will emit values 0 to 3 spaced
+   * // on a 1000ms interval
+   * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
    *
    * @see {@link concat}
    * @see {@link concatAll}
@@ -4038,29 +3738,24 @@ System.registerDynamic("rxjs/operator/concatMap", ["rxjs/operator/mergeMap"], tr
   }
   exports.concatMap = concatMap;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/concatMap', ['rxjs/Observable', 'rxjs/operator/concatMap'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var concatMap_1 = $__require('rxjs/operator/concatMap');
   Observable_1.Observable.prototype.concatMap = concatMap_1.concatMap;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/concatMapTo", ["rxjs/operator/mergeMapTo"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var mergeMapTo_1 = $__require("rxjs/operator/mergeMapTo");
+  /* tslint:disable:max-line-length */
   /**
    * Projects each source value to the same Observable which is merged multiple
    * times in a serialized fashion on the output Observable.
@@ -4089,6 +3784,12 @@ System.registerDynamic("rxjs/operator/concatMapTo", ["rxjs/operator/mergeMapTo"]
    * var result = clicks.concatMapTo(Rx.Observable.interval(1000).take(4));
    * result.subscribe(x => console.log(x));
    *
+   * // Results in the following:
+   * // (results are not concurrent)
+   * // For every click on the "document" it will emit values 0 to 3 spaced
+   * // on a 1000ms interval
+   * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
+   *
    * @see {@link concat}
    * @see {@link concatAll}
    * @see {@link concatMap}
@@ -4116,27 +3817,21 @@ System.registerDynamic("rxjs/operator/concatMapTo", ["rxjs/operator/mergeMapTo"]
   }
   exports.concatMapTo = concatMapTo;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/concatMapTo', ['rxjs/Observable', 'rxjs/operator/concatMapTo'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var concatMapTo_1 = $__require('rxjs/operator/concatMapTo');
   Observable_1.Observable.prototype.concatMapTo = concatMapTo_1.concatMapTo;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/count", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -4176,6 +3871,9 @@ System.registerDynamic("rxjs/operator/count", ["rxjs/Subscriber"], true, functio
      * var result = numbers.count(i => i % 2 === 1);
      * result.subscribe(x => console.log(x));
      *
+     * // Results in:
+     * // 4
+     *
      * @see {@link max}
      * @see {@link min}
      * @see {@link reduce}
@@ -4201,7 +3899,7 @@ System.registerDynamic("rxjs/operator/count", ["rxjs/Subscriber"], true, functio
             this.source = source;
         }
         CountOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new CountSubscriber(subscriber, this.predicate, this.source));
+            return source.subscribe(new CountSubscriber(subscriber, this.predicate, this.source));
         };
         return CountOperator;
     }();
@@ -4245,27 +3943,21 @@ System.registerDynamic("rxjs/operator/count", ["rxjs/Subscriber"], true, functio
         return CountSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/count', ['rxjs/Observable', 'rxjs/operator/count'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var count_1 = $__require('rxjs/operator/count');
   Observable_1.Observable.prototype.count = count_1.count;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/dematerialize", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -4302,6 +3994,11 @@ System.registerDynamic("rxjs/operator/dematerialize", ["rxjs/Subscriber"], true,
      * var upperCase = materialized.dematerialize();
      * upperCase.subscribe(x => console.log(x), e => console.error(e));
      *
+     * // Results in:
+     * // A
+     * // B
+     * // TypeError: x.toUpperCase is not a function
+     *
      * @see {@link Notification}
      * @see {@link materialize}
      *
@@ -4317,7 +4014,7 @@ System.registerDynamic("rxjs/operator/dematerialize", ["rxjs/Subscriber"], true,
     var DeMaterializeOperator = function () {
         function DeMaterializeOperator() {}
         DeMaterializeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DeMaterializeSubscriber(subscriber));
+            return source.subscribe(new DeMaterializeSubscriber(subscriber));
         };
         return DeMaterializeOperator;
     }();
@@ -4337,27 +4034,21 @@ System.registerDynamic("rxjs/operator/dematerialize", ["rxjs/Subscriber"], true,
         return DeMaterializeSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/dematerialize', ['rxjs/Observable', 'rxjs/operator/dematerialize'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var dematerialize_1 = $__require('rxjs/operator/dematerialize');
   Observable_1.Observable.prototype.dematerialize = dematerialize_1.dematerialize;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/debounce', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -4419,7 +4110,7 @@ System.registerDynamic('rxjs/operator/debounce', ['rxjs/OuterSubscriber', 'rxjs/
             this.durationSelector = durationSelector;
         }
         DebounceOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DebounceSubscriber(subscriber, this.durationSelector));
+            return source.subscribe(new DebounceSubscriber(subscriber, this.durationSelector));
         };
         return DebounceOperator;
     }();
@@ -4486,27 +4177,21 @@ System.registerDynamic('rxjs/operator/debounce', ['rxjs/OuterSubscriber', 'rxjs/
         return DebounceSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/debounce', ['rxjs/Observable', 'rxjs/operator/debounce'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var debounce_1 = $__require('rxjs/operator/debounce');
   Observable_1.Observable.prototype.debounce = debounce_1.debounce;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/debounceTime', ['rxjs/Subscriber', 'rxjs/scheduler/async'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -4576,7 +4261,7 @@ System.registerDynamic('rxjs/operator/debounceTime', ['rxjs/Subscriber', 'rxjs/s
             this.scheduler = scheduler;
         }
         DebounceTimeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DebounceTimeSubscriber(subscriber, this.dueTime, this.scheduler));
+            return source.subscribe(new DebounceTimeSubscriber(subscriber, this.dueTime, this.scheduler));
         };
         return DebounceTimeOperator;
     }();
@@ -4627,27 +4312,21 @@ System.registerDynamic('rxjs/operator/debounceTime', ['rxjs/Subscriber', 'rxjs/s
         subscriber.debouncedNext();
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/debounceTime', ['rxjs/Observable', 'rxjs/operator/debounceTime'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var debounceTime_1 = $__require('rxjs/operator/debounceTime');
   Observable_1.Observable.prototype.debounceTime = debounceTime_1.debounceTime;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/defaultIfEmpty", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -4657,6 +4336,7 @@ System.registerDynamic("rxjs/operator/defaultIfEmpty", ["rxjs/Subscriber"], true
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
     var Subscriber_1 = $__require("rxjs/Subscriber");
+    /* tslint:disable:max-line-length */
     /**
      * Emits a given value if the source Observable completes without emitting any
      * `next` value, otherwise mirrors the source Observable.
@@ -4699,7 +4379,7 @@ System.registerDynamic("rxjs/operator/defaultIfEmpty", ["rxjs/Subscriber"], true
             this.defaultValue = defaultValue;
         }
         DefaultIfEmptyOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DefaultIfEmptySubscriber(subscriber, this.defaultValue));
+            return source.subscribe(new DefaultIfEmptySubscriber(subscriber, this.defaultValue));
         };
         return DefaultIfEmptyOperator;
     }();
@@ -4728,27 +4408,21 @@ System.registerDynamic("rxjs/operator/defaultIfEmpty", ["rxjs/Subscriber"], true
         return DefaultIfEmptySubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/defaultIfEmpty', ['rxjs/Observable', 'rxjs/operator/defaultIfEmpty'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var defaultIfEmpty_1 = $__require('rxjs/operator/defaultIfEmpty');
   Observable_1.Observable.prototype.defaultIfEmpty = defaultIfEmpty_1.defaultIfEmpty;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/delay', ['rxjs/scheduler/async', 'rxjs/util/isDate', 'rxjs/Subscriber', 'rxjs/Notification'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -4815,7 +4489,7 @@ System.registerDynamic('rxjs/operator/delay', ['rxjs/scheduler/async', 'rxjs/uti
             this.scheduler = scheduler;
         }
         DelayOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DelaySubscriber(subscriber, this.delay, this.scheduler));
+            return source.subscribe(new DelaySubscriber(subscriber, this.delay, this.scheduler));
         };
         return DelayOperator;
     }();
@@ -4887,27 +4561,21 @@ System.registerDynamic('rxjs/operator/delay', ['rxjs/scheduler/async', 'rxjs/uti
         return DelayMessage;
     }();
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/delay', ['rxjs/Observable', 'rxjs/operator/delay'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var delay_1 = $__require('rxjs/operator/delay');
   Observable_1.Observable.prototype.delay = delay_1.delay;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/delayWhen', ['rxjs/Subscriber', 'rxjs/Observable', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -4977,7 +4645,7 @@ System.registerDynamic('rxjs/operator/delayWhen', ['rxjs/Subscriber', 'rxjs/Obse
             this.delayDurationSelector = delayDurationSelector;
         }
         DelayWhenOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DelayWhenSubscriber(subscriber, this.delayDurationSelector));
+            return source.subscribe(new DelayWhenSubscriber(subscriber, this.delayDurationSelector));
         };
         return DelayWhenOperator;
     }();
@@ -5098,40 +4766,59 @@ System.registerDynamic('rxjs/operator/delayWhen', ['rxjs/Subscriber', 'rxjs/Obse
         return SubscriptionDelaySubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/delayWhen', ['rxjs/Observable', 'rxjs/operator/delayWhen'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var delayWhen_1 = $__require('rxjs/operator/delayWhen');
   Observable_1.Observable.prototype.delayWhen = delayWhen_1.delayWhen;
   
-
-  return module.exports;
 });
-System.registerDynamic('rxjs/add/operator/distinct', ['rxjs/Observable', 'rxjs/operator/distinct'], true, function ($__require, exports, module) {
-  "use strict";
-
-  var define,
-      global = this || self,
-      GLOBAL = global;
-  var Observable_1 = $__require('rxjs/Observable');
-  var distinct_1 = $__require('rxjs/operator/distinct');
-  Observable_1.Observable.prototype.distinct = distinct_1.distinct;
-  
-
-  return module.exports;
-});
-System.registerDynamic('rxjs/operator/distinct', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
+System.registerDynamic("rxjs/util/Set", ["rxjs/util/root"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
+        GLOBAL = global;
+    var root_1 = $__require("rxjs/util/root");
+    function minimalSetImpl() {
+        // THIS IS NOT a full impl of Set, this is just the minimum
+        // bits of functionality we need for this library.
+        return function () {
+            function MinimalSet() {
+                this._values = [];
+            }
+            MinimalSet.prototype.add = function (value) {
+                if (!this.has(value)) {
+                    this._values.push(value);
+                }
+            };
+            MinimalSet.prototype.has = function (value) {
+                return this._values.indexOf(value) !== -1;
+            };
+            Object.defineProperty(MinimalSet.prototype, "size", {
+                get: function () {
+                    return this._values.length;
+                },
+                enumerable: true,
+                configurable: true
+            });
+            MinimalSet.prototype.clear = function () {
+                this._values.length = 0;
+            };
+            return MinimalSet;
+        }();
+    }
+    exports.minimalSetImpl = minimalSetImpl;
+    exports.Set = root_1.root.Set || minimalSetImpl();
+    
+});
+System.registerDynamic('rxjs/operator/distinct', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult', 'rxjs/util/Set'], true, function ($__require, exports, module) {
+    "use strict";
+
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -5142,29 +4829,34 @@ System.registerDynamic('rxjs/operator/distinct', ['rxjs/OuterSubscriber', 'rxjs/
     };
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    var Set_1 = $__require('rxjs/util/Set');
     /**
      * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items.
-     * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
-     * If a comparator function is not provided, an equality check is used by default.
-     * As the internal HashSet of this operator grows larger and larger, care should be taken in the domain of inputs this operator may see.
-     * An optional parameter is also provided such that an Observable can be provided to queue the internal HashSet to flush the values it holds.
-     * @param {function} [compare] optional comparison function called to test if an item is distinct from previous items in the source.
+     * If a keySelector function is provided, then it will project each value from the source observable into a new value that it will
+     * check for equality with previously projected values. If a keySelector function is not provided, it will use each value from the
+     * source observable directly with an equality check against previous values.
+     * In JavaScript runtimes that support `Set`, this operator will use a `Set` to improve performance of the distinct value checking.
+     * In other runtimes, this operator will use a minimal implementation of `Set` that relies on an `Array` and `indexOf` under the
+     * hood, so performance will degrade as more values are checked for distinction. Even in newer browsers, a long-running `distinct`
+     * use might result in memory leaks. To help alleviate this in some scenarios, an optional `flushes` parameter is also provided so
+     * that the internal `Set` can be "flushed", basically clearing it of values.
+     * @param {function} [keySelector] optional function to select which value you want to check as distinct.
      * @param {Observable} [flushes] optional Observable for flushing the internal HashSet of the operator.
      * @return {Observable} an Observable that emits items from the source Observable with distinct values.
      * @method distinct
      * @owner Observable
      */
-    function distinct(compare, flushes) {
-        return this.lift(new DistinctOperator(compare, flushes));
+    function distinct(keySelector, flushes) {
+        return this.lift(new DistinctOperator(keySelector, flushes));
     }
     exports.distinct = distinct;
     var DistinctOperator = function () {
-        function DistinctOperator(compare, flushes) {
-            this.compare = compare;
+        function DistinctOperator(keySelector, flushes) {
+            this.keySelector = keySelector;
             this.flushes = flushes;
         }
         DistinctOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DistinctSubscriber(subscriber, this.compare, this.flushes));
+            return source.subscribe(new DistinctSubscriber(subscriber, this.keySelector, this.flushes));
         };
         return DistinctOperator;
     }();
@@ -5175,115 +4867,74 @@ System.registerDynamic('rxjs/operator/distinct', ['rxjs/OuterSubscriber', 'rxjs/
      */
     var DistinctSubscriber = function (_super) {
         __extends(DistinctSubscriber, _super);
-        function DistinctSubscriber(destination, compare, flushes) {
+        function DistinctSubscriber(destination, keySelector, flushes) {
             _super.call(this, destination);
-            this.values = [];
-            if (typeof compare === 'function') {
-                this.compare = compare;
-            }
+            this.keySelector = keySelector;
+            this.values = new Set_1.Set();
             if (flushes) {
                 this.add(subscribeToResult_1.subscribeToResult(this, flushes));
             }
         }
         DistinctSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex, innerSub) {
-            this.values.length = 0;
+            this.values.clear();
         };
         DistinctSubscriber.prototype.notifyError = function (error, innerSub) {
             this._error(error);
         };
         DistinctSubscriber.prototype._next = function (value) {
-            var found = false;
-            var values = this.values;
-            var len = values.length;
+            if (this.keySelector) {
+                this._useKeySelector(value);
+            } else {
+                this._finalizeNext(value, value);
+            }
+        };
+        DistinctSubscriber.prototype._useKeySelector = function (value) {
+            var key;
+            var destination = this.destination;
             try {
-                for (var i = 0; i < len; i++) {
-                    if (this.compare(values[i], value)) {
-                        found = true;
-                        return;
-                    }
-                }
+                key = this.keySelector(value);
             } catch (err) {
-                this.destination.error(err);
+                destination.error(err);
                 return;
             }
-            this.values.push(value);
-            this.destination.next(value);
+            this._finalizeNext(key, value);
         };
-        DistinctSubscriber.prototype.compare = function (x, y) {
-            return x === y;
+        DistinctSubscriber.prototype._finalizeNext = function (key, value) {
+            var values = this.values;
+            if (!values.has(key)) {
+                values.add(key);
+                this.destination.next(value);
+            }
         };
         return DistinctSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     exports.DistinctSubscriber = DistinctSubscriber;
     
-
-    return module.exports;
 });
-System.registerDynamic("rxjs/operator/distinctKey", ["rxjs/operator/distinct"], true, function ($__require, exports, module) {
-    "use strict";
-
-    var define,
-        global = this || self,
-        GLOBAL = global;
-    var distinct_1 = $__require("rxjs/operator/distinct");
-    /**
-     * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items,
-     * using a property accessed by using the key provided to check if the two items are distinct.
-     * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
-     * If a comparator function is not provided, an equality check is used by default.
-     * As the internal HashSet of this operator grows larger and larger, care should be taken in the domain of inputs this operator may see.
-     * An optional parameter is also provided such that an Observable can be provided to queue the internal HashSet to flush the values it holds.
-     * @param {string} key string key for object property lookup on each item.
-     * @param {function} [compare] optional comparison function called to test if an item is distinct from previous items in the source.
-     * @param {Observable} [flushes] optional Observable for flushing the internal HashSet of the operator.
-     * @return {Observable} an Observable that emits items from the source Observable with distinct values.
-     * @method distinctKey
-     * @owner Observable
-     */
-    function distinctKey(key, compare, flushes) {
-        return distinct_1.distinct.call(this, function (x, y) {
-            if (compare) {
-                return compare(x[key], y[key]);
-            }
-            return x[key] === y[key];
-        }, flushes);
-    }
-    exports.distinctKey = distinctKey;
-    
-
-    return module.exports;
-});
-System.registerDynamic('rxjs/add/operator/distinctKey', ['rxjs/Observable', 'rxjs/operator/distinctKey'], true, function ($__require, exports, module) {
+System.registerDynamic('rxjs/add/operator/distinct', ['rxjs/Observable', 'rxjs/operator/distinct'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
-  var distinctKey_1 = $__require('rxjs/operator/distinctKey');
-  Observable_1.Observable.prototype.distinctKey = distinctKey_1.distinctKey;
+  var distinct_1 = $__require('rxjs/operator/distinct');
+  Observable_1.Observable.prototype.distinct = distinct_1.distinct;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/distinctUntilChanged', ['rxjs/Observable', 'rxjs/operator/distinctUntilChanged'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var distinctUntilChanged_1 = $__require('rxjs/operator/distinctUntilChanged');
   Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_1.distinctUntilChanged;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/distinctUntilChanged', ['rxjs/Subscriber', 'rxjs/util/tryCatch', 'rxjs/util/errorObject'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -5295,6 +4946,7 @@ System.registerDynamic('rxjs/operator/distinctUntilChanged', ['rxjs/Subscriber',
     var Subscriber_1 = $__require('rxjs/Subscriber');
     var tryCatch_1 = $__require('rxjs/util/tryCatch');
     var errorObject_1 = $__require('rxjs/util/errorObject');
+    /* tslint:disable:max-line-length */
     /**
      * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
      * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
@@ -5314,7 +4966,7 @@ System.registerDynamic('rxjs/operator/distinctUntilChanged', ['rxjs/Subscriber',
             this.keySelector = keySelector;
         }
         DistinctUntilChangedOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DistinctUntilChangedSubscriber(subscriber, this.compare, this.keySelector));
+            return source.subscribe(new DistinctUntilChangedSubscriber(subscriber, this.compare, this.keySelector));
         };
         return DistinctUntilChangedOperator;
     }();
@@ -5362,16 +5014,14 @@ System.registerDynamic('rxjs/operator/distinctUntilChanged', ['rxjs/Subscriber',
         return DistinctUntilChangedSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/operator/distinctUntilKeyChanged", ["rxjs/operator/distinctUntilChanged"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var distinctUntilChanged_1 = $__require("rxjs/operator/distinctUntilChanged");
+    /* tslint:disable:max-line-length */
     /**
      * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item,
      * using a property accessed by using the key provided to check if the two items are distinct.
@@ -5393,27 +5043,21 @@ System.registerDynamic("rxjs/operator/distinctUntilKeyChanged", ["rxjs/operator/
     }
     exports.distinctUntilKeyChanged = distinctUntilKeyChanged;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/distinctUntilKeyChanged', ['rxjs/Observable', 'rxjs/operator/distinctUntilKeyChanged'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var distinctUntilKeyChanged_1 = $__require('rxjs/operator/distinctUntilKeyChanged');
   Observable_1.Observable.prototype.distinctUntilKeyChanged = distinctUntilKeyChanged_1.distinctUntilKeyChanged;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/do", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -5423,6 +5067,7 @@ System.registerDynamic("rxjs/operator/do", ["rxjs/Subscriber"], true, function (
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
     var Subscriber_1 = $__require("rxjs/Subscriber");
+    /* tslint:disable:max-line-length */
     /**
      * Perform a side effect for every emission on the source Observable, but return
      * an Observable that is identical to the source.
@@ -5477,7 +5122,7 @@ System.registerDynamic("rxjs/operator/do", ["rxjs/Subscriber"], true, function (
             this.complete = complete;
         }
         DoOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new DoSubscriber(subscriber, this.nextOrObserver, this.error, this.complete));
+            return source.subscribe(new DoSubscriber(subscriber, this.nextOrObserver, this.error, this.complete));
         };
         return DoOperator;
     }();
@@ -5525,28 +5170,22 @@ System.registerDynamic("rxjs/operator/do", ["rxjs/Subscriber"], true, function (
         return DoSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/do', ['rxjs/Observable', 'rxjs/operator/do'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var do_1 = $__require('rxjs/operator/do');
   Observable_1.Observable.prototype.do = do_1._do;
   Observable_1.Observable.prototype._do = do_1._do;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/exhaust', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -5600,7 +5239,7 @@ System.registerDynamic('rxjs/operator/exhaust', ['rxjs/OuterSubscriber', 'rxjs/u
     var SwitchFirstOperator = function () {
         function SwitchFirstOperator() {}
         SwitchFirstOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SwitchFirstSubscriber(subscriber));
+            return source.subscribe(new SwitchFirstSubscriber(subscriber));
         };
         return SwitchFirstOperator;
     }();
@@ -5638,27 +5277,21 @@ System.registerDynamic('rxjs/operator/exhaust', ['rxjs/OuterSubscriber', 'rxjs/u
         return SwitchFirstSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/exhaust', ['rxjs/Observable', 'rxjs/operator/exhaust'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var exhaust_1 = $__require('rxjs/operator/exhaust');
   Observable_1.Observable.prototype.exhaust = exhaust_1.exhaust;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/exhaustMap', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -5669,6 +5302,7 @@ System.registerDynamic('rxjs/operator/exhaustMap', ['rxjs/OuterSubscriber', 'rxj
     };
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * Projects each source value to an Observable which is merged in the output
      * Observable only if the previous projected Observable has completed.
@@ -5724,7 +5358,7 @@ System.registerDynamic('rxjs/operator/exhaustMap', ['rxjs/OuterSubscriber', 'rxj
             this.resultSelector = resultSelector;
         }
         SwitchFirstMapOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SwitchFirstMapSubscriber(subscriber, this.project, this.resultSelector));
+            return source.subscribe(new SwitchFirstMapSubscriber(subscriber, this.project, this.resultSelector));
         };
         return SwitchFirstMapOperator;
     }();
@@ -5799,27 +5433,21 @@ System.registerDynamic('rxjs/operator/exhaustMap', ['rxjs/OuterSubscriber', 'rxj
         return SwitchFirstMapSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/exhaustMap', ['rxjs/Observable', 'rxjs/operator/exhaustMap'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var exhaustMap_1 = $__require('rxjs/operator/exhaustMap');
   Observable_1.Observable.prototype.exhaustMap = exhaustMap_1.exhaustMap;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/expand', ['rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -5832,6 +5460,7 @@ System.registerDynamic('rxjs/operator/expand', ['rxjs/util/tryCatch', 'rxjs/util
     var errorObject_1 = $__require('rxjs/util/errorObject');
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * Recursively projects each source value to an Observable which is merged in
      * the output Observable.
@@ -5895,7 +5524,7 @@ System.registerDynamic('rxjs/operator/expand', ['rxjs/util/tryCatch', 'rxjs/util
             this.scheduler = scheduler;
         }
         ExpandOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ExpandSubscriber(subscriber, this.project, this.concurrent, this.scheduler));
+            return source.subscribe(new ExpandSubscriber(subscriber, this.project, this.concurrent, this.scheduler));
         };
         return ExpandOperator;
     }();
@@ -5976,27 +5605,21 @@ System.registerDynamic('rxjs/operator/expand', ['rxjs/util/tryCatch', 'rxjs/util
     }(OuterSubscriber_1.OuterSubscriber);
     exports.ExpandSubscriber = ExpandSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/expand', ['rxjs/Observable', 'rxjs/operator/expand'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var expand_1 = $__require('rxjs/operator/expand');
   Observable_1.Observable.prototype.expand = expand_1.expand;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/elementAt', ['rxjs/Subscriber', 'rxjs/util/ArgumentOutOfRangeError'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -6025,6 +5648,11 @@ System.registerDynamic('rxjs/operator/elementAt', ['rxjs/Subscriber', 'rxjs/util
      * var clicks = Rx.Observable.fromEvent(document, 'click');
      * var result = clicks.elementAt(2);
      * result.subscribe(x => console.log(x));
+     *
+     * // Results in:
+     * // click 1 = nothing
+     * // click 2 = nothing
+     * // click 3 = MouseEvent object logged to console
      *
      * @see {@link first}
      * @see {@link last}
@@ -6057,7 +5685,7 @@ System.registerDynamic('rxjs/operator/elementAt', ['rxjs/Subscriber', 'rxjs/util
             }
         }
         ElementAtOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ElementAtSubscriber(subscriber, this.index, this.defaultValue));
+            return source.subscribe(new ElementAtSubscriber(subscriber, this.index, this.defaultValue));
         };
         return ElementAtOperator;
     }();
@@ -6093,40 +5721,31 @@ System.registerDynamic('rxjs/operator/elementAt', ['rxjs/Subscriber', 'rxjs/util
         return ElementAtSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/elementAt', ['rxjs/Observable', 'rxjs/operator/elementAt'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var elementAt_1 = $__require('rxjs/operator/elementAt');
   Observable_1.Observable.prototype.elementAt = elementAt_1.elementAt;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/filter', ['rxjs/Observable', 'rxjs/operator/filter'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var filter_1 = $__require('rxjs/operator/filter');
   Observable_1.Observable.prototype.filter = filter_1.filter;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/finally', ['rxjs/Subscriber', 'rxjs/Subscription'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -6154,7 +5773,7 @@ System.registerDynamic('rxjs/operator/finally', ['rxjs/Subscriber', 'rxjs/Subscr
             this.callback = callback;
         }
         FinallyOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new FinallySubscriber(subscriber, this.callback));
+            return source.subscribe(new FinallySubscriber(subscriber, this.callback));
         };
         return FinallyOperator;
     }();
@@ -6172,41 +5791,32 @@ System.registerDynamic('rxjs/operator/finally', ['rxjs/Subscriber', 'rxjs/Subscr
         return FinallySubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/finally', ['rxjs/Observable', 'rxjs/operator/finally'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var finally_1 = $__require('rxjs/operator/finally');
   Observable_1.Observable.prototype.finally = finally_1._finally;
   Observable_1.Observable.prototype._finally = finally_1._finally;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/find', ['rxjs/Observable', 'rxjs/operator/find'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var find_1 = $__require('rxjs/operator/find');
   Observable_1.Observable.prototype.find = find_1.find;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/find', ['rxjs/Subscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -6216,6 +5826,7 @@ System.registerDynamic('rxjs/operator/find', ['rxjs/Subscriber'], true, function
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
     var Subscriber_1 = $__require('rxjs/Subscriber');
+    /* tslint:disable:max-line-length */
     /**
      * Emits only the first value emitted by the source Observable that meets some
      * condition.
@@ -6264,7 +5875,7 @@ System.registerDynamic('rxjs/operator/find', ['rxjs/Subscriber'], true, function
             this.thisArg = thisArg;
         }
         FindValueOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new FindValueSubscriber(observer, this.predicate, this.source, this.yieldIndex, this.thisArg));
+            return source.subscribe(new FindValueSubscriber(observer, this.predicate, this.source, this.yieldIndex, this.thisArg));
         };
         return FindValueOperator;
     }();
@@ -6310,14 +5921,11 @@ System.registerDynamic('rxjs/operator/find', ['rxjs/Subscriber'], true, function
     }(Subscriber_1.Subscriber);
     exports.FindValueSubscriber = FindValueSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/operator/findIndex", ["rxjs/operator/find"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var find_1 = $__require("rxjs/operator/find");
   /**
@@ -6359,27 +5967,21 @@ System.registerDynamic("rxjs/operator/findIndex", ["rxjs/operator/find"], true, 
   }
   exports.findIndex = findIndex;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/findIndex', ['rxjs/Observable', 'rxjs/operator/findIndex'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var findIndex_1 = $__require('rxjs/operator/findIndex');
   Observable_1.Observable.prototype.findIndex = findIndex_1.findIndex;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/first', ['rxjs/Subscriber', 'rxjs/util/EmptyError'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -6451,7 +6053,7 @@ System.registerDynamic('rxjs/operator/first', ['rxjs/Subscriber', 'rxjs/util/Emp
             this.source = source;
         }
         FirstOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new FirstSubscriber(observer, this.predicate, this.resultSelector, this.defaultValue, this.source));
+            return source.subscribe(new FirstSubscriber(observer, this.predicate, this.resultSelector, this.defaultValue, this.source));
         };
         return FirstOperator;
     }();
@@ -6470,6 +6072,7 @@ System.registerDynamic('rxjs/operator/first', ['rxjs/Subscriber', 'rxjs/util/Emp
             this.source = source;
             this.index = 0;
             this.hasCompleted = false;
+            this._emitted = false;
         }
         FirstSubscriber.prototype._next = function (value) {
             var index = this.index++;
@@ -6510,9 +6113,12 @@ System.registerDynamic('rxjs/operator/first', ['rxjs/Subscriber', 'rxjs/util/Emp
         };
         FirstSubscriber.prototype._emitFinal = function (value) {
             var destination = this.destination;
-            destination.next(value);
-            destination.complete();
-            this.hasCompleted = true;
+            if (!this._emitted) {
+                this._emitted = true;
+                destination.next(value);
+                destination.complete();
+                this.hasCompleted = true;
+            }
         };
         FirstSubscriber.prototype._complete = function () {
             var destination = this.destination;
@@ -6526,27 +6132,21 @@ System.registerDynamic('rxjs/operator/first', ['rxjs/Subscriber', 'rxjs/util/Emp
         return FirstSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/first', ['rxjs/Observable', 'rxjs/operator/first'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var first_1 = $__require('rxjs/operator/first');
   Observable_1.Observable.prototype.first = first_1.first;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/MapPolyfill", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var MapPolyfill = function () {
         function MapPolyfill() {
@@ -6593,14 +6193,11 @@ System.registerDynamic("rxjs/util/MapPolyfill", [], true, function ($__require, 
     }();
     exports.MapPolyfill = MapPolyfill;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/util/Map', ['rxjs/util/root', 'rxjs/util/MapPolyfill'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var root_1 = $__require('rxjs/util/root');
   var MapPolyfill_1 = $__require('rxjs/util/MapPolyfill');
@@ -6608,14 +6205,11 @@ System.registerDynamic('rxjs/util/Map', ['rxjs/util/root', 'rxjs/util/MapPolyfil
     return MapPolyfill_1.MapPolyfill;
   }();
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/FastMap", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var FastMap = function () {
         function FastMap() {
@@ -6647,14 +6241,11 @@ System.registerDynamic("rxjs/util/FastMap", [], true, function ($__require, expo
     }();
     exports.FastMap = FastMap;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/groupBy', ['rxjs/Subscriber', 'rxjs/Subscription', 'rxjs/Observable', 'rxjs/Subject', 'rxjs/util/Map', 'rxjs/util/FastMap'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -6669,6 +6260,7 @@ System.registerDynamic('rxjs/operator/groupBy', ['rxjs/Subscriber', 'rxjs/Subscr
     var Subject_1 = $__require('rxjs/Subject');
     var Map_1 = $__require('rxjs/util/Map');
     var FastMap_1 = $__require('rxjs/util/FastMap');
+    /* tslint:disable:max-line-length */
     /**
      * Groups the items emitted by an Observable according to a specified criterion,
      * and emits these grouped items as `GroupedObservables`, one
@@ -6690,19 +6282,19 @@ System.registerDynamic('rxjs/operator/groupBy', ['rxjs/Subscriber', 'rxjs/Subscr
      * @method groupBy
      * @owner Observable
      */
-    function groupBy(keySelector, elementSelector, durationSelector) {
-        return this.lift(new GroupByOperator(this, keySelector, elementSelector, durationSelector));
+    function groupBy(keySelector, elementSelector, durationSelector, subjectSelector) {
+        return this.lift(new GroupByOperator(keySelector, elementSelector, durationSelector, subjectSelector));
     }
     exports.groupBy = groupBy;
     var GroupByOperator = function () {
-        function GroupByOperator(source, keySelector, elementSelector, durationSelector) {
-            this.source = source;
+        function GroupByOperator(keySelector, elementSelector, durationSelector, subjectSelector) {
             this.keySelector = keySelector;
             this.elementSelector = elementSelector;
             this.durationSelector = durationSelector;
+            this.subjectSelector = subjectSelector;
         }
         GroupByOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new GroupBySubscriber(subscriber, this.keySelector, this.elementSelector, this.durationSelector));
+            return source.subscribe(new GroupBySubscriber(subscriber, this.keySelector, this.elementSelector, this.durationSelector, this.subjectSelector));
         };
         return GroupByOperator;
     }();
@@ -6713,11 +6305,12 @@ System.registerDynamic('rxjs/operator/groupBy', ['rxjs/Subscriber', 'rxjs/Subscr
      */
     var GroupBySubscriber = function (_super) {
         __extends(GroupBySubscriber, _super);
-        function GroupBySubscriber(destination, keySelector, elementSelector, durationSelector) {
+        function GroupBySubscriber(destination, keySelector, elementSelector, durationSelector, subjectSelector) {
             _super.call(this, destination);
             this.keySelector = keySelector;
             this.elementSelector = elementSelector;
             this.durationSelector = durationSelector;
+            this.subjectSelector = subjectSelector;
             this.groups = null;
             this.attemptedToUnsubscribe = false;
             this.count = 0;
@@ -6749,7 +6342,8 @@ System.registerDynamic('rxjs/operator/groupBy', ['rxjs/Subscriber', 'rxjs/Subscr
                 element = value;
             }
             if (!group) {
-                groups.set(key, group = new Subject_1.Subject());
+                group = this.subjectSelector ? this.subjectSelector() : new Subject_1.Subject();
+                groups.set(key, group);
                 var groupedObservable = new GroupedObservable(key, group, this);
                 this.destination.next(groupedObservable);
                 if (this.durationSelector) {
@@ -6887,40 +6481,31 @@ System.registerDynamic('rxjs/operator/groupBy', ['rxjs/Subscriber', 'rxjs/Subscr
         return InnerRefCountSubscription;
     }(Subscription_1.Subscription);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/groupBy', ['rxjs/Observable', 'rxjs/operator/groupBy'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var groupBy_1 = $__require('rxjs/operator/groupBy');
   Observable_1.Observable.prototype.groupBy = groupBy_1.groupBy;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/noop", [], true, function ($__require, exports, module) {
   "use strict";
   /* tslint:disable:no-empty */
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   function noop() {}
   exports.noop = noop;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/ignoreElements', ['rxjs/Subscriber', 'rxjs/util/noop'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -6949,7 +6534,7 @@ System.registerDynamic('rxjs/operator/ignoreElements', ['rxjs/Subscriber', 'rxjs
     var IgnoreElementsOperator = function () {
         function IgnoreElementsOperator() {}
         IgnoreElementsOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new IgnoreElementsSubscriber(subscriber));
+            return source.subscribe(new IgnoreElementsSubscriber(subscriber));
         };
         return IgnoreElementsOperator;
     }();
@@ -6969,27 +6554,21 @@ System.registerDynamic('rxjs/operator/ignoreElements', ['rxjs/Subscriber', 'rxjs
         return IgnoreElementsSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/ignoreElements', ['rxjs/Observable', 'rxjs/operator/ignoreElements'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var ignoreElements_1 = $__require('rxjs/operator/ignoreElements');
   Observable_1.Observable.prototype.ignoreElements = ignoreElements_1.ignoreElements;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/isEmpty", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -7015,7 +6594,7 @@ System.registerDynamic("rxjs/operator/isEmpty", ["rxjs/Subscriber"], true, funct
     var IsEmptyOperator = function () {
         function IsEmptyOperator() {}
         IsEmptyOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new IsEmptySubscriber(observer));
+            return source.subscribe(new IsEmptySubscriber(observer));
         };
         return IsEmptyOperator;
     }();
@@ -7043,27 +6622,21 @@ System.registerDynamic("rxjs/operator/isEmpty", ["rxjs/Subscriber"], true, funct
         return IsEmptySubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/isEmpty', ['rxjs/Observable', 'rxjs/operator/isEmpty'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var isEmpty_1 = $__require('rxjs/operator/isEmpty');
   Observable_1.Observable.prototype.isEmpty = isEmpty_1.isEmpty;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/audit', ['rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -7125,7 +6698,7 @@ System.registerDynamic('rxjs/operator/audit', ['rxjs/util/tryCatch', 'rxjs/util/
             this.durationSelector = durationSelector;
         }
         AuditOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new AuditSubscriber(subscriber, this.durationSelector));
+            return source.subscribe(new AuditSubscriber(subscriber, this.durationSelector));
         };
         return AuditOperator;
     }();
@@ -7178,27 +6751,21 @@ System.registerDynamic('rxjs/operator/audit', ['rxjs/util/tryCatch', 'rxjs/util/
         return AuditSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/audit', ['rxjs/Observable', 'rxjs/operator/audit'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var audit_1 = $__require('rxjs/operator/audit');
   Observable_1.Observable.prototype.audit = audit_1.audit;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/auditTime', ['rxjs/scheduler/async', 'rxjs/Subscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -7264,7 +6831,7 @@ System.registerDynamic('rxjs/operator/auditTime', ['rxjs/scheduler/async', 'rxjs
             this.scheduler = scheduler;
         }
         AuditTimeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new AuditTimeSubscriber(subscriber, this.duration, this.scheduler));
+            return source.subscribe(new AuditTimeSubscriber(subscriber, this.duration, this.scheduler));
         };
         return AuditTimeOperator;
     }();
@@ -7310,27 +6877,21 @@ System.registerDynamic('rxjs/operator/auditTime', ['rxjs/scheduler/async', 'rxjs
         subscriber.clearThrottle();
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/auditTime', ['rxjs/Observable', 'rxjs/operator/auditTime'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var auditTime_1 = $__require('rxjs/operator/auditTime');
   Observable_1.Observable.prototype.auditTime = auditTime_1.auditTime;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/last', ['rxjs/Subscriber', 'rxjs/util/EmptyError'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -7341,6 +6902,7 @@ System.registerDynamic('rxjs/operator/last', ['rxjs/Subscriber', 'rxjs/util/Empt
     };
     var Subscriber_1 = $__require('rxjs/Subscriber');
     var EmptyError_1 = $__require('rxjs/util/EmptyError');
+    /* tslint:disable:max-line-length */
     /**
      * Returns an Observable that emits only the last item emitted by the source Observable.
      * It optionally takes a predicate function as a parameter, in which case, rather than emitting
@@ -7370,7 +6932,7 @@ System.registerDynamic('rxjs/operator/last', ['rxjs/Subscriber', 'rxjs/util/Empt
             this.source = source;
         }
         LastOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new LastSubscriber(observer, this.predicate, this.resultSelector, this.defaultValue, this.source));
+            return source.subscribe(new LastSubscriber(observer, this.predicate, this.resultSelector, this.defaultValue, this.source));
         };
         return LastOperator;
     }();
@@ -7447,21 +7009,16 @@ System.registerDynamic('rxjs/operator/last', ['rxjs/Subscriber', 'rxjs/util/Empt
         return LastSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/last', ['rxjs/Observable', 'rxjs/operator/last'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var last_1 = $__require('rxjs/operator/last');
   Observable_1.Observable.prototype.last = last_1.last;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/let", [], true, function ($__require, exports, module) {
   "use strict";
@@ -7472,36 +7029,29 @@ System.registerDynamic("rxjs/operator/let", [], true, function ($__require, expo
    * @owner Observable
    */
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   function letProto(func) {
     return func(this);
   }
   exports.letProto = letProto;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/let', ['rxjs/Observable', 'rxjs/operator/let'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var let_1 = $__require('rxjs/operator/let');
   Observable_1.Observable.prototype.let = let_1.letProto;
   Observable_1.Observable.prototype.letBind = let_1.letProto;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/every", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -7530,7 +7080,7 @@ System.registerDynamic("rxjs/operator/every", ["rxjs/Subscriber"], true, functio
             this.source = source;
         }
         EveryOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new EverySubscriber(observer, this.predicate, this.thisArg, this.source));
+            return source.subscribe(new EverySubscriber(observer, this.predicate, this.thisArg, this.source));
         };
         return EveryOperator;
     }();
@@ -7571,40 +7121,31 @@ System.registerDynamic("rxjs/operator/every", ["rxjs/Subscriber"], true, functio
         return EverySubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/every', ['rxjs/Observable', 'rxjs/operator/every'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var every_1 = $__require('rxjs/operator/every');
   Observable_1.Observable.prototype.every = every_1.every;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/map', ['rxjs/Observable', 'rxjs/operator/map'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var map_1 = $__require('rxjs/operator/map');
   Observable_1.Observable.prototype.map = map_1.map;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/mapTo", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -7649,7 +7190,7 @@ System.registerDynamic("rxjs/operator/mapTo", ["rxjs/Subscriber"], true, functio
             this.value = value;
         }
         MapToOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new MapToSubscriber(subscriber, this.value));
+            return source.subscribe(new MapToSubscriber(subscriber, this.value));
         };
         return MapToOperator;
     }();
@@ -7670,27 +7211,21 @@ System.registerDynamic("rxjs/operator/mapTo", ["rxjs/Subscriber"], true, functio
         return MapToSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/mapTo', ['rxjs/Observable', 'rxjs/operator/mapTo'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var mapTo_1 = $__require('rxjs/operator/mapTo');
   Observable_1.Observable.prototype.mapTo = mapTo_1.mapTo;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/materialize', ['rxjs/Subscriber', 'rxjs/Notification'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -7729,6 +7264,13 @@ System.registerDynamic('rxjs/operator/materialize', ['rxjs/Subscriber', 'rxjs/No
      * var materialized = upperCase.materialize();
      * materialized.subscribe(x => console.log(x));
      *
+     * // Results in the following:
+     * // - Notification {kind: "N", value: "A", error: undefined, hasValue: true}
+     * // - Notification {kind: "N", value: "B", error: undefined, hasValue: true}
+     * // - Notification {kind: "E", value: undefined, error: TypeError:
+     * //   x.toUpperCase is not a function at MapSubscriber.letters.map.x
+     * //   [as project] (http://1…, hasValue: false}
+     *
      * @see {@link Notification}
      * @see {@link dematerialize}
      *
@@ -7745,7 +7287,7 @@ System.registerDynamic('rxjs/operator/materialize', ['rxjs/Subscriber', 'rxjs/No
     var MaterializeOperator = function () {
         function MaterializeOperator() {}
         MaterializeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new MaterializeSubscriber(subscriber));
+            return source.subscribe(new MaterializeSubscriber(subscriber));
         };
         return MaterializeOperator;
     }();
@@ -7775,27 +7317,21 @@ System.registerDynamic('rxjs/operator/materialize', ['rxjs/Subscriber', 'rxjs/No
         return MaterializeSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/materialize', ['rxjs/Observable', 'rxjs/operator/materialize'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var materialize_1 = $__require('rxjs/operator/materialize');
   Observable_1.Observable.prototype.materialize = materialize_1.materialize;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/max', ['rxjs/operator/reduce'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var reduce_1 = $__require('rxjs/operator/reduce');
     /**
@@ -7820,31 +7356,26 @@ System.registerDynamic('rxjs/operator/max', ['rxjs/operator/reduce'], true, func
     }
     exports.max = max;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/max', ['rxjs/Observable', 'rxjs/operator/max'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var max_1 = $__require('rxjs/operator/max');
   Observable_1.Observable.prototype.max = max_1.max;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/merge', ['rxjs/observable/ArrayObservable', 'rxjs/operator/mergeAll', 'rxjs/util/isScheduler'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var ArrayObservable_1 = $__require('rxjs/observable/ArrayObservable');
     var mergeAll_1 = $__require('rxjs/operator/mergeAll');
     var isScheduler_1 = $__require('rxjs/util/isScheduler');
+    /* tslint:disable:max-line-length */
     /**
      * Creates an output Observable which concurrently emits all values from every
      * given input Observable.
@@ -7896,8 +7427,7 @@ System.registerDynamic('rxjs/operator/merge', ['rxjs/observable/ArrayObservable'
         for (var _i = 0; _i < arguments.length; _i++) {
             observables[_i - 0] = arguments[_i];
         }
-        observables.unshift(this);
-        return mergeStatic.apply(this, observables);
+        return this.lift.call(mergeStatic.apply(void 0, [this].concat(observables)));
     }
     exports.merge = merge;
     /* tslint:enable:max-line-length */
@@ -7922,6 +7452,12 @@ System.registerDynamic('rxjs/operator/merge', ['rxjs/observable/ArrayObservable'
      * var clicksOrTimer = Rx.Observable.merge(clicks, timer);
      * clicksOrTimer.subscribe(x => console.log(x));
      *
+     * // Results in the following:
+     * // timer will emit ascending values, one every second(1000ms) to console
+     * // clicks logs MouseEvents to console everytime the "document" is clicked
+     * // Since the two streams are merged you see these happening
+     * // as they occur.
+     *
      * @example <caption>Merge together 3 Observables, but only 2 run concurrently</caption>
      * var timer1 = Rx.Observable.interval(1000).take(10);
      * var timer2 = Rx.Observable.interval(2000).take(6);
@@ -7930,13 +7466,21 @@ System.registerDynamic('rxjs/operator/merge', ['rxjs/observable/ArrayObservable'
      * var merged = Rx.Observable.merge(timer1, timer2, timer3, concurrent);
      * merged.subscribe(x => console.log(x));
      *
+     * // Results in the following:
+     * // - First timer1 and timer2 will run concurrently
+     * // - timer1 will emit a value every 1000ms for 10 iterations
+     * // - timer2 will emit a value every 2000ms for 6 iterations
+     * // - after timer1 hits it's max iteration, timer2 will
+     * //   continue, and timer3 will start to run concurrently with timer2
+     * // - when timer2 hits it's max iteration it terminates, and
+     * //   timer3 will continue to emit a value every 500ms until it is complete
+     *
      * @see {@link mergeAll}
      * @see {@link mergeMap}
      * @see {@link mergeMapTo}
      * @see {@link mergeScan}
      *
-     * @param {Observable} input1 An input Observable to merge with others.
-     * @param {Observable} input2 An input Observable to merge with others.
+     * @param {...Observable} observables Input Observables to merge together.
      * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
      * Observables being subscribed to concurrently.
      * @param {Scheduler} [scheduler=null] The Scheduler to use for managing
@@ -7963,47 +7507,38 @@ System.registerDynamic('rxjs/operator/merge', ['rxjs/observable/ArrayObservable'
         } else if (typeof last === 'number') {
             concurrent = observables.pop();
         }
-        if (observables.length === 1) {
+        if (scheduler === null && observables.length === 1) {
             return observables[0];
         }
         return new ArrayObservable_1.ArrayObservable(observables, scheduler).lift(new mergeAll_1.MergeAllOperator(concurrent));
     }
     exports.mergeStatic = mergeStatic;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/merge', ['rxjs/Observable', 'rxjs/operator/merge'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var merge_1 = $__require('rxjs/operator/merge');
   Observable_1.Observable.prototype.merge = merge_1.merge;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/mergeAll', ['rxjs/Observable', 'rxjs/operator/mergeAll'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var mergeAll_1 = $__require('rxjs/operator/mergeAll');
   Observable_1.Observable.prototype.mergeAll = mergeAll_1.mergeAll;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/mergeMap', ['rxjs/util/subscribeToResult', 'rxjs/OuterSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -8014,6 +7549,7 @@ System.registerDynamic('rxjs/operator/mergeMap', ['rxjs/util/subscribeToResult',
     };
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
+    /* tslint:disable:max-line-length */
     /**
      * Projects each source value to an Observable which is merged in the output
      * Observable.
@@ -8034,6 +7570,15 @@ System.registerDynamic('rxjs/operator/mergeMap', ['rxjs/util/subscribeToResult',
      *   Rx.Observable.interval(1000).map(i => x+i)
      * );
      * result.subscribe(x => console.log(x));
+     *
+     * // Results in the following:
+     * // a0
+     * // b0
+     * // c0
+     * // a1
+     * // b1
+     * // c1
+     * // continues to list a,b,c with respective ascending integers
      *
      * @see {@link concatMap}
      * @see {@link exhaustMap}
@@ -8084,7 +7629,7 @@ System.registerDynamic('rxjs/operator/mergeMap', ['rxjs/util/subscribeToResult',
             this.concurrent = concurrent;
         }
         MergeMapOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new MergeMapSubscriber(observer, this.project, this.resultSelector, this.concurrent));
+            return source.subscribe(new MergeMapSubscriber(observer, this.project, this.resultSelector, this.concurrent));
         };
         return MergeMapOperator;
     }();
@@ -8168,28 +7713,22 @@ System.registerDynamic('rxjs/operator/mergeMap', ['rxjs/util/subscribeToResult',
     }(OuterSubscriber_1.OuterSubscriber);
     exports.MergeMapSubscriber = MergeMapSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/mergeMap', ['rxjs/Observable', 'rxjs/operator/mergeMap'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var mergeMap_1 = $__require('rxjs/operator/mergeMap');
   Observable_1.Observable.prototype.mergeMap = mergeMap_1.mergeMap;
   Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/mergeMapTo', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -8200,6 +7739,7 @@ System.registerDynamic('rxjs/operator/mergeMapTo', ['rxjs/OuterSubscriber', 'rxj
     };
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * Projects each source value to the same Observable which is merged multiple
      * times in the output Observable.
@@ -8266,7 +7806,7 @@ System.registerDynamic('rxjs/operator/mergeMapTo', ['rxjs/OuterSubscriber', 'rxj
             this.concurrent = concurrent;
         }
         MergeMapToOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new MergeMapToSubscriber(observer, this.ish, this.resultSelector, this.concurrent));
+            return source.subscribe(new MergeMapToSubscriber(observer, this.ish, this.resultSelector, this.concurrent));
         };
         return MergeMapToOperator;
     }();
@@ -8352,28 +7892,22 @@ System.registerDynamic('rxjs/operator/mergeMapTo', ['rxjs/OuterSubscriber', 'rxj
     }(OuterSubscriber_1.OuterSubscriber);
     exports.MergeMapToSubscriber = MergeMapToSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/mergeMapTo', ['rxjs/Observable', 'rxjs/operator/mergeMapTo'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var mergeMapTo_1 = $__require('rxjs/operator/mergeMapTo');
   Observable_1.Observable.prototype.flatMapTo = mergeMapTo_1.mergeMapTo;
   Observable_1.Observable.prototype.mergeMapTo = mergeMapTo_1.mergeMapTo;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/mergeScan', ['rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/util/subscribeToResult', 'rxjs/OuterSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -8408,7 +7942,7 @@ System.registerDynamic('rxjs/operator/mergeScan', ['rxjs/util/tryCatch', 'rxjs/u
             this.concurrent = concurrent;
         }
         MergeScanOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new MergeScanSubscriber(subscriber, this.project, this.seed, this.concurrent));
+            return source.subscribe(new MergeScanSubscriber(subscriber, this.project, this.seed, this.concurrent));
         };
         return MergeScanOperator;
     }();
@@ -8481,27 +8015,21 @@ System.registerDynamic('rxjs/operator/mergeScan', ['rxjs/util/tryCatch', 'rxjs/u
     }(OuterSubscriber_1.OuterSubscriber);
     exports.MergeScanSubscriber = MergeScanSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/mergeScan', ['rxjs/Observable', 'rxjs/operator/mergeScan'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var mergeScan_1 = $__require('rxjs/operator/mergeScan');
   Observable_1.Observable.prototype.mergeScan = mergeScan_1.mergeScan;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/min', ['rxjs/operator/reduce'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var reduce_1 = $__require('rxjs/operator/reduce');
     /**
@@ -8525,53 +8053,41 @@ System.registerDynamic('rxjs/operator/min', ['rxjs/operator/reduce'], true, func
     }
     exports.min = min;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/min', ['rxjs/Observable', 'rxjs/operator/min'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var min_1 = $__require('rxjs/operator/min');
   Observable_1.Observable.prototype.min = min_1.min;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/multicast', ['rxjs/Observable', 'rxjs/operator/multicast'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var multicast_1 = $__require('rxjs/operator/multicast');
   Observable_1.Observable.prototype.multicast = multicast_1.multicast;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/observeOn', ['rxjs/Observable', 'rxjs/operator/observeOn'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var observeOn_1 = $__require('rxjs/operator/observeOn');
   Observable_1.Observable.prototype.observeOn = observeOn_1.observeOn;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/observable/PromiseObservable', ['rxjs/util/root', 'rxjs/Observable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -8696,14 +8212,11 @@ System.registerDynamic('rxjs/observable/PromiseObservable', ['rxjs/util/root', '
         }
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/IteratorObservable', ['rxjs/util/root', 'rxjs/Observable', 'rxjs/symbol/iterator'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -8750,6 +8263,9 @@ System.registerDynamic('rxjs/observable/IteratorObservable', ['rxjs/util/root', 
             subscriber.next(result.value);
             state.index = index + 1;
             if (subscriber.closed) {
+                if (typeof iterator.return === 'function') {
+                    iterator.return();
+                }
                 return;
             }
             this.schedule(state);
@@ -8773,6 +8289,9 @@ System.registerDynamic('rxjs/observable/IteratorObservable', ['rxjs/util/root', 
                         subscriber.next(result.value);
                     }
                     if (subscriber.closed) {
+                        if (typeof iterator.return === 'function') {
+                            iterator.return();
+                        }
                         break;
                     }
                 } while (true);
@@ -8878,14 +8397,11 @@ System.registerDynamic('rxjs/observable/IteratorObservable', ['rxjs/util/root', 
         return valueAsNumber < 0 ? -1 : 1;
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/ArrayLikeObservable', ['rxjs/Observable', 'rxjs/observable/ScalarObservable', 'rxjs/observable/EmptyObservable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -8960,14 +8476,11 @@ System.registerDynamic('rxjs/observable/ArrayLikeObservable', ['rxjs/Observable'
     }(Observable_1.Observable);
     exports.ArrayLikeObservable = ArrayLikeObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/FromObservable', ['rxjs/util/isArray', 'rxjs/util/isPromise', 'rxjs/observable/PromiseObservable', 'rxjs/observable/IteratorObservable', 'rxjs/observable/ArrayObservable', 'rxjs/observable/ArrayLikeObservable', 'rxjs/symbol/iterator', 'rxjs/Observable', 'rxjs/operator/observeOn', 'rxjs/symbol/observable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -9022,6 +8535,9 @@ System.registerDynamic('rxjs/observable/FromObservable', ['rxjs/util/isArray', '
          * var result = Rx.Observable.from(array);
          * result.subscribe(x => console.log(x));
          *
+         * // Results in the following:
+         * // 10 20 30
+         *
          * @example <caption>Convert an infinite iterable (from a generator) to an Observable</caption>
          * function* generateDoubles(seed) {
          *   var i = seed;
@@ -9034,6 +8550,9 @@ System.registerDynamic('rxjs/observable/FromObservable', ['rxjs/util/isArray', '
          * var iterator = generateDoubles(3);
          * var result = Rx.Observable.from(iterator).take(10);
          * result.subscribe(x => console.log(x));
+         *
+         * // Results in the following:
+         * // 3 6 12 24 48 96 192 384 768 1536
          *
          * @see {@link create}
          * @see {@link fromEvent}
@@ -9083,14 +8602,11 @@ System.registerDynamic('rxjs/observable/FromObservable', ['rxjs/util/isArray', '
     }(Observable_1.Observable);
     exports.FromObservable = FromObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/onErrorResumeNext', ['rxjs/observable/FromObservable', 'rxjs/util/isArray', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -9103,6 +8619,7 @@ System.registerDynamic('rxjs/operator/onErrorResumeNext', ['rxjs/observable/From
     var isArray_1 = $__require('rxjs/util/isArray');
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     function onErrorResumeNext() {
         var nextSources = [];
         for (var _i = 0; _i < arguments.length; _i++) {
@@ -9133,7 +8650,7 @@ System.registerDynamic('rxjs/operator/onErrorResumeNext', ['rxjs/observable/From
             this.nextSources = nextSources;
         }
         OnErrorResumeNextOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new OnErrorResumeNextSubscriber(subscriber, this.nextSources));
+            return source.subscribe(new OnErrorResumeNextSubscriber(subscriber, this.nextSources));
         };
         return OnErrorResumeNextOperator;
     }();
@@ -9167,27 +8684,21 @@ System.registerDynamic('rxjs/operator/onErrorResumeNext', ['rxjs/observable/From
         return OnErrorResumeNextSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/onErrorResumeNext', ['rxjs/Observable', 'rxjs/operator/onErrorResumeNext'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var onErrorResumeNext_1 = $__require('rxjs/operator/onErrorResumeNext');
   Observable_1.Observable.prototype.onErrorResumeNext = onErrorResumeNext_1.onErrorResumeNext;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/pairwise", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -9239,7 +8750,7 @@ System.registerDynamic("rxjs/operator/pairwise", ["rxjs/Subscriber"], true, func
     var PairwiseOperator = function () {
         function PairwiseOperator() {}
         PairwiseOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new PairwiseSubscriber(subscriber));
+            return source.subscribe(new PairwiseSubscriber(subscriber));
         };
         return PairwiseOperator;
     }();
@@ -9265,27 +8776,21 @@ System.registerDynamic("rxjs/operator/pairwise", ["rxjs/Subscriber"], true, func
         return PairwiseSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/pairwise', ['rxjs/Observable', 'rxjs/operator/pairwise'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var pairwise_1 = $__require('rxjs/operator/pairwise');
   Observable_1.Observable.prototype.pairwise = pairwise_1.pairwise;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/not", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     function not(pred, thisArg) {
         function notPred() {
@@ -9297,14 +8802,11 @@ System.registerDynamic("rxjs/util/not", [], true, function ($__require, exports,
     }
     exports.not = not;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/operator/filter", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -9314,6 +8816,7 @@ System.registerDynamic("rxjs/operator/filter", ["rxjs/Subscriber"], true, functi
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
     var Subscriber_1 = $__require("rxjs/Subscriber");
+    /* tslint:disable:max-line-length */
     /**
      * Filter items emitted by the source Observable by only emitting those that
      * satisfy a specified predicate.
@@ -9334,7 +8837,6 @@ System.registerDynamic("rxjs/operator/filter", ["rxjs/Subscriber"], true, functi
      * clicksOnDivs.subscribe(x => console.log(x));
      *
      * @see {@link distinct}
-     * @see {@link distinctKey}
      * @see {@link distinctUntilChanged}
      * @see {@link distinctUntilKeyChanged}
      * @see {@link ignoreElements}
@@ -9364,7 +8866,7 @@ System.registerDynamic("rxjs/operator/filter", ["rxjs/Subscriber"], true, functi
             this.thisArg = thisArg;
         }
         FilterOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new FilterSubscriber(subscriber, this.predicate, this.thisArg));
+            return source.subscribe(new FilterSubscriber(subscriber, this.predicate, this.thisArg));
         };
         return FilterOperator;
     }();
@@ -9399,14 +8901,11 @@ System.registerDynamic("rxjs/operator/filter", ["rxjs/Subscriber"], true, functi
         return FilterSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/partition', ['rxjs/util/not', 'rxjs/operator/filter'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var not_1 = $__require('rxjs/util/not');
     var filter_1 = $__require('rxjs/operator/filter');
@@ -9452,31 +8951,25 @@ System.registerDynamic('rxjs/operator/partition', ['rxjs/util/not', 'rxjs/operat
      * @owner Observable
      */
     function partition(predicate, thisArg) {
-        return [filter_1.filter.call(this, predicate), filter_1.filter.call(this, not_1.not(predicate, thisArg))];
+        return [filter_1.filter.call(this, predicate, thisArg), filter_1.filter.call(this, not_1.not(predicate, thisArg))];
     }
     exports.partition = partition;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/partition', ['rxjs/Observable', 'rxjs/operator/partition'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var partition_1 = $__require('rxjs/operator/partition');
   Observable_1.Observable.prototype.partition = partition_1.partition;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/pluck', ['rxjs/operator/map'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var map_1 = $__require('rxjs/operator/map');
     /**
@@ -9534,30 +9027,25 @@ System.registerDynamic('rxjs/operator/pluck', ['rxjs/operator/map'], true, funct
         return mapper;
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/pluck', ['rxjs/Observable', 'rxjs/operator/pluck'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var pluck_1 = $__require('rxjs/operator/pluck');
   Observable_1.Observable.prototype.pluck = pluck_1.pluck;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/publish', ['rxjs/Subject', 'rxjs/operator/multicast'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Subject_1 = $__require('rxjs/Subject');
   var multicast_1 = $__require('rxjs/operator/multicast');
+  /* tslint:disable:max-line-length */
   /**
    * Returns a ConnectableObservable, which is a variety of Observable that waits until its connect method is called
    * before it begins emitting items to those Observers that have subscribed to it.
@@ -9578,27 +9066,21 @@ System.registerDynamic('rxjs/operator/publish', ['rxjs/Subject', 'rxjs/operator/
   }
   exports.publish = publish;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/publish', ['rxjs/Observable', 'rxjs/operator/publish'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var publish_1 = $__require('rxjs/operator/publish');
   Observable_1.Observable.prototype.publish = publish_1.publish;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/publishBehavior', ['rxjs/BehaviorSubject', 'rxjs/operator/multicast'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var BehaviorSubject_1 = $__require('rxjs/BehaviorSubject');
   var multicast_1 = $__require('rxjs/operator/multicast');
@@ -9613,27 +9095,21 @@ System.registerDynamic('rxjs/operator/publishBehavior', ['rxjs/BehaviorSubject',
   }
   exports.publishBehavior = publishBehavior;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/publishBehavior', ['rxjs/Observable', 'rxjs/operator/publishBehavior'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var publishBehavior_1 = $__require('rxjs/operator/publishBehavior');
   Observable_1.Observable.prototype.publishBehavior = publishBehavior_1.publishBehavior;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/publishReplay', ['rxjs/ReplaySubject', 'rxjs/operator/multicast'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var ReplaySubject_1 = $__require('rxjs/ReplaySubject');
   var multicast_1 = $__require('rxjs/operator/multicast');
@@ -9656,27 +9132,21 @@ System.registerDynamic('rxjs/operator/publishReplay', ['rxjs/ReplaySubject', 'rx
   }
   exports.publishReplay = publishReplay;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/publishReplay', ['rxjs/Observable', 'rxjs/operator/publishReplay'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var publishReplay_1 = $__require('rxjs/operator/publishReplay');
   Observable_1.Observable.prototype.publishReplay = publishReplay_1.publishReplay;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/publishLast', ['rxjs/AsyncSubject', 'rxjs/operator/multicast'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var AsyncSubject_1 = $__require('rxjs/AsyncSubject');
   var multicast_1 = $__require('rxjs/operator/multicast');
@@ -9690,27 +9160,21 @@ System.registerDynamic('rxjs/operator/publishLast', ['rxjs/AsyncSubject', 'rxjs/
   }
   exports.publishLast = publishLast;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/publishLast', ['rxjs/Observable', 'rxjs/operator/publishLast'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var publishLast_1 = $__require('rxjs/operator/publishLast');
   Observable_1.Observable.prototype.publishLast = publishLast_1.publishLast;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/race', ['rxjs/util/isArray', 'rxjs/observable/ArrayObservable', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -9723,6 +9187,7 @@ System.registerDynamic('rxjs/operator/race', ['rxjs/util/isArray', 'rxjs/observa
     var ArrayObservable_1 = $__require('rxjs/observable/ArrayObservable');
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * Returns an Observable that mirrors the first source Observable to emit an item
      * from the combination of this Observable and supplied Observables
@@ -9741,8 +9206,7 @@ System.registerDynamic('rxjs/operator/race', ['rxjs/util/isArray', 'rxjs/observa
         if (observables.length === 1 && isArray_1.isArray(observables[0])) {
             observables = observables[0];
         }
-        observables.unshift(this);
-        return raceStatic.apply(this, observables);
+        return this.lift.call(raceStatic.apply(void 0, [this].concat(observables)));
     }
     exports.race = race;
     function raceStatic() {
@@ -9765,7 +9229,7 @@ System.registerDynamic('rxjs/operator/race', ['rxjs/util/isArray', 'rxjs/observa
     var RaceOperator = function () {
         function RaceOperator() {}
         RaceOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new RaceSubscriber(subscriber));
+            return source.subscribe(new RaceSubscriber(subscriber));
         };
         return RaceOperator;
     }();
@@ -9792,13 +9256,13 @@ System.registerDynamic('rxjs/operator/race', ['rxjs/util/isArray', 'rxjs/observa
             if (len === 0) {
                 this.destination.complete();
             } else {
-                for (var i = 0; i < len; i++) {
+                for (var i = 0; i < len && !this.hasFirst; i++) {
                     var observable = observables[i];
                     var subscription = subscribeToResult_1.subscribeToResult(this, observable, observable, i);
                     if (this.subscriptions) {
                         this.subscriptions.push(subscription);
-                        this.add(subscription);
                     }
+                    this.add(subscription);
                 }
                 this.observables = null;
             }
@@ -9821,27 +9285,21 @@ System.registerDynamic('rxjs/operator/race', ['rxjs/util/isArray', 'rxjs/observa
     }(OuterSubscriber_1.OuterSubscriber);
     exports.RaceSubscriber = RaceSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/race', ['rxjs/Observable', 'rxjs/operator/race'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var race_1 = $__require('rxjs/operator/race');
   Observable_1.Observable.prototype.race = race_1.race;
   
-
-  return module.exports;
 });
-System.registerDynamic('rxjs/operator/reduce', ['rxjs/Subscriber'], true, function ($__require, exports, module) {
+System.registerDynamic("rxjs/operator/reduce", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -9850,7 +9308,8 @@ System.registerDynamic('rxjs/operator/reduce', ['rxjs/Subscriber'], true, functi
         }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-    var Subscriber_1 = $__require('rxjs/Subscriber');
+    var Subscriber_1 = $__require("rxjs/Subscriber");
+    /* tslint:disable:max-line-length */
     /**
      * Applies an accumulator function over the source Observable, and returns the
      * accumulated result when the source completes, given an optional seed value.
@@ -9897,16 +9356,29 @@ System.registerDynamic('rxjs/operator/reduce', ['rxjs/Subscriber'], true, functi
      * @owner Observable
      */
     function reduce(accumulator, seed) {
-        return this.lift(new ReduceOperator(accumulator, seed));
+        var hasSeed = false;
+        // providing a seed of `undefined` *should* be valid and trigger
+        // hasSeed! so don't use `seed !== undefined` checks!
+        // For this reason, we have to check it here at the original call site
+        // otherwise inside Operator/Subscriber we won't know if `undefined`
+        // means they didn't provide anything or if they literally provided `undefined`
+        if (arguments.length >= 2) {
+            hasSeed = true;
+        }
+        return this.lift(new ReduceOperator(accumulator, seed, hasSeed));
     }
     exports.reduce = reduce;
     var ReduceOperator = function () {
-        function ReduceOperator(accumulator, seed) {
+        function ReduceOperator(accumulator, seed, hasSeed) {
+            if (hasSeed === void 0) {
+                hasSeed = false;
+            }
             this.accumulator = accumulator;
             this.seed = seed;
+            this.hasSeed = hasSeed;
         }
         ReduceOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ReduceSubscriber(subscriber, this.accumulator, this.seed));
+            return source.subscribe(new ReduceSubscriber(subscriber, this.accumulator, this.seed, this.hasSeed));
         };
         return ReduceOperator;
     }();
@@ -9918,13 +9390,12 @@ System.registerDynamic('rxjs/operator/reduce', ['rxjs/Subscriber'], true, functi
      */
     var ReduceSubscriber = function (_super) {
         __extends(ReduceSubscriber, _super);
-        function ReduceSubscriber(destination, accumulator, seed) {
+        function ReduceSubscriber(destination, accumulator, seed, hasSeed) {
             _super.call(this, destination);
             this.accumulator = accumulator;
+            this.hasSeed = hasSeed;
             this.hasValue = false;
             this.acc = seed;
-            this.accumulator = accumulator;
-            this.hasSeed = typeof seed !== 'undefined';
         }
         ReduceSubscriber.prototype._next = function (value) {
             if (this.hasValue || (this.hasValue = this.hasSeed)) {
@@ -9954,27 +9425,21 @@ System.registerDynamic('rxjs/operator/reduce', ['rxjs/Subscriber'], true, functi
     }(Subscriber_1.Subscriber);
     exports.ReduceSubscriber = ReduceSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/reduce', ['rxjs/Observable', 'rxjs/operator/reduce'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var reduce_1 = $__require('rxjs/operator/reduce');
   Observable_1.Observable.prototype.reduce = reduce_1.reduce;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/repeat', ['rxjs/Subscriber', 'rxjs/observable/EmptyObservable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10018,7 +9483,7 @@ System.registerDynamic('rxjs/operator/repeat', ['rxjs/Subscriber', 'rxjs/observa
             this.source = source;
         }
         RepeatOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new RepeatSubscriber(subscriber, this.count, this.source));
+            return source.subscribe(new RepeatSubscriber(subscriber, this.count, this.source));
         };
         return RepeatOperator;
     }();
@@ -10053,27 +9518,21 @@ System.registerDynamic('rxjs/operator/repeat', ['rxjs/Subscriber', 'rxjs/observa
         return RepeatSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/repeat', ['rxjs/Observable', 'rxjs/operator/repeat'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var repeat_1 = $__require('rxjs/operator/repeat');
   Observable_1.Observable.prototype.repeat = repeat_1.repeat;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/repeatWhen', ['rxjs/Subject', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10113,7 +9572,7 @@ System.registerDynamic('rxjs/operator/repeatWhen', ['rxjs/Subject', 'rxjs/util/t
             this.source = source;
         }
         RepeatWhenOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new RepeatWhenSubscriber(subscriber, this.notifier, this.source));
+            return source.subscribe(new RepeatWhenSubscriber(subscriber, this.notifier, this.source));
         };
         return RepeatWhenOperator;
     }();
@@ -10186,27 +9645,21 @@ System.registerDynamic('rxjs/operator/repeatWhen', ['rxjs/Subject', 'rxjs/util/t
         return RepeatWhenSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/repeatWhen', ['rxjs/Observable', 'rxjs/operator/repeatWhen'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var repeatWhen_1 = $__require('rxjs/operator/repeatWhen');
   Observable_1.Observable.prototype.repeatWhen = repeatWhen_1.repeatWhen;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/retry", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10246,7 +9699,7 @@ System.registerDynamic("rxjs/operator/retry", ["rxjs/Subscriber"], true, functio
             this.source = source;
         }
         RetryOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new RetrySubscriber(subscriber, this.count, this.source));
+            return source.subscribe(new RetrySubscriber(subscriber, this.count, this.source));
         };
         return RetryOperator;
     }();
@@ -10281,27 +9734,21 @@ System.registerDynamic("rxjs/operator/retry", ["rxjs/Subscriber"], true, functio
         return RetrySubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/retry', ['rxjs/Observable', 'rxjs/operator/retry'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var retry_1 = $__require('rxjs/operator/retry');
   Observable_1.Observable.prototype.retry = retry_1.retry;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/retryWhen', ['rxjs/Subject', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10341,7 +9788,7 @@ System.registerDynamic('rxjs/operator/retryWhen', ['rxjs/Subject', 'rxjs/util/tr
             this.source = source;
         }
         RetryWhenOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new RetryWhenSubscriber(subscriber, this.notifier, this.source));
+            return source.subscribe(new RetryWhenSubscriber(subscriber, this.notifier, this.source));
         };
         return RetryWhenOperator;
     }();
@@ -10414,27 +9861,21 @@ System.registerDynamic('rxjs/operator/retryWhen', ['rxjs/Subject', 'rxjs/util/tr
         return RetryWhenSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/retryWhen', ['rxjs/Observable', 'rxjs/operator/retryWhen'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var retryWhen_1 = $__require('rxjs/operator/retryWhen');
   Observable_1.Observable.prototype.retryWhen = retryWhen_1.retryWhen;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/sample', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10488,7 +9929,10 @@ System.registerDynamic('rxjs/operator/sample', ['rxjs/OuterSubscriber', 'rxjs/ut
             this.notifier = notifier;
         }
         SampleOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SampleSubscriber(subscriber, this.notifier));
+            var sampleSubscriber = new SampleSubscriber(subscriber);
+            var subscription = source.subscribe(sampleSubscriber);
+            subscription.add(subscribeToResult_1.subscribeToResult(sampleSubscriber, this.notifier));
+            return subscription;
         };
         return SampleOperator;
     }();
@@ -10499,10 +9943,9 @@ System.registerDynamic('rxjs/operator/sample', ['rxjs/OuterSubscriber', 'rxjs/ut
      */
     var SampleSubscriber = function (_super) {
         __extends(SampleSubscriber, _super);
-        function SampleSubscriber(destination, notifier) {
-            _super.call(this, destination);
+        function SampleSubscriber() {
+            _super.apply(this, arguments);
             this.hasValue = false;
-            this.add(subscribeToResult_1.subscribeToResult(this, notifier));
         }
         SampleSubscriber.prototype._next = function (value) {
             this.value = value;
@@ -10523,27 +9966,21 @@ System.registerDynamic('rxjs/operator/sample', ['rxjs/OuterSubscriber', 'rxjs/ut
         return SampleSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/sample', ['rxjs/Observable', 'rxjs/operator/sample'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var sample_1 = $__require('rxjs/operator/sample');
   Observable_1.Observable.prototype.sample = sample_1.sample;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/sampleTime', ['rxjs/Subscriber', 'rxjs/scheduler/async'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10603,7 +10040,7 @@ System.registerDynamic('rxjs/operator/sampleTime', ['rxjs/Subscriber', 'rxjs/sch
             this.scheduler = scheduler;
         }
         SampleTimeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SampleTimeSubscriber(subscriber, this.period, this.scheduler));
+            return source.subscribe(new SampleTimeSubscriber(subscriber, this.period, this.scheduler));
         };
         return SampleTimeOperator;
     }();
@@ -10640,27 +10077,21 @@ System.registerDynamic('rxjs/operator/sampleTime', ['rxjs/Subscriber', 'rxjs/sch
         this.schedule(state, period);
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/sampleTime', ['rxjs/Observable', 'rxjs/operator/sampleTime'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var sampleTime_1 = $__require('rxjs/operator/sampleTime');
   Observable_1.Observable.prototype.sampleTime = sampleTime_1.sampleTime;
   
-
-  return module.exports;
 });
-System.registerDynamic('rxjs/operator/scan', ['rxjs/Subscriber'], true, function ($__require, exports, module) {
+System.registerDynamic("rxjs/operator/scan", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10669,7 +10100,8 @@ System.registerDynamic('rxjs/operator/scan', ['rxjs/Subscriber'], true, function
         }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-    var Subscriber_1 = $__require('rxjs/Subscriber');
+    var Subscriber_1 = $__require("rxjs/Subscriber");
+    /* tslint:disable:max-line-length */
     /**
      * Applies an accumulator function over the source Observable, and returns each
      * intermediate result, with an optional seed value.
@@ -10708,16 +10140,29 @@ System.registerDynamic('rxjs/operator/scan', ['rxjs/Subscriber'], true, function
      * @owner Observable
      */
     function scan(accumulator, seed) {
-        return this.lift(new ScanOperator(accumulator, seed));
+        var hasSeed = false;
+        // providing a seed of `undefined` *should* be valid and trigger
+        // hasSeed! so don't use `seed !== undefined` checks!
+        // For this reason, we have to check it here at the original call site
+        // otherwise inside Operator/Subscriber we won't know if `undefined`
+        // means they didn't provide anything or if they literally provided `undefined`
+        if (arguments.length >= 2) {
+            hasSeed = true;
+        }
+        return this.lift(new ScanOperator(accumulator, seed, hasSeed));
     }
     exports.scan = scan;
     var ScanOperator = function () {
-        function ScanOperator(accumulator, seed) {
+        function ScanOperator(accumulator, seed, hasSeed) {
+            if (hasSeed === void 0) {
+                hasSeed = false;
+            }
             this.accumulator = accumulator;
             this.seed = seed;
+            this.hasSeed = hasSeed;
         }
         ScanOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ScanSubscriber(subscriber, this.accumulator, this.seed));
+            return source.subscribe(new ScanSubscriber(subscriber, this.accumulator, this.seed, this.hasSeed));
         };
         return ScanOperator;
     }();
@@ -10728,27 +10173,26 @@ System.registerDynamic('rxjs/operator/scan', ['rxjs/Subscriber'], true, function
      */
     var ScanSubscriber = function (_super) {
         __extends(ScanSubscriber, _super);
-        function ScanSubscriber(destination, accumulator, seed) {
+        function ScanSubscriber(destination, accumulator, _seed, hasSeed) {
             _super.call(this, destination);
             this.accumulator = accumulator;
+            this._seed = _seed;
+            this.hasSeed = hasSeed;
             this.index = 0;
-            this.accumulatorSet = false;
-            this.seed = seed;
-            this.accumulatorSet = typeof seed !== 'undefined';
         }
         Object.defineProperty(ScanSubscriber.prototype, "seed", {
             get: function () {
                 return this._seed;
             },
             set: function (value) {
-                this.accumulatorSet = true;
+                this.hasSeed = true;
                 this._seed = value;
             },
             enumerable: true,
             configurable: true
         });
         ScanSubscriber.prototype._next = function (value) {
-            if (!this.accumulatorSet) {
+            if (!this.hasSeed) {
                 this.seed = value;
                 this.destination.next(value);
             } else {
@@ -10769,27 +10213,21 @@ System.registerDynamic('rxjs/operator/scan', ['rxjs/Subscriber'], true, function
         return ScanSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/scan', ['rxjs/Observable', 'rxjs/operator/scan'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var scan_1 = $__require('rxjs/operator/scan');
   Observable_1.Observable.prototype.scan = scan_1.scan;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/sequenceEqual', ['rxjs/Subscriber', 'rxjs/util/tryCatch', 'rxjs/util/errorObject'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -10818,7 +10256,7 @@ System.registerDynamic('rxjs/operator/sequenceEqual', ['rxjs/Subscriber', 'rxjs/
      * completes or emits after the other complets, the returned observable will never complete.
      *
      * @example <caption>figure out if the Konami code matches</caption>
-     * var code = Observable.from([
+     * var code = Rx.Observable.from([
      *  "ArrowUp",
      *  "ArrowUp",
      *  "ArrowDown",
@@ -10863,7 +10301,7 @@ System.registerDynamic('rxjs/operator/sequenceEqual', ['rxjs/Subscriber', 'rxjs/
             this.comparor = comparor;
         }
         SequenceEqualOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SequenceEqualSubscriber(subscriber, this.compareTo, this.comparor));
+            return source.subscribe(new SequenceEqualSubscriber(subscriber, this.compareTo, this.comparor));
         };
         return SequenceEqualOperator;
     }();
@@ -10955,30 +10393,24 @@ System.registerDynamic('rxjs/operator/sequenceEqual', ['rxjs/Subscriber', 'rxjs/
         return SequenceEqualCompareToSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/sequenceEqual', ['rxjs/Observable', 'rxjs/operator/sequenceEqual'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var sequenceEqual_1 = $__require('rxjs/operator/sequenceEqual');
   Observable_1.Observable.prototype.sequenceEqual = sequenceEqual_1.sequenceEqual;
   
-
-  return module.exports;
 });
-System.registerDynamic('rxjs/operator/multicast', ['rxjs/observable/MulticastObservable', 'rxjs/observable/ConnectableObservable'], true, function ($__require, exports, module) {
+System.registerDynamic('rxjs/operator/multicast', ['rxjs/observable/ConnectableObservable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
-    var MulticastObservable_1 = $__require('rxjs/observable/MulticastObservable');
     var ConnectableObservable_1 = $__require('rxjs/observable/ConnectableObservable');
+    /* tslint:disable:max-line-length */
     /**
      * Returns an Observable that emits the results of invoking a specified selector on items
      * emitted by a ConnectableObservable that shares a single subscription to the underlying stream.
@@ -11007,18 +10439,36 @@ System.registerDynamic('rxjs/operator/multicast', ['rxjs/observable/MulticastObs
                 return subjectOrSubjectFactory;
             };
         }
-        return !selector ? new ConnectableObservable_1.ConnectableObservable(this, subjectFactory) : new MulticastObservable_1.MulticastObservable(this, subjectFactory, selector);
+        if (typeof selector === 'function') {
+            return this.lift(new MulticastOperator(subjectFactory, selector));
+        }
+        var connectable = Object.create(this, ConnectableObservable_1.connectableObservableDescriptor);
+        connectable.source = this;
+        connectable.subjectFactory = subjectFactory;
+        return connectable;
     }
     exports.multicast = multicast;
+    var MulticastOperator = function () {
+        function MulticastOperator(subjectFactory, selector) {
+            this.subjectFactory = subjectFactory;
+            this.selector = selector;
+        }
+        MulticastOperator.prototype.call = function (subscriber, source) {
+            var selector = this.selector;
+            var subject = this.subjectFactory();
+            var subscription = selector(subject).subscribe(subscriber);
+            subscription.add(source.subscribe(subject));
+            return subscription;
+        };
+        return MulticastOperator;
+    }();
+    exports.MulticastOperator = MulticastOperator;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/share', ['rxjs/operator/multicast', 'rxjs/Subject'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var multicast_1 = $__require('rxjs/operator/multicast');
     var Subject_1 = $__require('rxjs/Subject');
@@ -11043,27 +10493,21 @@ System.registerDynamic('rxjs/operator/share', ['rxjs/operator/multicast', 'rxjs/
     exports.share = share;
     ;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/share', ['rxjs/Observable', 'rxjs/operator/share'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var share_1 = $__require('rxjs/operator/share');
   Observable_1.Observable.prototype.share = share_1.share;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/single', ['rxjs/Subscriber', 'rxjs/util/EmptyError'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -11100,7 +10544,7 @@ System.registerDynamic('rxjs/operator/single', ['rxjs/Subscriber', 'rxjs/util/Em
             this.source = source;
         }
         SingleOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SingleSubscriber(subscriber, this.predicate, this.source));
+            return source.subscribe(new SingleSubscriber(subscriber, this.predicate, this.source));
         };
         return SingleOperator;
     }();
@@ -11157,27 +10601,21 @@ System.registerDynamic('rxjs/operator/single', ['rxjs/Subscriber', 'rxjs/util/Em
         return SingleSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/single', ['rxjs/Observable', 'rxjs/operator/single'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var single_1 = $__require('rxjs/operator/single');
   Observable_1.Observable.prototype.single = single_1.single;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/skip", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -11207,7 +10645,7 @@ System.registerDynamic("rxjs/operator/skip", ["rxjs/Subscriber"], true, function
             this.total = total;
         }
         SkipOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SkipSubscriber(subscriber, this.total));
+            return source.subscribe(new SkipSubscriber(subscriber, this.total));
         };
         return SkipOperator;
     }();
@@ -11231,27 +10669,21 @@ System.registerDynamic("rxjs/operator/skip", ["rxjs/Subscriber"], true, function
         return SkipSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/skip', ['rxjs/Observable', 'rxjs/operator/skip'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var skip_1 = $__require('rxjs/operator/skip');
   Observable_1.Observable.prototype.skip = skip_1.skip;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/skipUntil', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -11283,7 +10715,7 @@ System.registerDynamic('rxjs/operator/skipUntil', ['rxjs/OuterSubscriber', 'rxjs
             this.notifier = notifier;
         }
         SkipUntilOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SkipUntilSubscriber(subscriber, this.notifier));
+            return source.subscribe(new SkipUntilSubscriber(subscriber, this.notifier));
         };
         return SkipUntilOperator;
     }();
@@ -11324,27 +10756,21 @@ System.registerDynamic('rxjs/operator/skipUntil', ['rxjs/OuterSubscriber', 'rxjs
         return SkipUntilSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/skipUntil', ['rxjs/Observable', 'rxjs/operator/skipUntil'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var skipUntil_1 = $__require('rxjs/operator/skipUntil');
   Observable_1.Observable.prototype.skipUntil = skipUntil_1.skipUntil;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/skipWhile", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -11375,7 +10801,7 @@ System.registerDynamic("rxjs/operator/skipWhile", ["rxjs/Subscriber"], true, fun
             this.predicate = predicate;
         }
         SkipWhileOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SkipWhileSubscriber(subscriber, this.predicate));
+            return source.subscribe(new SkipWhileSubscriber(subscriber, this.predicate));
         };
         return SkipWhileOperator;
     }();
@@ -11412,27 +10838,21 @@ System.registerDynamic("rxjs/operator/skipWhile", ["rxjs/Subscriber"], true, fun
         return SkipWhileSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/skipWhile', ['rxjs/Observable', 'rxjs/operator/skipWhile'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var skipWhile_1 = $__require('rxjs/operator/skipWhile');
   Observable_1.Observable.prototype.skipWhile = skipWhile_1.skipWhile;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/mergeAll', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -11499,7 +10919,7 @@ System.registerDynamic('rxjs/operator/mergeAll', ['rxjs/OuterSubscriber', 'rxjs/
             this.concurrent = concurrent;
         }
         MergeAllOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new MergeAllSubscriber(observer, this.concurrent));
+            return source.subscribe(new MergeAllSubscriber(observer, this.concurrent));
         };
         return MergeAllOperator;
     }();
@@ -11546,18 +10966,16 @@ System.registerDynamic('rxjs/operator/mergeAll', ['rxjs/OuterSubscriber', 'rxjs/
     }(OuterSubscriber_1.OuterSubscriber);
     exports.MergeAllSubscriber = MergeAllSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/concat', ['rxjs/util/isScheduler', 'rxjs/observable/ArrayObservable', 'rxjs/operator/mergeAll'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var isScheduler_1 = $__require('rxjs/util/isScheduler');
     var ArrayObservable_1 = $__require('rxjs/observable/ArrayObservable');
     var mergeAll_1 = $__require('rxjs/operator/mergeAll');
+    /* tslint:disable:max-line-length */
     /**
      * Creates an output Observable which sequentially emits all values from every
      * given input Observable after the current Observable.
@@ -11578,12 +10996,21 @@ System.registerDynamic('rxjs/operator/concat', ['rxjs/util/isScheduler', 'rxjs/o
      * var result = timer.concat(sequence);
      * result.subscribe(x => console.log(x));
      *
+     * // results in:
+     * // 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3 -immediate-> 1 ... 10
+     *
      * @example <caption>Concatenate 3 Observables</caption>
      * var timer1 = Rx.Observable.interval(1000).take(10);
      * var timer2 = Rx.Observable.interval(2000).take(6);
      * var timer3 = Rx.Observable.interval(500).take(10);
      * var result = timer1.concat(timer2, timer3);
      * result.subscribe(x => console.log(x));
+     *
+     * // results in the following:
+     * // (Prints to console sequentially)
+     * // -1000ms-> 0 -1000ms-> 1 -1000ms-> ... 9
+     * // -2000ms-> 0 -2000ms-> 1 -2000ms-> ... 5
+     * // -500ms-> 0 -500ms-> 1 -500ms-> ... 9
      *
      * @see {@link concatAll}
      * @see {@link concatMap}
@@ -11603,7 +11030,7 @@ System.registerDynamic('rxjs/operator/concat', ['rxjs/util/isScheduler', 'rxjs/o
         for (var _i = 0; _i < arguments.length; _i++) {
             observables[_i - 0] = arguments[_i];
         }
-        return concatStatic.apply(void 0, [this].concat(observables));
+        return this.lift.call(concatStatic.apply(void 0, [this].concat(observables)));
     }
     exports.concat = concat;
     /* tslint:enable:max-line-length */
@@ -11626,12 +11053,21 @@ System.registerDynamic('rxjs/operator/concat', ['rxjs/util/isScheduler', 'rxjs/o
      * var result = Rx.Observable.concat(timer, sequence);
      * result.subscribe(x => console.log(x));
      *
+     * // results in:
+     * // 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3 -immediate-> 1 ... 10
+     *
      * @example <caption>Concatenate 3 Observables</caption>
      * var timer1 = Rx.Observable.interval(1000).take(10);
      * var timer2 = Rx.Observable.interval(2000).take(6);
      * var timer3 = Rx.Observable.interval(500).take(10);
      * var result = Rx.Observable.concat(timer1, timer2, timer3);
      * result.subscribe(x => console.log(x));
+     *
+     * // results in the following:
+     * // (Prints to console sequentially)
+     * // -1000ms-> 0 -1000ms-> 1 -1000ms-> ... 9
+     * // -2000ms-> 0 -2000ms-> 1 -2000ms-> ... 5
+     * // -500ms-> 0 -500ms-> 1 -500ms-> ... 9
      *
      * @see {@link concatAll}
      * @see {@link concatMap}
@@ -11658,24 +11094,25 @@ System.registerDynamic('rxjs/operator/concat', ['rxjs/util/isScheduler', 'rxjs/o
         if (isScheduler_1.isScheduler(args[observables.length - 1])) {
             scheduler = args.pop();
         }
+        if (scheduler === null && observables.length === 1) {
+            return observables[0];
+        }
         return new ArrayObservable_1.ArrayObservable(observables, scheduler).lift(new mergeAll_1.MergeAllOperator(1));
     }
     exports.concatStatic = concatStatic;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/startWith', ['rxjs/observable/ArrayObservable', 'rxjs/observable/ScalarObservable', 'rxjs/observable/EmptyObservable', 'rxjs/operator/concat', 'rxjs/util/isScheduler'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var ArrayObservable_1 = $__require('rxjs/observable/ArrayObservable');
     var ScalarObservable_1 = $__require('rxjs/observable/ScalarObservable');
     var EmptyObservable_1 = $__require('rxjs/observable/EmptyObservable');
     var concat_1 = $__require('rxjs/operator/concat');
     var isScheduler_1 = $__require('rxjs/util/isScheduler');
+    /* tslint:disable:max-line-length */
     /**
      * Returns an Observable that emits the items in a specified Iterable before it begins to emit items emitted by the
      * source Observable.
@@ -11710,27 +11147,21 @@ System.registerDynamic('rxjs/operator/startWith', ['rxjs/observable/ArrayObserva
     }
     exports.startWith = startWith;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/startWith', ['rxjs/Observable', 'rxjs/operator/startWith'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var startWith_1 = $__require('rxjs/operator/startWith');
   Observable_1.Observable.prototype.startWith = startWith_1.startWith;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/isNumeric", ["rxjs/util/isArray"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var isArray_1 = $__require("rxjs/util/isArray");
     function isNumeric(val) {
@@ -11743,14 +11174,11 @@ System.registerDynamic("rxjs/util/isNumeric", ["rxjs/util/isArray"], true, funct
     exports.isNumeric = isNumeric;
     ;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/SubscribeOnObservable', ['rxjs/Observable', 'rxjs/scheduler/asap', 'rxjs/util/isNumeric'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -11799,7 +11227,7 @@ System.registerDynamic('rxjs/observable/SubscribeOnObservable', ['rxjs/Observabl
         SubscribeOnObservable.dispatch = function (arg) {
             var source = arg.source,
                 subscriber = arg.subscriber;
-            return source.subscribe(subscriber);
+            return this.add(source.subscribe(subscriber));
         };
         SubscribeOnObservable.prototype._subscribe = function (subscriber) {
             var delay = this.delayTime;
@@ -11813,56 +11241,57 @@ System.registerDynamic('rxjs/observable/SubscribeOnObservable', ['rxjs/Observabl
     }(Observable_1.Observable);
     exports.SubscribeOnObservable = SubscribeOnObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/operator/subscribeOn", ["rxjs/observable/SubscribeOnObservable"], true, function ($__require, exports, module) {
-  "use strict";
+    "use strict";
 
-  var define,
-      global = this || self,
-      GLOBAL = global;
-  var SubscribeOnObservable_1 = $__require("rxjs/observable/SubscribeOnObservable");
-  /**
-   * Asynchronously subscribes Observers to this Observable on the specified Scheduler.
-   *
-   * <img src="./img/subscribeOn.png" width="100%">
-   *
-   * @param {Scheduler} the Scheduler to perform subscription actions on.
-   * @return {Observable<T>} the source Observable modified so that its subscriptions happen on the specified Scheduler
-   .
-   * @method subscribeOn
-   * @owner Observable
-   */
-  function subscribeOn(scheduler, delay) {
-    if (delay === void 0) {
-      delay = 0;
+    var global = this || self,
+        GLOBAL = global;
+    var SubscribeOnObservable_1 = $__require("rxjs/observable/SubscribeOnObservable");
+    /**
+     * Asynchronously subscribes Observers to this Observable on the specified Scheduler.
+     *
+     * <img src="./img/subscribeOn.png" width="100%">
+     *
+     * @param {Scheduler} the Scheduler to perform subscription actions on.
+     * @return {Observable<T>} the source Observable modified so that its subscriptions happen on the specified Scheduler
+     .
+     * @method subscribeOn
+     * @owner Observable
+     */
+    function subscribeOn(scheduler, delay) {
+        if (delay === void 0) {
+            delay = 0;
+        }
+        return this.lift(new SubscribeOnOperator(scheduler, delay));
     }
-    return new SubscribeOnObservable_1.SubscribeOnObservable(this, delay, scheduler);
-  }
-  exports.subscribeOn = subscribeOn;
-  
-
-  return module.exports;
+    exports.subscribeOn = subscribeOn;
+    var SubscribeOnOperator = function () {
+        function SubscribeOnOperator(scheduler, delay) {
+            this.scheduler = scheduler;
+            this.delay = delay;
+        }
+        SubscribeOnOperator.prototype.call = function (subscriber, source) {
+            return new SubscribeOnObservable_1.SubscribeOnObservable(source, this.delay, this.scheduler).subscribe(subscriber);
+        };
+        return SubscribeOnOperator;
+    }();
+    
 });
 System.registerDynamic('rxjs/add/operator/subscribeOn', ['rxjs/Observable', 'rxjs/operator/subscribeOn'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var subscribeOn_1 = $__require('rxjs/operator/subscribeOn');
   Observable_1.Observable.prototype.subscribeOn = subscribeOn_1.subscribeOn;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/switch', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -11922,7 +11351,7 @@ System.registerDynamic('rxjs/operator/switch', ['rxjs/OuterSubscriber', 'rxjs/ut
     var SwitchOperator = function () {
         function SwitchOperator() {}
         SwitchOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SwitchSubscriber(subscriber));
+            return source.subscribe(new SwitchSubscriber(subscriber));
         };
         return SwitchOperator;
     }();
@@ -11972,28 +11401,22 @@ System.registerDynamic('rxjs/operator/switch', ['rxjs/OuterSubscriber', 'rxjs/ut
         return SwitchSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/switch', ['rxjs/Observable', 'rxjs/operator/switch'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var switch_1 = $__require('rxjs/operator/switch');
   Observable_1.Observable.prototype.switch = switch_1._switch;
   Observable_1.Observable.prototype._switch = switch_1._switch;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/switchMap', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12004,6 +11427,7 @@ System.registerDynamic('rxjs/operator/switchMap', ['rxjs/OuterSubscriber', 'rxjs
     };
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * Projects each source value to an Observable which is merged in the output
      * Observable, emitting values only from the most recently projected Observable.
@@ -12061,7 +11485,7 @@ System.registerDynamic('rxjs/operator/switchMap', ['rxjs/OuterSubscriber', 'rxjs
             this.resultSelector = resultSelector;
         }
         SwitchMapOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SwitchMapSubscriber(subscriber, this.project, this.resultSelector));
+            return source.subscribe(new SwitchMapSubscriber(subscriber, this.project, this.resultSelector));
         };
         return SwitchMapOperator;
     }();
@@ -12132,27 +11556,21 @@ System.registerDynamic('rxjs/operator/switchMap', ['rxjs/OuterSubscriber', 'rxjs
         return SwitchMapSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/switchMap', ['rxjs/Observable', 'rxjs/operator/switchMap'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var switchMap_1 = $__require('rxjs/operator/switchMap');
   Observable_1.Observable.prototype.switchMap = switchMap_1.switchMap;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/switchMapTo', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12163,6 +11581,7 @@ System.registerDynamic('rxjs/operator/switchMapTo', ['rxjs/OuterSubscriber', 'rx
     };
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * Projects each source value to the same Observable which is flattened multiple
      * times with {@link switch} in the output Observable.
@@ -12217,7 +11636,7 @@ System.registerDynamic('rxjs/operator/switchMapTo', ['rxjs/OuterSubscriber', 'rx
             this.resultSelector = resultSelector;
         }
         SwitchMapToOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new SwitchMapToSubscriber(subscriber, this.observable, this.resultSelector));
+            return source.subscribe(new SwitchMapToSubscriber(subscriber, this.observable, this.resultSelector));
         };
         return SwitchMapToOperator;
     }();
@@ -12283,27 +11702,21 @@ System.registerDynamic('rxjs/operator/switchMapTo', ['rxjs/OuterSubscriber', 'rx
         return SwitchMapToSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/switchMapTo', ['rxjs/Observable', 'rxjs/operator/switchMapTo'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var switchMapTo_1 = $__require('rxjs/operator/switchMapTo');
   Observable_1.Observable.prototype.switchMapTo = switchMapTo_1.switchMapTo;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/take', ['rxjs/Subscriber', 'rxjs/util/ArgumentOutOfRangeError', 'rxjs/observable/EmptyObservable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12364,7 +11777,7 @@ System.registerDynamic('rxjs/operator/take', ['rxjs/Subscriber', 'rxjs/util/Argu
             }
         }
         TakeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new TakeSubscriber(subscriber, this.total));
+            return source.subscribe(new TakeSubscriber(subscriber, this.total));
         };
         return TakeOperator;
     }();
@@ -12382,9 +11795,10 @@ System.registerDynamic('rxjs/operator/take', ['rxjs/Subscriber', 'rxjs/util/Argu
         }
         TakeSubscriber.prototype._next = function (value) {
             var total = this.total;
-            if (++this.count <= total) {
+            var count = ++this.count;
+            if (count <= total) {
                 this.destination.next(value);
-                if (this.count === total) {
+                if (count === total) {
                     this.destination.complete();
                     this.unsubscribe();
                 }
@@ -12393,27 +11807,21 @@ System.registerDynamic('rxjs/operator/take', ['rxjs/Subscriber', 'rxjs/util/Argu
         return TakeSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/take', ['rxjs/Observable', 'rxjs/operator/take'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var take_1 = $__require('rxjs/operator/take');
   Observable_1.Observable.prototype.take = take_1.take;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/takeLast', ['rxjs/Subscriber', 'rxjs/util/ArgumentOutOfRangeError', 'rxjs/observable/EmptyObservable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12477,7 +11885,7 @@ System.registerDynamic('rxjs/operator/takeLast', ['rxjs/Subscriber', 'rxjs/util/
             }
         }
         TakeLastOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new TakeLastSubscriber(subscriber, this.total));
+            return source.subscribe(new TakeLastSubscriber(subscriber, this.total));
         };
         return TakeLastOperator;
     }();
@@ -12521,27 +11929,21 @@ System.registerDynamic('rxjs/operator/takeLast', ['rxjs/Subscriber', 'rxjs/util/
         return TakeLastSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/takeLast', ['rxjs/Observable', 'rxjs/operator/takeLast'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var takeLast_1 = $__require('rxjs/operator/takeLast');
   Observable_1.Observable.prototype.takeLast = takeLast_1.takeLast;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/takeUntil', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12594,7 +11996,7 @@ System.registerDynamic('rxjs/operator/takeUntil', ['rxjs/OuterSubscriber', 'rxjs
             this.notifier = notifier;
         }
         TakeUntilOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new TakeUntilSubscriber(subscriber, this.notifier));
+            return source.subscribe(new TakeUntilSubscriber(subscriber, this.notifier));
         };
         return TakeUntilOperator;
     }();
@@ -12619,27 +12021,21 @@ System.registerDynamic('rxjs/operator/takeUntil', ['rxjs/OuterSubscriber', 'rxjs
         return TakeUntilSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/takeUntil', ['rxjs/Observable', 'rxjs/operator/takeUntil'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var takeUntil_1 = $__require('rxjs/operator/takeUntil');
   Observable_1.Observable.prototype.takeUntil = takeUntil_1.takeUntil;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/takeWhile", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12694,7 +12090,7 @@ System.registerDynamic("rxjs/operator/takeWhile", ["rxjs/Subscriber"], true, fun
             this.predicate = predicate;
         }
         TakeWhileOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new TakeWhileSubscriber(subscriber, this.predicate));
+            return source.subscribe(new TakeWhileSubscriber(subscriber, this.predicate));
         };
         return TakeWhileOperator;
     }();
@@ -12732,27 +12128,21 @@ System.registerDynamic("rxjs/operator/takeWhile", ["rxjs/Subscriber"], true, fun
         return TakeWhileSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/takeWhile', ['rxjs/Observable', 'rxjs/operator/takeWhile'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var takeWhile_1 = $__require('rxjs/operator/takeWhile');
   Observable_1.Observable.prototype.takeWhile = takeWhile_1.takeWhile;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/throttle', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12810,7 +12200,7 @@ System.registerDynamic('rxjs/operator/throttle', ['rxjs/OuterSubscriber', 'rxjs/
             this.durationSelector = durationSelector;
         }
         ThrottleOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ThrottleSubscriber(subscriber, this.durationSelector));
+            return source.subscribe(new ThrottleSubscriber(subscriber, this.durationSelector));
         };
         return ThrottleOperator;
     }();
@@ -12862,27 +12252,21 @@ System.registerDynamic('rxjs/operator/throttle', ['rxjs/OuterSubscriber', 'rxjs/
         return ThrottleSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/throttle', ['rxjs/Observable', 'rxjs/operator/throttle'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var throttle_1 = $__require('rxjs/operator/throttle');
   Observable_1.Observable.prototype.throttle = throttle_1.throttle;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/throttleTime', ['rxjs/Subscriber', 'rxjs/scheduler/async'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -12945,7 +12329,7 @@ System.registerDynamic('rxjs/operator/throttleTime', ['rxjs/Subscriber', 'rxjs/s
             this.scheduler = scheduler;
         }
         ThrottleTimeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ThrottleTimeSubscriber(subscriber, this.duration, this.scheduler));
+            return source.subscribe(new ThrottleTimeSubscriber(subscriber, this.duration, this.scheduler));
         };
         return ThrottleTimeOperator;
     }();
@@ -12982,40 +12366,31 @@ System.registerDynamic('rxjs/operator/throttleTime', ['rxjs/Subscriber', 'rxjs/s
         subscriber.clearThrottle();
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/throttleTime', ['rxjs/Observable', 'rxjs/operator/throttleTime'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var throttleTime_1 = $__require('rxjs/operator/throttleTime');
   Observable_1.Observable.prototype.throttleTime = throttleTime_1.throttleTime;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/timeInterval', ['rxjs/Observable', 'rxjs/operator/timeInterval'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var timeInterval_1 = $__require('rxjs/operator/timeInterval');
   Observable_1.Observable.prototype.timeInterval = timeInterval_1.timeInterval;
   
-
-  return module.exports;
 });
-System.registerDynamic('rxjs/operator/timeout', ['rxjs/scheduler/async', 'rxjs/util/isDate', 'rxjs/Subscriber'], true, function ($__require, exports, module) {
+System.registerDynamic('rxjs/operator/timeout', ['rxjs/scheduler/async', 'rxjs/util/isDate', 'rxjs/Subscriber', 'rxjs/util/TimeoutError'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -13027,35 +12402,32 @@ System.registerDynamic('rxjs/operator/timeout', ['rxjs/scheduler/async', 'rxjs/u
     var async_1 = $__require('rxjs/scheduler/async');
     var isDate_1 = $__require('rxjs/util/isDate');
     var Subscriber_1 = $__require('rxjs/Subscriber');
+    var TimeoutError_1 = $__require('rxjs/util/TimeoutError');
     /**
-     * @param due
-     * @param errorToSend
-     * @param scheduler
+     * @param {number} due
+     * @param {Scheduler} [scheduler]
      * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
      * @method timeout
      * @owner Observable
      */
-    function timeout(due, errorToSend, scheduler) {
-        if (errorToSend === void 0) {
-            errorToSend = null;
-        }
+    function timeout(due, scheduler) {
         if (scheduler === void 0) {
             scheduler = async_1.async;
         }
         var absoluteTimeout = isDate_1.isDate(due);
         var waitFor = absoluteTimeout ? +due - scheduler.now() : Math.abs(due);
-        return this.lift(new TimeoutOperator(waitFor, absoluteTimeout, errorToSend, scheduler));
+        return this.lift(new TimeoutOperator(waitFor, absoluteTimeout, scheduler, new TimeoutError_1.TimeoutError()));
     }
     exports.timeout = timeout;
     var TimeoutOperator = function () {
-        function TimeoutOperator(waitFor, absoluteTimeout, errorToSend, scheduler) {
+        function TimeoutOperator(waitFor, absoluteTimeout, scheduler, errorInstance) {
             this.waitFor = waitFor;
             this.absoluteTimeout = absoluteTimeout;
-            this.errorToSend = errorToSend;
             this.scheduler = scheduler;
+            this.errorInstance = errorInstance;
         }
         TimeoutOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new TimeoutSubscriber(subscriber, this.absoluteTimeout, this.waitFor, this.errorToSend, this.scheduler));
+            return source.subscribe(new TimeoutSubscriber(subscriber, this.absoluteTimeout, this.waitFor, this.scheduler, this.errorInstance));
         };
         return TimeoutOperator;
     }();
@@ -13066,12 +12438,12 @@ System.registerDynamic('rxjs/operator/timeout', ['rxjs/scheduler/async', 'rxjs/u
      */
     var TimeoutSubscriber = function (_super) {
         __extends(TimeoutSubscriber, _super);
-        function TimeoutSubscriber(destination, absoluteTimeout, waitFor, errorToSend, scheduler) {
+        function TimeoutSubscriber(destination, absoluteTimeout, waitFor, scheduler, errorInstance) {
             _super.call(this, destination);
             this.absoluteTimeout = absoluteTimeout;
             this.waitFor = waitFor;
-            this.errorToSend = errorToSend;
             this.scheduler = scheduler;
+            this.errorInstance = errorInstance;
             this.index = 0;
             this._previousIndex = 0;
             this._hasCompleted = false;
@@ -13119,46 +12491,37 @@ System.registerDynamic('rxjs/operator/timeout', ['rxjs/scheduler/async', 'rxjs/u
             this._hasCompleted = true;
         };
         TimeoutSubscriber.prototype.notifyTimeout = function () {
-            this.error(this.errorToSend || new Error('timeout'));
+            this.error(this.errorInstance);
         };
         return TimeoutSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/timeout', ['rxjs/Observable', 'rxjs/operator/timeout'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var timeout_1 = $__require('rxjs/operator/timeout');
   Observable_1.Observable.prototype.timeout = timeout_1.timeout;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/isDate", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     function isDate(value) {
         return value instanceof Date && !isNaN(+value);
     }
     exports.isDate = isDate;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/timeoutWith', ['rxjs/scheduler/async', 'rxjs/util/isDate', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -13171,6 +12534,7 @@ System.registerDynamic('rxjs/operator/timeoutWith', ['rxjs/scheduler/async', 'rx
     var isDate_1 = $__require('rxjs/util/isDate');
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * @param due
      * @param withObservable
@@ -13196,7 +12560,7 @@ System.registerDynamic('rxjs/operator/timeoutWith', ['rxjs/scheduler/async', 'rx
             this.scheduler = scheduler;
         }
         TimeoutWithOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new TimeoutWithSubscriber(subscriber, this.absoluteTimeout, this.waitFor, this.withObservable, this.scheduler));
+            return source.subscribe(new TimeoutWithSubscriber(subscriber, this.absoluteTimeout, this.waitFor, this.withObservable, this.scheduler));
         };
         return TimeoutWithOperator;
     }();
@@ -13273,40 +12637,31 @@ System.registerDynamic('rxjs/operator/timeoutWith', ['rxjs/scheduler/async', 'rx
         return TimeoutWithSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/timeoutWith', ['rxjs/Observable', 'rxjs/operator/timeoutWith'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var timeoutWith_1 = $__require('rxjs/operator/timeoutWith');
   Observable_1.Observable.prototype.timeoutWith = timeoutWith_1.timeoutWith;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/timestamp', ['rxjs/Observable', 'rxjs/operator/timestamp'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var timestamp_1 = $__require('rxjs/operator/timestamp');
   Observable_1.Observable.prototype.timestamp = timestamp_1.timestamp;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/operator/toArray", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -13328,7 +12683,7 @@ System.registerDynamic("rxjs/operator/toArray", ["rxjs/Subscriber"], true, funct
     var ToArrayOperator = function () {
         function ToArrayOperator() {}
         ToArrayOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ToArraySubscriber(subscriber));
+            return source.subscribe(new ToArraySubscriber(subscriber));
         };
         return ToArrayOperator;
     }();
@@ -13353,29 +12708,24 @@ System.registerDynamic("rxjs/operator/toArray", ["rxjs/Subscriber"], true, funct
         return ToArraySubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/toArray', ['rxjs/Observable', 'rxjs/operator/toArray'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var toArray_1 = $__require('rxjs/operator/toArray');
   Observable_1.Observable.prototype.toArray = toArray_1.toArray;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/toPromise', ['rxjs/util/root'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require('rxjs/util/root');
+    /* tslint:disable:max-line-length */
     /**
      * @param PromiseCtor
      * @return {Promise<T>}
@@ -13407,27 +12757,21 @@ System.registerDynamic('rxjs/operator/toPromise', ['rxjs/util/root'], true, func
     }
     exports.toPromise = toPromise;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/toPromise', ['rxjs/Observable', 'rxjs/operator/toPromise'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var toPromise_1 = $__require('rxjs/operator/toPromise');
   Observable_1.Observable.prototype.toPromise = toPromise_1.toPromise;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/window', ['rxjs/Subject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -13485,7 +12829,7 @@ System.registerDynamic('rxjs/operator/window', ['rxjs/Subject', 'rxjs/OuterSubsc
         }
         WindowOperator.prototype.call = function (subscriber, source) {
             var windowSubscriber = new WindowSubscriber(subscriber);
-            var sourceSubscription = source._subscribe(windowSubscriber);
+            var sourceSubscription = source.subscribe(windowSubscriber);
             if (!sourceSubscription.closed) {
                 windowSubscriber.add(subscribeToResult_1.subscribeToResult(windowSubscriber, this.windowBoundaries));
             }
@@ -13540,27 +12884,21 @@ System.registerDynamic('rxjs/operator/window', ['rxjs/Subject', 'rxjs/OuterSubsc
         return WindowSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/window', ['rxjs/Observable', 'rxjs/operator/window'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var window_1 = $__require('rxjs/operator/window');
   Observable_1.Observable.prototype.window = window_1.window;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/windowCount', ['rxjs/Subscriber', 'rxjs/Subject'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -13632,7 +12970,7 @@ System.registerDynamic('rxjs/operator/windowCount', ['rxjs/Subscriber', 'rxjs/Su
             this.startWindowEvery = startWindowEvery;
         }
         WindowCountOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new WindowCountSubscriber(subscriber, this.windowSize, this.startWindowEvery));
+            return source.subscribe(new WindowCountSubscriber(subscriber, this.windowSize, this.startWindowEvery));
         };
         return WindowCountOperator;
     }();
@@ -13696,27 +13034,21 @@ System.registerDynamic('rxjs/operator/windowCount', ['rxjs/Subscriber', 'rxjs/Su
         return WindowCountSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/windowCount', ['rxjs/Observable', 'rxjs/operator/windowCount'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var windowCount_1 = $__require('rxjs/operator/windowCount');
   Observable_1.Observable.prototype.windowCount = windowCount_1.windowCount;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/windowTime', ['rxjs/Subject', 'rxjs/scheduler/async', 'rxjs/Subscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -13794,7 +13126,7 @@ System.registerDynamic('rxjs/operator/windowTime', ['rxjs/Subject', 'rxjs/schedu
             this.scheduler = scheduler;
         }
         WindowTimeOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new WindowTimeSubscriber(subscriber, this.windowTimeSpan, this.windowCreationInterval, this.scheduler));
+            return source.subscribe(new WindowTimeSubscriber(subscriber, this.windowTimeSpan, this.windowCreationInterval, this.scheduler));
         };
         return WindowTimeOperator;
     }();
@@ -13898,27 +13230,21 @@ System.registerDynamic('rxjs/operator/windowTime', ['rxjs/Subject', 'rxjs/schedu
         subscriber.closeWindow(window);
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/windowTime', ['rxjs/Observable', 'rxjs/operator/windowTime'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var windowTime_1 = $__require('rxjs/operator/windowTime');
   Observable_1.Observable.prototype.windowTime = windowTime_1.windowTime;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/windowToggle', ['rxjs/Subject', 'rxjs/Subscription', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -13984,7 +13310,7 @@ System.registerDynamic('rxjs/operator/windowToggle', ['rxjs/Subject', 'rxjs/Subs
             this.closingSelector = closingSelector;
         }
         WindowToggleOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new WindowToggleSubscriber(subscriber, this.openings, this.closingSelector));
+            return source.subscribe(new WindowToggleSubscriber(subscriber, this.openings, this.closingSelector));
         };
         return WindowToggleOperator;
     }();
@@ -14099,27 +13425,21 @@ System.registerDynamic('rxjs/operator/windowToggle', ['rxjs/Subject', 'rxjs/Subs
         return WindowToggleSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/windowToggle', ['rxjs/Observable', 'rxjs/operator/windowToggle'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var windowToggle_1 = $__require('rxjs/operator/windowToggle');
   Observable_1.Observable.prototype.windowToggle = windowToggle_1.windowToggle;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/windowWhen', ['rxjs/Subject', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14180,7 +13500,7 @@ System.registerDynamic('rxjs/operator/windowWhen', ['rxjs/Subject', 'rxjs/util/t
             this.closingSelector = closingSelector;
         }
         WindowOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new WindowSubscriber(subscriber, this.closingSelector));
+            return source.subscribe(new WindowSubscriber(subscriber, this.closingSelector));
         };
         return WindowOperator;
     }();
@@ -14250,27 +13570,21 @@ System.registerDynamic('rxjs/operator/windowWhen', ['rxjs/Subject', 'rxjs/util/t
         return WindowSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/windowWhen', ['rxjs/Observable', 'rxjs/operator/windowWhen'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var windowWhen_1 = $__require('rxjs/operator/windowWhen');
   Observable_1.Observable.prototype.windowWhen = windowWhen_1.windowWhen;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/operator/withLatestFrom', ['rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14281,6 +13595,7 @@ System.registerDynamic('rxjs/operator/withLatestFrom', ['rxjs/OuterSubscriber', 
     };
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
+    /* tslint:disable:max-line-length */
     /**
      * Combines the source Observable with other Observables to create an Observable
      * whose values are calculated from the latest values of each, only when the
@@ -14332,14 +13647,13 @@ System.registerDynamic('rxjs/operator/withLatestFrom', ['rxjs/OuterSubscriber', 
         return this.lift(new WithLatestFromOperator(observables, project));
     }
     exports.withLatestFrom = withLatestFrom;
-    /* tslint:enable:max-line-length */
     var WithLatestFromOperator = function () {
         function WithLatestFromOperator(observables, project) {
             this.observables = observables;
             this.project = project;
         }
         WithLatestFromOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new WithLatestFromSubscriber(subscriber, this.observables, this.project));
+            return source.subscribe(new WithLatestFromSubscriber(subscriber, this.observables, this.project));
         };
         return WithLatestFromOperator;
     }();
@@ -14401,40 +13715,31 @@ System.registerDynamic('rxjs/operator/withLatestFrom', ['rxjs/OuterSubscriber', 
         return WithLatestFromSubscriber;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/withLatestFrom', ['rxjs/Observable', 'rxjs/operator/withLatestFrom'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var withLatestFrom_1 = $__require('rxjs/operator/withLatestFrom');
   Observable_1.Observable.prototype.withLatestFrom = withLatestFrom_1.withLatestFrom;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/zip', ['rxjs/Observable', 'rxjs/operator/zip'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var zip_1 = $__require('rxjs/operator/zip');
   Observable_1.Observable.prototype.zip = zip_1.zipProto;
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/observable/ScalarObservable", ["rxjs/Observable"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14496,14 +13801,11 @@ System.registerDynamic("rxjs/observable/ScalarObservable", ["rxjs/Observable"], 
     }(Observable_1.Observable);
     exports.ScalarObservable = ScalarObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/observable/EmptyObservable", ["rxjs/Observable"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14548,6 +13850,12 @@ System.registerDynamic("rxjs/observable/EmptyObservable", ["rxjs/Observable"], t
          * );
          * result.subscribe(x => console.log(x));
          *
+         * // Results in the following to the console:
+         * // x is equal to the count on the interval eg(0,1,2,3,...)
+         * // x will occur every 1000ms
+         * // if x % 2 is equal to 1 print abc
+         * // if x % 2 is not equal to 1 nothing will be output
+         *
          * @see {@link create}
          * @see {@link never}
          * @see {@link of}
@@ -14580,28 +13888,22 @@ System.registerDynamic("rxjs/observable/EmptyObservable", ["rxjs/Observable"], t
     }(Observable_1.Observable);
     exports.EmptyObservable = EmptyObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/util/isScheduler", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     function isScheduler(value) {
         return value && typeof value.schedule === 'function';
     }
     exports.isScheduler = isScheduler;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/ArrayObservable', ['rxjs/Observable', 'rxjs/observable/ScalarObservable', 'rxjs/observable/EmptyObservable', 'rxjs/util/isScheduler'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14725,14 +14027,11 @@ System.registerDynamic('rxjs/observable/ArrayObservable', ['rxjs/Observable', 'r
     }(Observable_1.Observable);
     exports.ArrayObservable = ArrayObservable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/OuterSubscriber", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14765,28 +14064,22 @@ System.registerDynamic("rxjs/OuterSubscriber", ["rxjs/Subscriber"], true, functi
     }(Subscriber_1.Subscriber);
     exports.OuterSubscriber = OuterSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/util/isPromise', [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     function isPromise(value) {
         return value && typeof value.subscribe !== 'function' && typeof value.then === 'function';
     }
     exports.isPromise = isPromise;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/InnerSubscriber", ["rxjs/Subscriber"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14825,18 +14118,16 @@ System.registerDynamic("rxjs/InnerSubscriber", ["rxjs/Subscriber"], true, functi
     }(Subscriber_1.Subscriber);
     exports.InnerSubscriber = InnerSubscriber;
     
-
-    return module.exports;
 });
-System.registerDynamic('rxjs/util/subscribeToResult', ['rxjs/util/root', 'rxjs/util/isArray', 'rxjs/util/isPromise', 'rxjs/Observable', 'rxjs/symbol/iterator', 'rxjs/InnerSubscriber', 'rxjs/symbol/observable'], true, function ($__require, exports, module) {
+System.registerDynamic('rxjs/util/subscribeToResult', ['rxjs/util/root', 'rxjs/util/isArray', 'rxjs/util/isPromise', 'rxjs/util/isObject', 'rxjs/Observable', 'rxjs/symbol/iterator', 'rxjs/InnerSubscriber', 'rxjs/symbol/observable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require('rxjs/util/root');
     var isArray_1 = $__require('rxjs/util/isArray');
     var isPromise_1 = $__require('rxjs/util/isPromise');
+    var isObject_1 = $__require('rxjs/util/isObject');
     var Observable_1 = $__require('rxjs/Observable');
     var iterator_1 = $__require('rxjs/symbol/iterator');
     var InnerSubscriber_1 = $__require('rxjs/InnerSubscriber');
@@ -14854,8 +14145,7 @@ System.registerDynamic('rxjs/util/subscribeToResult', ['rxjs/util/root', 'rxjs/u
             } else {
                 return result.subscribe(destination);
             }
-        }
-        if (isArray_1.isArray(result)) {
+        } else if (isArray_1.isArray(result)) {
             for (var i = 0, len = result.length; i < len && !destination.closed; i++) {
                 destination.next(result[i]);
             }
@@ -14877,7 +14167,7 @@ System.registerDynamic('rxjs/util/subscribeToResult', ['rxjs/util/root', 'rxjs/u
                 });
             });
             return destination;
-        } else if (typeof result[iterator_1.$$iterator] === 'function') {
+        } else if (result && typeof result[iterator_1.$$iterator] === 'function') {
             var iterator = result[iterator_1.$$iterator]();
             do {
                 var item = iterator.next();
@@ -14890,28 +14180,27 @@ System.registerDynamic('rxjs/util/subscribeToResult', ['rxjs/util/root', 'rxjs/u
                     break;
                 }
             } while (true);
-        } else if (typeof result[observable_1.$$observable] === 'function') {
+        } else if (result && typeof result[observable_1.$$observable] === 'function') {
             var obs = result[observable_1.$$observable]();
             if (typeof obs.subscribe !== 'function') {
-                destination.error(new Error('invalid observable'));
+                destination.error(new TypeError('Provided object does not correctly implement Symbol.observable'));
             } else {
                 return obs.subscribe(new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex));
             }
         } else {
-            destination.error(new TypeError('unknown type returned'));
+            var value = isObject_1.isObject(result) ? 'an invalid object' : "'" + result + "'";
+            var msg = "You provided " + value + " where a stream was expected." + ' You can provide an Observable, Promise, Array, or Iterable.';
+            destination.error(new TypeError(msg));
         }
         return null;
     }
     exports.subscribeToResult = subscribeToResult;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 'rxjs/util/isArray', 'rxjs/Subscriber', 'rxjs/OuterSubscriber', 'rxjs/util/subscribeToResult', 'rxjs/symbol/iterator'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -14926,6 +14215,7 @@ System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 
     var OuterSubscriber_1 = $__require('rxjs/OuterSubscriber');
     var subscribeToResult_1 = $__require('rxjs/util/subscribeToResult');
     var iterator_1 = $__require('rxjs/symbol/iterator');
+    /* tslint:disable:max-line-length */
     /**
      * @param observables
      * @return {Observable<R>}
@@ -14937,8 +14227,7 @@ System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 
         for (var _i = 0; _i < arguments.length; _i++) {
             observables[_i - 0] = arguments[_i];
         }
-        observables.unshift(this);
-        return zipStatic.apply(this, observables);
+        return this.lift.call(zipStatic.apply(void 0, [this].concat(observables)));
     }
     exports.zipProto = zipProto;
     /* tslint:enable:max-line-length */
@@ -14966,7 +14255,7 @@ System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 
             this.project = project;
         }
         ZipOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ZipSubscriber(subscriber, this.project));
+            return source.subscribe(new ZipSubscriber(subscriber, this.project));
         };
         return ZipOperator;
     }();
@@ -14983,7 +14272,6 @@ System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 
                 values = Object.create(null);
             }
             _super.call(this, destination);
-            this.index = 0;
             this.iterators = [];
             this.active = 0;
             this.project = typeof project === 'function' ? project : null;
@@ -14991,13 +14279,12 @@ System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 
         }
         ZipSubscriber.prototype._next = function (value) {
             var iterators = this.iterators;
-            var index = this.index++;
             if (isArray_1.isArray(value)) {
                 iterators.push(new StaticArrayIterator(value));
             } else if (typeof value[iterator_1.$$iterator] === 'function') {
                 iterators.push(new StaticIterator(value[iterator_1.$$iterator]()));
             } else {
-                iterators.push(new ZipBufferIterator(this.destination, this, value, index));
+                iterators.push(new ZipBufferIterator(this.destination, this, value));
             }
         };
         ZipSubscriber.prototype._complete = function () {
@@ -15117,11 +14404,10 @@ System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 
      */
     var ZipBufferIterator = function (_super) {
         __extends(ZipBufferIterator, _super);
-        function ZipBufferIterator(destination, parent, observable, index) {
+        function ZipBufferIterator(destination, parent, observable) {
             _super.call(this, destination);
             this.parent = parent;
             this.observable = observable;
-            this.index = index;
             this.stillUnsubscribed = true;
             this.buffer = [];
             this.isComplete = false;
@@ -15163,14 +14449,11 @@ System.registerDynamic('rxjs/operator/zip', ['rxjs/observable/ArrayObservable', 
         return ZipBufferIterator;
     }(OuterSubscriber_1.OuterSubscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/operator/zipAll", ["rxjs/operator/zip"], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var zip_1 = $__require("rxjs/operator/zip");
   /**
@@ -15184,27 +14467,21 @@ System.registerDynamic("rxjs/operator/zipAll", ["rxjs/operator/zip"], true, func
   }
   exports.zipAll = zipAll;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/add/operator/zipAll', ['rxjs/Observable', 'rxjs/operator/zipAll'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Observable_1 = $__require('rxjs/Observable');
   var zipAll_1 = $__require('rxjs/operator/zipAll');
   Observable_1.Observable.prototype.zipAll = zipAll_1.zipAll;
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/AsyncSubject', ['rxjs/Subject', 'rxjs/Subscription'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15254,14 +14531,11 @@ System.registerDynamic('rxjs/AsyncSubject', ['rxjs/Subject', 'rxjs/Subscription'
     }(Subject_1.Subject);
     exports.AsyncSubject = AsyncSubject;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/observeOn', ['rxjs/Subscriber', 'rxjs/Notification'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15297,7 +14571,7 @@ System.registerDynamic('rxjs/operator/observeOn', ['rxjs/Subscriber', 'rxjs/Noti
             this.delay = delay;
         }
         ObserveOnOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new ObserveOnSubscriber(subscriber, this.scheduler, this.delay));
+            return source.subscribe(new ObserveOnSubscriber(subscriber, this.scheduler, this.delay));
         };
         return ObserveOnOperator;
     }();
@@ -15346,14 +14620,11 @@ System.registerDynamic('rxjs/operator/observeOn', ['rxjs/Subscriber', 'rxjs/Noti
     }();
     exports.ObserveOnMessage = ObserveOnMessage;
     
-
-    return module.exports;
 });
-System.registerDynamic('rxjs/ReplaySubject', ['rxjs/Subject', 'rxjs/scheduler/queue', 'rxjs/operator/observeOn'], true, function ($__require, exports, module) {
+System.registerDynamic('rxjs/ReplaySubject', ['rxjs/Subject', 'rxjs/scheduler/queue', 'rxjs/Subscription', 'rxjs/operator/observeOn', 'rxjs/util/ObjectUnsubscribedError', 'rxjs/SubjectSubscription'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15364,7 +14635,10 @@ System.registerDynamic('rxjs/ReplaySubject', ['rxjs/Subject', 'rxjs/scheduler/qu
     };
     var Subject_1 = $__require('rxjs/Subject');
     var queue_1 = $__require('rxjs/scheduler/queue');
+    var Subscription_1 = $__require('rxjs/Subscription');
     var observeOn_1 = $__require('rxjs/operator/observeOn');
+    var ObjectUnsubscribedError_1 = $__require('rxjs/util/ObjectUnsubscribedError');
+    var SubjectSubscription_1 = $__require('rxjs/SubjectSubscription');
     /**
      * @class ReplaySubject<T>
      */
@@ -15392,6 +14666,17 @@ System.registerDynamic('rxjs/ReplaySubject', ['rxjs/Subject', 'rxjs/scheduler/qu
         ReplaySubject.prototype._subscribe = function (subscriber) {
             var _events = this._trimBufferThenGetEvents();
             var scheduler = this.scheduler;
+            var subscription;
+            if (this.closed) {
+                throw new ObjectUnsubscribedError_1.ObjectUnsubscribedError();
+            } else if (this.hasError) {
+                subscription = Subscription_1.Subscription.EMPTY;
+            } else if (this.isStopped) {
+                subscription = Subscription_1.Subscription.EMPTY;
+            } else {
+                this.observers.push(subscriber);
+                subscription = new SubjectSubscription_1.SubjectSubscription(this, subscriber);
+            }
             if (scheduler) {
                 subscriber.add(subscriber = new observeOn_1.ObserveOnSubscriber(subscriber, scheduler));
             }
@@ -15399,7 +14684,12 @@ System.registerDynamic('rxjs/ReplaySubject', ['rxjs/Subject', 'rxjs/scheduler/qu
             for (var i = 0; i < len && !subscriber.closed; i++) {
                 subscriber.next(_events[i].value);
             }
-            return _super.prototype._subscribe.call(this, subscriber);
+            if (this.hasError) {
+                subscriber.error(this.thrownError);
+            } else if (this.isStopped) {
+                subscriber.complete();
+            }
+            return subscription;
         };
         ReplaySubject.prototype._getNow = function () {
             return (this.scheduler || queue_1.queue).now();
@@ -15439,14 +14729,11 @@ System.registerDynamic('rxjs/ReplaySubject', ['rxjs/Subject', 'rxjs/scheduler/qu
         return ReplayEvent;
     }();
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/BehaviorSubject', ['rxjs/Subject', 'rxjs/util/ObjectUnsubscribedError'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15496,53 +14783,11 @@ System.registerDynamic('rxjs/BehaviorSubject', ['rxjs/Subject', 'rxjs/util/Objec
     }(Subject_1.Subject);
     exports.BehaviorSubject = BehaviorSubject;
     
-
-    return module.exports;
-});
-System.registerDynamic('rxjs/observable/MulticastObservable', ['rxjs/Observable', 'rxjs/observable/ConnectableObservable'], true, function ($__require, exports, module) {
-    "use strict";
-
-    var define,
-        global = this || self,
-        GLOBAL = global;
-    var __extends = this && this.__extends || function (d, b) {
-        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-        function __() {
-            this.constructor = d;
-        }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-    var Observable_1 = $__require('rxjs/Observable');
-    var ConnectableObservable_1 = $__require('rxjs/observable/ConnectableObservable');
-    var MulticastObservable = function (_super) {
-        __extends(MulticastObservable, _super);
-        function MulticastObservable(source, subjectFactory, selector) {
-            _super.call(this);
-            this.source = source;
-            this.subjectFactory = subjectFactory;
-            this.selector = selector;
-        }
-        MulticastObservable.prototype._subscribe = function (subscriber) {
-            var _a = this,
-                selector = _a.selector,
-                source = _a.source;
-            var connectable = new ConnectableObservable_1.ConnectableObservable(source, this.subjectFactory);
-            var subscription = selector(connectable).subscribe(subscriber);
-            subscription.add(connectable.connect());
-            return subscription;
-        };
-        return MulticastObservable;
-    }(Observable_1.Observable);
-    exports.MulticastObservable = MulticastObservable;
-    
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/ConnectableObservable', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/Subscriber', 'rxjs/Subscription'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15596,6 +14841,14 @@ System.registerDynamic('rxjs/observable/ConnectableObservable', ['rxjs/Subject',
         return ConnectableObservable;
     }(Observable_1.Observable);
     exports.ConnectableObservable = ConnectableObservable;
+    exports.connectableObservableDescriptor = {
+        operator: { value: null },
+        _refCount: { value: 0, writable: true },
+        _subscribe: { value: ConnectableObservable.prototype._subscribe },
+        getSubject: { value: ConnectableObservable.prototype.getSubject },
+        connect: { value: ConnectableObservable.prototype.connect },
+        refCount: { value: ConnectableObservable.prototype.refCount }
+    };
     var ConnectableSubscriber = function (_super) {
         __extends(ConnectableSubscriber, _super);
         function ConnectableSubscriber(destination, connectable) {
@@ -15633,7 +14886,7 @@ System.registerDynamic('rxjs/observable/ConnectableObservable', ['rxjs/Subject',
             var connectable = this.connectable;
             connectable._refCount++;
             var refCounter = new RefCountSubscriber(subscriber, connectable);
-            var subscription = source._subscribe(refCounter);
+            var subscription = source.subscribe(refCounter);
             if (!refCounter.closed) {
                 refCounter.connection = connectable.connect();
             }
@@ -15668,7 +14921,7 @@ System.registerDynamic('rxjs/observable/ConnectableObservable', ['rxjs/Subject',
             // Compare the local RefCountSubscriber's connection Subscription to the
             // connection Subscription on the shared ConnectableObservable. In cases
             // where the ConnectableObservable source synchronously emits values, and
-            // the RefCountSubscriber's dowstream Observers synchronously unsubscribe,
+            // the RefCountSubscriber's downstream Observers synchronously unsubscribe,
             // execution continues to here before the RefCountOperator has a chance to
             // supply the RefCountSubscriber with the shared connection Subscription.
             // For example:
@@ -15697,14 +14950,11 @@ System.registerDynamic('rxjs/observable/ConnectableObservable', ['rxjs/Subject',
         return RefCountSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/util/EmptyError', [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15735,14 +14985,11 @@ System.registerDynamic('rxjs/util/EmptyError', [], true, function ($__require, e
     }(Error);
     exports.EmptyError = EmptyError;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/util/ArgumentOutOfRangeError', [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15773,14 +15020,43 @@ System.registerDynamic('rxjs/util/ArgumentOutOfRangeError', [], true, function (
     }(Error);
     exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError;
     
+});
+System.registerDynamic('rxjs/util/TimeoutError', [], true, function ($__require, exports, module) {
+    "use strict";
 
-    return module.exports;
+    var global = this || self,
+        GLOBAL = global;
+    var __extends = this && this.__extends || function (d, b) {
+        for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+        function __() {
+            this.constructor = d;
+        }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+    /**
+     * An error thrown when duetime elapses.
+     *
+     * @see {@link timeout}
+     *
+     * @class TimeoutError
+     */
+    var TimeoutError = function (_super) {
+        __extends(TimeoutError, _super);
+        function TimeoutError() {
+            var err = _super.call(this, 'Timeout has occurred');
+            this.name = err.name = 'TimeoutError';
+            this.stack = err.stack;
+            this.message = err.message;
+        }
+        return TimeoutError;
+    }(Error);
+    exports.TimeoutError = TimeoutError;
+    
 });
 System.registerDynamic('rxjs/operator/timeInterval', ['rxjs/Subscriber', 'rxjs/scheduler/async'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15818,7 +15094,7 @@ System.registerDynamic('rxjs/operator/timeInterval', ['rxjs/Subscriber', 'rxjs/s
             this.scheduler = scheduler;
         }
         TimeIntervalOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new TimeIntervalSubscriber(observer, this.scheduler));
+            return source.subscribe(new TimeIntervalSubscriber(observer, this.scheduler));
         };
         return TimeIntervalOperator;
     }();
@@ -15844,14 +15120,11 @@ System.registerDynamic('rxjs/operator/timeInterval', ['rxjs/Subscriber', 'rxjs/s
         return TimeIntervalSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/timestamp', ['rxjs/Subscriber', 'rxjs/scheduler/async'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15889,7 +15162,7 @@ System.registerDynamic('rxjs/operator/timestamp', ['rxjs/Subscriber', 'rxjs/sche
             this.scheduler = scheduler;
         }
         TimestampOperator.prototype.call = function (observer, source) {
-            return source._subscribe(new TimestampSubscriber(observer, this.scheduler));
+            return source.subscribe(new TimestampSubscriber(observer, this.scheduler));
         };
         return TimestampOperator;
     }();
@@ -15906,14 +15179,11 @@ System.registerDynamic('rxjs/operator/timestamp', ['rxjs/Subscriber', 'rxjs/sche
         return TimestampSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/Notification', ['rxjs/Observable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var Observable_1 = $__require('rxjs/Observable');
     /**
@@ -15931,10 +15201,10 @@ System.registerDynamic('rxjs/Notification', ['rxjs/Observable'], true, function 
      * @class Notification<T>
      */
     var Notification = function () {
-        function Notification(kind, value, exception) {
+        function Notification(kind, value, error) {
             this.kind = kind;
             this.value = value;
-            this.exception = exception;
+            this.error = error;
             this.hasValue = kind === 'N';
         }
         /**
@@ -15947,7 +15217,7 @@ System.registerDynamic('rxjs/Notification', ['rxjs/Observable'], true, function 
                 case 'N':
                     return observer.next && observer.next(this.value);
                 case 'E':
-                    return observer.error && observer.error(this.exception);
+                    return observer.error && observer.error(this.error);
                 case 'C':
                     return observer.complete && observer.complete();
             }
@@ -15966,7 +15236,7 @@ System.registerDynamic('rxjs/Notification', ['rxjs/Observable'], true, function 
                 case 'N':
                     return next && next(this.value);
                 case 'E':
-                    return error && error(this.exception);
+                    return error && error(this.error);
                 case 'C':
                     return complete && complete();
             }
@@ -15998,7 +15268,7 @@ System.registerDynamic('rxjs/Notification', ['rxjs/Observable'], true, function 
                 case 'N':
                     return Observable_1.Observable.of(this.value);
                 case 'E':
-                    return Observable_1.Observable.throw(this.exception);
+                    return Observable_1.Observable.throw(this.error);
                 case 'C':
                     return Observable_1.Observable.empty();
             }
@@ -16020,7 +15290,7 @@ System.registerDynamic('rxjs/Notification', ['rxjs/Observable'], true, function 
         /**
          * A shortcut to create a Notification instance of the type `error` from a
          * given error.
-         * @param {any} [err] The `error` exception.
+         * @param {any} [err] The `error` error.
          * @return {Notification<T>} The "error" Notification representing the
          * argument.
          */
@@ -16040,14 +15310,11 @@ System.registerDynamic('rxjs/Notification', ['rxjs/Observable'], true, function 
     }();
     exports.Notification = Notification;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/testing/ColdObservable', ['rxjs/Observable', 'rxjs/Subscription', 'rxjs/testing/SubscriptionLoggable', 'rxjs/util/applyMixins'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16097,14 +15364,11 @@ System.registerDynamic('rxjs/testing/ColdObservable', ['rxjs/Observable', 'rxjs/
     exports.ColdObservable = ColdObservable;
     applyMixins_1.applyMixins(ColdObservable, [SubscriptionLoggable_1.SubscriptionLoggable]);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/util/ObjectUnsubscribedError', [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16134,14 +15398,11 @@ System.registerDynamic('rxjs/util/ObjectUnsubscribedError', [], true, function (
     }(Error);
     exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/SubjectSubscription", ["rxjs/Subscription"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16184,14 +15445,11 @@ System.registerDynamic("rxjs/SubjectSubscription", ["rxjs/Subscription"], true, 
     }(Subscription_1.Subscription);
     exports.SubjectSubscription = SubjectSubscription;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/Subject', ['rxjs/Observable', 'rxjs/Subscriber', 'rxjs/Subscription', 'rxjs/util/ObjectUnsubscribedError', 'rxjs/SubjectSubscription', 'rxjs/symbol/rxSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16350,14 +15608,11 @@ System.registerDynamic('rxjs/Subject', ['rxjs/Observable', 'rxjs/Subscriber', 'r
     }(Subject);
     exports.AnonymousSubject = AnonymousSubject;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/testing/SubscriptionLoggable", ["rxjs/testing/SubscriptionLog"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var SubscriptionLog_1 = $__require("rxjs/testing/SubscriptionLog");
     var SubscriptionLoggable = function () {
@@ -16377,14 +15632,11 @@ System.registerDynamic("rxjs/testing/SubscriptionLoggable", ["rxjs/testing/Subsc
     }();
     exports.SubscriptionLoggable = SubscriptionLoggable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/util/applyMixins", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     function applyMixins(derivedCtor, baseCtors) {
         for (var i = 0, len = baseCtors.length; i < len; i++) {
@@ -16398,14 +15650,11 @@ System.registerDynamic("rxjs/util/applyMixins", [], true, function ($__require, 
     }
     exports.applyMixins = applyMixins;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/testing/HotObservable', ['rxjs/Subject', 'rxjs/Subscription', 'rxjs/testing/SubscriptionLoggable', 'rxjs/util/applyMixins'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16458,14 +15707,11 @@ System.registerDynamic('rxjs/testing/HotObservable', ['rxjs/Subject', 'rxjs/Subs
     exports.HotObservable = HotObservable;
     applyMixins_1.applyMixins(HotObservable, [SubscriptionLoggable_1.SubscriptionLoggable]);
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/testing/SubscriptionLog", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var SubscriptionLog = function () {
         function SubscriptionLog(subscribedFrame, unsubscribedFrame) {
@@ -16479,14 +15725,11 @@ System.registerDynamic("rxjs/testing/SubscriptionLog", [], true, function ($__re
     }();
     exports.SubscriptionLog = SubscriptionLog;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/testing/TestScheduler', ['rxjs/Observable', 'rxjs/Notification', 'rxjs/testing/ColdObservable', 'rxjs/testing/HotObservable', 'rxjs/testing/SubscriptionLog', 'rxjs/scheduler/VirtualTimeScheduler'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16714,14 +15957,11 @@ System.registerDynamic('rxjs/testing/TestScheduler', ['rxjs/Observable', 'rxjs/N
     }(VirtualTimeScheduler_1.VirtualTimeScheduler);
     exports.TestScheduler = TestScheduler;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/VirtualTimeScheduler', ['rxjs/scheduler/AsyncAction', 'rxjs/scheduler/AsyncScheduler'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -16833,17 +16073,15 @@ System.registerDynamic('rxjs/scheduler/VirtualTimeScheduler', ['rxjs/scheduler/A
     }(AsyncAction_1.AsyncAction);
     exports.VirtualAction = VirtualAction;
     
-
-    return module.exports;
 });
-System.registerDynamic('rxjs/util/toSubscriber', ['rxjs/Subscriber', 'rxjs/symbol/rxSubscriber'], true, function ($__require, exports, module) {
+System.registerDynamic('rxjs/util/toSubscriber', ['rxjs/Subscriber', 'rxjs/symbol/rxSubscriber', 'rxjs/Observer'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var Subscriber_1 = $__require('rxjs/Subscriber');
     var rxSubscriber_1 = $__require('rxjs/symbol/rxSubscriber');
+    var Observer_1 = $__require('rxjs/Observer');
     function toSubscriber(nextOrObserver, error, complete) {
         if (nextOrObserver) {
             if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -16854,20 +16092,17 @@ System.registerDynamic('rxjs/util/toSubscriber', ['rxjs/Subscriber', 'rxjs/symbo
             }
         }
         if (!nextOrObserver && !error && !complete) {
-            return new Subscriber_1.Subscriber();
+            return new Subscriber_1.Subscriber(Observer_1.empty);
         }
         return new Subscriber_1.Subscriber(nextOrObserver, error, complete);
     }
     exports.toSubscriber = toSubscriber;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/Observable', ['rxjs/util/root', 'rxjs/util/toSubscriber', 'rxjs/symbol/observable'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require('rxjs/util/root');
     var toSubscriber_1 = $__require('rxjs/util/toSubscriber');
@@ -16905,22 +16140,11 @@ System.registerDynamic('rxjs/Observable', ['rxjs/util/root', 'rxjs/util/toSubscr
             observable.operator = operator;
             return observable;
         };
-        /**
-         * Registers handlers for handling emitted values, error and completions from the observable, and
-         *  executes the observable's subscriber function, which will take action to set up the underlying data stream
-         * @method subscribe
-         * @param {PartialObserver|Function} observerOrNext (optional) either an observer defining all functions to be called,
-         *  or the first of three possible handlers, which is the handler for each value emitted from the observable.
-         * @param {Function} error (optional) a handler for a terminal event resulting from an error. If no error handler is provided,
-         *  the error will be thrown as unhandled
-         * @param {Function} complete (optional) a handler for a terminal event resulting from successful completion.
-         * @return {ISubscription} a subscription reference to the registered handlers
-         */
         Observable.prototype.subscribe = function (observerOrNext, error, complete) {
             var operator = this.operator;
             var sink = toSubscriber_1.toSubscriber(observerOrNext, error, complete);
             if (operator) {
-                operator.call(sink, this);
+                operator.call(sink, this.source);
             } else {
                 sink.add(this._subscribe(sink));
             }
@@ -17004,14 +16228,11 @@ System.registerDynamic('rxjs/Observable', ['rxjs/util/root', 'rxjs/util/toSubscr
     }();
     exports.Observable = Observable;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/Observer", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     exports.empty = {
         closed: true,
@@ -17022,14 +16243,11 @@ System.registerDynamic("rxjs/Observer", [], true, function ($__require, exports,
         complete: function () {}
     };
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/Subscriber', ['rxjs/util/isFunction', 'rxjs/Subscription', 'rxjs/Observer', 'rxjs/symbol/rxSubscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -17273,14 +16491,11 @@ System.registerDynamic('rxjs/Subscriber', ['rxjs/util/isFunction', 'rxjs/Subscri
         return SafeSubscriber;
     }(Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/operator/map', ['rxjs/Subscriber'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -17336,7 +16551,7 @@ System.registerDynamic('rxjs/operator/map', ['rxjs/Subscriber'], true, function 
             this.thisArg = thisArg;
         }
         MapOperator.prototype.call = function (subscriber, source) {
-            return source._subscribe(new MapSubscriber(subscriber, this.project, this.thisArg));
+            return source.subscribe(new MapSubscriber(subscriber, this.project, this.thisArg));
         };
         return MapOperator;
     }();
@@ -17369,14 +16584,11 @@ System.registerDynamic('rxjs/operator/map', ['rxjs/Subscriber'], true, function 
         return MapSubscriber;
     }(Subscriber_1.Subscriber);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/observable/dom/AjaxObservable', ['rxjs/util/root', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/Observable', 'rxjs/Subscriber', 'rxjs/operator/map'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -17599,10 +16811,10 @@ System.registerDynamic('rxjs/observable/dom/AjaxObservable', ['rxjs/util/root', 
                 // now set up the events
                 this.setupEvents(xhr, request);
                 // finally send the request
-                if (body) {
-                    xhr.send(body);
-                } else {
-                    xhr.send();
+                result = body ? tryCatch_1.tryCatch(xhr.send).call(xhr, body) : tryCatch_1.tryCatch(xhr.send).call(xhr);
+                if (result === errorObject_1.errorObject) {
+                    this.error(errorObject_1.errorObject.e);
+                    return null;
                 }
             }
             return xhr;
@@ -17639,7 +16851,7 @@ System.registerDynamic('rxjs/observable/dom/AjaxObservable', ['rxjs/util/root', 
         };
         AjaxSubscriber.prototype.setupEvents = function (xhr, request) {
             var progressSubscriber = request.progressSubscriber;
-            xhr.ontimeout = function xhrTimeout(e) {
+            function xhrTimeout(e) {
                 var _a = xhrTimeout,
                     subscriber = _a.subscriber,
                     progressSubscriber = _a.progressSubscriber,
@@ -17648,20 +16860,25 @@ System.registerDynamic('rxjs/observable/dom/AjaxObservable', ['rxjs/util/root', 
                     progressSubscriber.error(e);
                 }
                 subscriber.error(new AjaxTimeoutError(this, request)); //TODO: Make betterer.
-            };
-            xhr.ontimeout.request = request;
-            xhr.ontimeout.subscriber = this;
-            xhr.ontimeout.progressSubscriber = progressSubscriber;
+            }
+            ;
+            xhr.ontimeout = xhrTimeout;
+            xhrTimeout.request = request;
+            xhrTimeout.subscriber = this;
+            xhrTimeout.progressSubscriber = progressSubscriber;
             if (xhr.upload && 'withCredentials' in xhr && root_1.root.XDomainRequest) {
                 if (progressSubscriber) {
-                    xhr.onprogress = function xhrProgress(e) {
-                        var progressSubscriber = xhrProgress.progressSubscriber;
+                    var xhrProgress_1;
+                    xhrProgress_1 = function (e) {
+                        var progressSubscriber = xhrProgress_1.progressSubscriber;
                         progressSubscriber.next(e);
                     };
-                    xhr.onprogress.progressSubscriber = progressSubscriber;
+                    xhr.onprogress = xhrProgress_1;
+                    xhrProgress_1.progressSubscriber = progressSubscriber;
                 }
-                xhr.onerror = function xhrError(e) {
-                    var _a = xhrError,
+                var xhrError_1;
+                xhrError_1 = function (e) {
+                    var _a = xhrError_1,
                         progressSubscriber = _a.progressSubscriber,
                         subscriber = _a.subscriber,
                         request = _a.request;
@@ -17670,11 +16887,12 @@ System.registerDynamic('rxjs/observable/dom/AjaxObservable', ['rxjs/util/root', 
                     }
                     subscriber.error(new AjaxError('ajax error', this, request));
                 };
-                xhr.onerror.request = request;
-                xhr.onerror.subscriber = this;
-                xhr.onerror.progressSubscriber = progressSubscriber;
+                xhr.onerror = xhrError_1;
+                xhrError_1.request = request;
+                xhrError_1.subscriber = this;
+                xhrError_1.progressSubscriber = progressSubscriber;
             }
-            xhr.onreadystatechange = function xhrReadyStateChange(e) {
+            function xhrReadyStateChange(e) {
                 var _a = xhrReadyStateChange,
                     subscriber = _a.subscriber,
                     progressSubscriber = _a.progressSubscriber,
@@ -17702,16 +16920,18 @@ System.registerDynamic('rxjs/observable/dom/AjaxObservable', ['rxjs/util/root', 
                         subscriber.error(new AjaxError('ajax error ' + status_1, this, request));
                     }
                 }
-            };
-            xhr.onreadystatechange.subscriber = this;
-            xhr.onreadystatechange.progressSubscriber = progressSubscriber;
-            xhr.onreadystatechange.request = request;
+            }
+            ;
+            xhr.onreadystatechange = xhrReadyStateChange;
+            xhrReadyStateChange.subscriber = this;
+            xhrReadyStateChange.progressSubscriber = progressSubscriber;
+            xhrReadyStateChange.request = request;
         };
         AjaxSubscriber.prototype.unsubscribe = function () {
             var _a = this,
                 done = _a.done,
                 xhr = _a.xhr;
-            if (!done && xhr && xhr.readyState !== 4) {
+            if (!done && xhr && xhr.readyState !== 4 && typeof xhr.abort === 'function') {
                 xhr.abort();
             }
             _super.prototype.unsubscribe.call(this);
@@ -17787,8 +17007,6 @@ System.registerDynamic('rxjs/observable/dom/AjaxObservable', ['rxjs/util/root', 
     }(AjaxError);
     exports.AjaxTimeoutError = AjaxTimeoutError;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/util/Immediate', ['rxjs/util/root'], true, function ($__require, exports, module) {
     /**
@@ -17796,8 +17014,7 @@ System.registerDynamic('rxjs/util/Immediate', ['rxjs/util/root'], true, function
     */
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require('rxjs/util/root');
     var ImmediateDefinition = function () {
@@ -18000,14 +17217,11 @@ System.registerDynamic('rxjs/util/Immediate', ['rxjs/util/root'], true, function
     exports.ImmediateDefinition = ImmediateDefinition;
     exports.Immediate = new ImmediateDefinition(root_1.root);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/AsapAction', ['rxjs/util/Immediate', 'rxjs/scheduler/AsyncAction'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18049,8 +17263,10 @@ System.registerDynamic('rxjs/scheduler/AsapAction', ['rxjs/util/Immediate', 'rxj
             if (delay === void 0) {
                 delay = 0;
             }
-            // If delay exists and is greater than 0, recycle as an async action.
-            if (delay !== null && delay > 0) {
+            // If delay exists and is greater than 0, or if the delay is null (the
+            // action wasn't rescheduled) but was originally scheduled as an async
+            // action, then recycle as an async action.
+            if (delay !== null && delay > 0 || delay === null && this.delay > 0) {
                 return _super.prototype.recycleAsyncId.call(this, scheduler, id, delay);
             }
             // If the scheduler queue is empty, cancel the requested microtask and
@@ -18067,14 +17283,11 @@ System.registerDynamic('rxjs/scheduler/AsapAction', ['rxjs/util/Immediate', 'rxj
     }(AsyncAction_1.AsyncAction);
     exports.AsapAction = AsapAction;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/scheduler/AsapScheduler", ["rxjs/scheduler/AsyncScheduler"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18089,14 +17302,14 @@ System.registerDynamic("rxjs/scheduler/AsapScheduler", ["rxjs/scheduler/AsyncSch
         function AsapScheduler() {
             _super.apply(this, arguments);
         }
-        AsapScheduler.prototype.flush = function () {
+        AsapScheduler.prototype.flush = function (action) {
             this.active = true;
             this.scheduled = undefined;
             var actions = this.actions;
             var error;
             var index = -1;
             var count = actions.length;
-            var action = actions.shift();
+            action = action || actions.shift();
             do {
                 if (error = action.execute(action.state, action.delay)) {
                     break;
@@ -18114,40 +17327,31 @@ System.registerDynamic("rxjs/scheduler/AsapScheduler", ["rxjs/scheduler/AsyncSch
     }(AsyncScheduler_1.AsyncScheduler);
     exports.AsapScheduler = AsapScheduler;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/asap', ['rxjs/scheduler/AsapAction', 'rxjs/scheduler/AsapScheduler'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var AsapAction_1 = $__require('rxjs/scheduler/AsapAction');
   var AsapScheduler_1 = $__require('rxjs/scheduler/AsapScheduler');
   exports.asap = new AsapScheduler_1.AsapScheduler(AsapAction_1.AsapAction);
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/async', ['rxjs/scheduler/AsyncAction', 'rxjs/scheduler/AsyncScheduler'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var AsyncAction_1 = $__require('rxjs/scheduler/AsyncAction');
   var AsyncScheduler_1 = $__require('rxjs/scheduler/AsyncScheduler');
   exports.async = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/scheduler/QueueAction", ["rxjs/scheduler/AsyncAction"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18188,8 +17392,10 @@ System.registerDynamic("rxjs/scheduler/QueueAction", ["rxjs/scheduler/AsyncActio
             if (delay === void 0) {
                 delay = 0;
             }
-            // If delay is greater than 0, enqueue as an async action.
-            if (delay !== null && delay > 0) {
+            // If delay exists and is greater than 0, or if the delay is null (the
+            // action wasn't rescheduled) but was originally scheduled as an async
+            // action, then recycle as an async action.
+            if (delay !== null && delay > 0 || delay === null && this.delay > 0) {
                 return _super.prototype.requestAsyncId.call(this, scheduler, id, delay);
             }
             // Otherwise flush the scheduler starting with this action.
@@ -18199,14 +17405,11 @@ System.registerDynamic("rxjs/scheduler/QueueAction", ["rxjs/scheduler/AsyncActio
     }(AsyncAction_1.AsyncAction);
     exports.QueueAction = QueueAction;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/scheduler/QueueScheduler", ["rxjs/scheduler/AsyncScheduler"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18225,68 +17428,53 @@ System.registerDynamic("rxjs/scheduler/QueueScheduler", ["rxjs/scheduler/AsyncSc
     }(AsyncScheduler_1.AsyncScheduler);
     exports.QueueScheduler = QueueScheduler;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/queue', ['rxjs/scheduler/QueueAction', 'rxjs/scheduler/QueueScheduler'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var QueueAction_1 = $__require('rxjs/scheduler/QueueAction');
   var QueueScheduler_1 = $__require('rxjs/scheduler/QueueScheduler');
   exports.queue = new QueueScheduler_1.QueueScheduler(QueueAction_1.QueueAction);
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/isArray", [], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   exports.isArray = Array.isArray || function (x) {
     return x && typeof x.length === 'number';
   };
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/isObject", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     function isObject(x) {
         return x != null && typeof x === 'object';
     }
     exports.isObject = isObject;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/util/isFunction", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     function isFunction(x) {
         return typeof x === 'function';
     }
     exports.isFunction = isFunction;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/util/tryCatch", ["rxjs/util/errorObject"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var errorObject_1 = $__require("rxjs/util/errorObject");
     var tryCatchTarget;
@@ -18305,26 +17493,20 @@ System.registerDynamic("rxjs/util/tryCatch", ["rxjs/util/errorObject"], true, fu
     exports.tryCatch = tryCatch;
     ;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/util/errorObject", [], true, function ($__require, exports, module) {
   "use strict";
   // typeof any so that it we don't have to cast when comparing a result to the error object
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   exports.errorObject = { e: {} };
   
-
-  return module.exports;
 });
 System.registerDynamic("rxjs/util/UnsubscriptionError", [], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18353,14 +17535,11 @@ System.registerDynamic("rxjs/util/UnsubscriptionError", [], true, function ($__r
     }(Error);
     exports.UnsubscriptionError = UnsubscriptionError;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/Subscription', ['rxjs/util/isArray', 'rxjs/util/isObject', 'rxjs/util/isFunction', 'rxjs/util/tryCatch', 'rxjs/util/errorObject', 'rxjs/util/UnsubscriptionError'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var isArray_1 = $__require('rxjs/util/isArray');
     var isObject_1 = $__require('rxjs/util/isObject');
@@ -18513,14 +17692,11 @@ System.registerDynamic('rxjs/Subscription', ['rxjs/util/isArray', 'rxjs/util/isO
     }();
     exports.Subscription = Subscription;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/scheduler/Action", ["rxjs/Subscription"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18569,14 +17745,11 @@ System.registerDynamic("rxjs/scheduler/Action", ["rxjs/Subscription"], true, fun
     }(Subscription_1.Subscription);
     exports.Action = Action;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/AsyncAction', ['rxjs/util/root', 'rxjs/scheduler/Action'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18725,14 +17898,11 @@ System.registerDynamic('rxjs/scheduler/AsyncAction', ['rxjs/util/root', 'rxjs/sc
     }(Action_1.Action);
     exports.AsyncAction = AsyncAction;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/util/AnimationFrame", ["rxjs/util/root"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require("rxjs/util/root");
     var RequestAnimationFrameDefinition = function () {
@@ -18764,14 +17934,11 @@ System.registerDynamic("rxjs/util/AnimationFrame", ["rxjs/util/root"], true, fun
     exports.RequestAnimationFrameDefinition = RequestAnimationFrameDefinition;
     exports.AnimationFrame = new RequestAnimationFrameDefinition(root_1.root);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/AnimationFrameAction', ['rxjs/scheduler/AsyncAction', 'rxjs/util/AnimationFrame'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18813,8 +17980,10 @@ System.registerDynamic('rxjs/scheduler/AnimationFrameAction', ['rxjs/scheduler/A
             if (delay === void 0) {
                 delay = 0;
             }
-            // If delay exists and is greater than 0, recycle as an async action.
-            if (delay !== null && delay > 0) {
+            // If delay exists and is greater than 0, or if the delay is null (the
+            // action wasn't rescheduled) but was originally scheduled as an async
+            // action, then recycle as an async action.
+            if (delay !== null && delay > 0 || delay === null && this.delay > 0) {
                 return _super.prototype.recycleAsyncId.call(this, scheduler, id, delay);
             }
             // If the scheduler queue is empty, cancel the requested animation frame and
@@ -18831,8 +18000,6 @@ System.registerDynamic('rxjs/scheduler/AnimationFrameAction', ['rxjs/scheduler/A
     }(AsyncAction_1.AsyncAction);
     exports.AnimationFrameAction = AnimationFrameAction;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/Scheduler", [], true, function ($__require, exports, module) {
     "use strict";
@@ -18853,8 +18020,7 @@ System.registerDynamic("rxjs/Scheduler", [], true, function ($__require, exports
      * @class Scheduler
      */
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var Scheduler = function () {
         function Scheduler(SchedulerAction, now) {
@@ -18894,14 +18060,11 @@ System.registerDynamic("rxjs/Scheduler", [], true, function ($__require, exports
     }();
     exports.Scheduler = Scheduler;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/scheduler/AsyncScheduler", ["rxjs/Scheduler"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18955,14 +18118,11 @@ System.registerDynamic("rxjs/scheduler/AsyncScheduler", ["rxjs/Scheduler"], true
     }(Scheduler_1.Scheduler);
     exports.AsyncScheduler = AsyncScheduler;
     
-
-    return module.exports;
 });
 System.registerDynamic("rxjs/scheduler/AnimationFrameScheduler", ["rxjs/scheduler/AsyncScheduler"], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var __extends = this && this.__extends || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -18977,14 +18137,14 @@ System.registerDynamic("rxjs/scheduler/AnimationFrameScheduler", ["rxjs/schedule
         function AnimationFrameScheduler() {
             _super.apply(this, arguments);
         }
-        AnimationFrameScheduler.prototype.flush = function () {
+        AnimationFrameScheduler.prototype.flush = function (action) {
             this.active = true;
             this.scheduled = undefined;
             var actions = this.actions;
             var error;
             var index = -1;
             var count = actions.length;
-            var action = actions.shift();
+            action = action || actions.shift();
             do {
                 if (error = action.execute(action.state, action.delay)) {
                     break;
@@ -19002,99 +18162,85 @@ System.registerDynamic("rxjs/scheduler/AnimationFrameScheduler", ["rxjs/schedule
     }(AsyncScheduler_1.AsyncScheduler);
     exports.AnimationFrameScheduler = AnimationFrameScheduler;
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/scheduler/animationFrame', ['rxjs/scheduler/AnimationFrameAction', 'rxjs/scheduler/AnimationFrameScheduler'], true, function ($__require, exports, module) {
   "use strict";
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var AnimationFrameAction_1 = $__require('rxjs/scheduler/AnimationFrameAction');
   var AnimationFrameScheduler_1 = $__require('rxjs/scheduler/AnimationFrameScheduler');
   exports.animationFrame = new AnimationFrameScheduler_1.AnimationFrameScheduler(AnimationFrameAction_1.AnimationFrameAction);
   
-
-  return module.exports;
 });
 System.registerDynamic('rxjs/symbol/rxSubscriber', ['rxjs/util/root'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require('rxjs/util/root');
     var Symbol = root_1.root.Symbol;
     exports.$$rxSubscriber = typeof Symbol === 'function' && typeof Symbol.for === 'function' ? Symbol.for('rxSubscriber') : '@@rxSubscriber';
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/symbol/iterator', ['rxjs/util/root'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require('rxjs/util/root');
-    var Symbol = root_1.root.Symbol;
-    if (typeof Symbol === 'function') {
-        if (Symbol.iterator) {
-            exports.$$iterator = Symbol.iterator;
-        } else if (typeof Symbol.for === 'function') {
-            exports.$$iterator = Symbol.for('iterator');
-        }
-    } else {
-        if (root_1.root.Set && typeof new root_1.root.Set()['@@iterator'] === 'function') {
-            // Bug for mozilla version
-            exports.$$iterator = '@@iterator';
-        } else if (root_1.root.Map) {
-            // es6-shim specific logic
-            var keys = Object.getOwnPropertyNames(root_1.root.Map.prototype);
-            for (var i = 0; i < keys.length; ++i) {
-                var key = keys[i];
-                if (key !== 'entries' && key !== 'size' && root_1.root.Map.prototype[key] === root_1.root.Map.prototype['entries']) {
-                    exports.$$iterator = key;
-                    break;
+    function symbolIteratorPonyfill(root) {
+        var Symbol = root.Symbol;
+        if (typeof Symbol === 'function') {
+            if (!Symbol.iterator) {
+                Symbol.iterator = Symbol('iterator polyfill');
+            }
+            return Symbol.iterator;
+        } else {
+            // [for Mozilla Gecko 27-35:](https://mzl.la/2ewE1zC)
+            var Set_1 = root.Set;
+            if (Set_1 && typeof new Set_1()['@@iterator'] === 'function') {
+                return '@@iterator';
+            }
+            var Map_1 = root.Map;
+            // required for compatability with es6-shim
+            if (Map_1) {
+                var keys = Object.getOwnPropertyNames(Map_1.prototype);
+                for (var i = 0; i < keys.length; ++i) {
+                    var key = keys[i];
+                    // according to spec, Map.prototype[@@iterator] and Map.orototype.entries must be equal.
+                    if (key !== 'entries' && key !== 'size' && Map_1.prototype[key] === Map_1.prototype['entries']) {
+                        return key;
+                    }
                 }
             }
-        } else {
-            exports.$$iterator = '@@iterator';
+            return '@@iterator';
         }
     }
+    exports.symbolIteratorPonyfill = symbolIteratorPonyfill;
+    exports.$$iterator = symbolIteratorPonyfill(root_1.root);
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/util/root', [], true, function ($__require, exports, module) {
     "use strict";
+    /**
+     * window: browser in DOM main thread
+     * self: browser in WebWorker
+     * global: Node.js/other
+     */
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
-    var objectTypes = {
-        'boolean': false,
-        'function': true,
-        'object': true,
-        'number': false,
-        'string': false,
-        'undefined': false
-    };
-    exports.root = objectTypes[typeof self] && self || objectTypes[typeof window] && window;
-    var freeGlobal = objectTypes[typeof global] && global;
-    if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal)) {
-        exports.root = freeGlobal;
+    exports.root = typeof window == 'object' && window.window === window && window || typeof self == 'object' && self.self === self && self || typeof global == 'object' && global.global === global && global;
+    if (!exports.root) {
+        throw new Error('RxJS could not find any global context (window, self, global)');
     }
     
-
-    return module.exports;
 });
 System.registerDynamic('rxjs/symbol/observable', ['rxjs/util/root'], true, function ($__require, exports, module) {
     "use strict";
 
-    var define,
-        global = this || self,
+    var global = this || self,
         GLOBAL = global;
     var root_1 = $__require('rxjs/util/root');
     function getSymbolObservable(context) {
@@ -19115,21 +18261,19 @@ System.registerDynamic('rxjs/symbol/observable', ['rxjs/util/root'], true, funct
     exports.getSymbolObservable = getSymbolObservable;
     exports.$$observable = getSymbolObservable(root_1.root);
     
-
-    return module.exports;
 });
-System.registerDynamic('rxjs/Rx', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/add/observable/bindCallback', 'rxjs/add/observable/bindNodeCallback', 'rxjs/add/observable/combineLatest', 'rxjs/add/observable/concat', 'rxjs/add/observable/defer', 'rxjs/add/observable/empty', 'rxjs/add/observable/forkJoin', 'rxjs/add/observable/from', 'rxjs/add/observable/fromEvent', 'rxjs/add/observable/fromEventPattern', 'rxjs/add/observable/fromPromise', 'rxjs/add/observable/generate', 'rxjs/add/observable/if', 'rxjs/add/observable/interval', 'rxjs/add/observable/merge', 'rxjs/add/observable/race', 'rxjs/add/observable/never', 'rxjs/add/observable/of', 'rxjs/add/observable/onErrorResumeNext', 'rxjs/add/observable/pairs', 'rxjs/add/observable/range', 'rxjs/add/observable/using', 'rxjs/add/observable/throw', 'rxjs/add/observable/timer', 'rxjs/add/observable/zip', 'rxjs/add/observable/dom/ajax', 'rxjs/add/observable/dom/webSocket', 'rxjs/add/operator/buffer', 'rxjs/add/operator/bufferCount', 'rxjs/add/operator/bufferTime', 'rxjs/add/operator/bufferToggle', 'rxjs/add/operator/bufferWhen', 'rxjs/add/operator/cache', 'rxjs/add/operator/catch', 'rxjs/add/operator/combineAll', 'rxjs/add/operator/combineLatest', 'rxjs/add/operator/concat', 'rxjs/add/operator/concatAll', 'rxjs/add/operator/concatMap', 'rxjs/add/operator/concatMapTo', 'rxjs/add/operator/count', 'rxjs/add/operator/dematerialize', 'rxjs/add/operator/debounce', 'rxjs/add/operator/debounceTime', 'rxjs/add/operator/defaultIfEmpty', 'rxjs/add/operator/delay', 'rxjs/add/operator/delayWhen', 'rxjs/add/operator/distinct', 'rxjs/add/operator/distinctKey', 'rxjs/add/operator/distinctUntilChanged', 'rxjs/add/operator/distinctUntilKeyChanged', 'rxjs/add/operator/do', 'rxjs/add/operator/exhaust', 'rxjs/add/operator/exhaustMap', 'rxjs/add/operator/expand', 'rxjs/add/operator/elementAt', 'rxjs/add/operator/filter', 'rxjs/add/operator/finally', 'rxjs/add/operator/find', 'rxjs/add/operator/findIndex', 'rxjs/add/operator/first', 'rxjs/add/operator/groupBy', 'rxjs/add/operator/ignoreElements', 'rxjs/add/operator/isEmpty', 'rxjs/add/operator/audit', 'rxjs/add/operator/auditTime', 'rxjs/add/operator/last', 'rxjs/add/operator/let', 'rxjs/add/operator/every', 'rxjs/add/operator/map', 'rxjs/add/operator/mapTo', 'rxjs/add/operator/materialize', 'rxjs/add/operator/max', 'rxjs/add/operator/merge', 'rxjs/add/operator/mergeAll', 'rxjs/add/operator/mergeMap', 'rxjs/add/operator/mergeMapTo', 'rxjs/add/operator/mergeScan', 'rxjs/add/operator/min', 'rxjs/add/operator/multicast', 'rxjs/add/operator/observeOn', 'rxjs/add/operator/onErrorResumeNext', 'rxjs/add/operator/pairwise', 'rxjs/add/operator/partition', 'rxjs/add/operator/pluck', 'rxjs/add/operator/publish', 'rxjs/add/operator/publishBehavior', 'rxjs/add/operator/publishReplay', 'rxjs/add/operator/publishLast', 'rxjs/add/operator/race', 'rxjs/add/operator/reduce', 'rxjs/add/operator/repeat', 'rxjs/add/operator/repeatWhen', 'rxjs/add/operator/retry', 'rxjs/add/operator/retryWhen', 'rxjs/add/operator/sample', 'rxjs/add/operator/sampleTime', 'rxjs/add/operator/scan', 'rxjs/add/operator/sequenceEqual', 'rxjs/add/operator/share', 'rxjs/add/operator/single', 'rxjs/add/operator/skip', 'rxjs/add/operator/skipUntil', 'rxjs/add/operator/skipWhile', 'rxjs/add/operator/startWith', 'rxjs/add/operator/subscribeOn', 'rxjs/add/operator/switch', 'rxjs/add/operator/switchMap', 'rxjs/add/operator/switchMapTo', 'rxjs/add/operator/take', 'rxjs/add/operator/takeLast', 'rxjs/add/operator/takeUntil', 'rxjs/add/operator/takeWhile', 'rxjs/add/operator/throttle', 'rxjs/add/operator/throttleTime', 'rxjs/add/operator/timeInterval', 'rxjs/add/operator/timeout', 'rxjs/add/operator/timeoutWith', 'rxjs/add/operator/timestamp', 'rxjs/add/operator/toArray', 'rxjs/add/operator/toPromise', 'rxjs/add/operator/window', 'rxjs/add/operator/windowCount', 'rxjs/add/operator/windowTime', 'rxjs/add/operator/windowToggle', 'rxjs/add/operator/windowWhen', 'rxjs/add/operator/withLatestFrom', 'rxjs/add/operator/zip', 'rxjs/add/operator/zipAll', 'rxjs/Subscription', 'rxjs/Subscriber', 'rxjs/AsyncSubject', 'rxjs/ReplaySubject', 'rxjs/BehaviorSubject', 'rxjs/observable/MulticastObservable', 'rxjs/observable/ConnectableObservable', 'rxjs/Notification', 'rxjs/util/EmptyError', 'rxjs/util/ArgumentOutOfRangeError', 'rxjs/util/ObjectUnsubscribedError', 'rxjs/util/UnsubscriptionError', 'rxjs/operator/timeInterval', 'rxjs/operator/timestamp', 'rxjs/testing/TestScheduler', 'rxjs/scheduler/VirtualTimeScheduler', 'rxjs/observable/dom/AjaxObservable', 'rxjs/scheduler/asap', 'rxjs/scheduler/async', 'rxjs/scheduler/queue', 'rxjs/scheduler/animationFrame', 'rxjs/symbol/rxSubscriber', 'rxjs/symbol/iterator', 'rxjs/symbol/observable'], true, function ($__require, exports, module) {
+System.registerDynamic('rxjs/Rx', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/add/observable/bindCallback', 'rxjs/add/observable/bindNodeCallback', 'rxjs/add/observable/combineLatest', 'rxjs/add/observable/concat', 'rxjs/add/observable/defer', 'rxjs/add/observable/empty', 'rxjs/add/observable/forkJoin', 'rxjs/add/observable/from', 'rxjs/add/observable/fromEvent', 'rxjs/add/observable/fromEventPattern', 'rxjs/add/observable/fromPromise', 'rxjs/add/observable/generate', 'rxjs/add/observable/if', 'rxjs/add/observable/interval', 'rxjs/add/observable/merge', 'rxjs/add/observable/race', 'rxjs/add/observable/never', 'rxjs/add/observable/of', 'rxjs/add/observable/onErrorResumeNext', 'rxjs/add/observable/pairs', 'rxjs/add/observable/range', 'rxjs/add/observable/using', 'rxjs/add/observable/throw', 'rxjs/add/observable/timer', 'rxjs/add/observable/zip', 'rxjs/add/observable/dom/ajax', 'rxjs/add/observable/dom/webSocket', 'rxjs/add/operator/buffer', 'rxjs/add/operator/bufferCount', 'rxjs/add/operator/bufferTime', 'rxjs/add/operator/bufferToggle', 'rxjs/add/operator/bufferWhen', 'rxjs/add/operator/catch', 'rxjs/add/operator/combineAll', 'rxjs/add/operator/combineLatest', 'rxjs/add/operator/concat', 'rxjs/add/operator/concatAll', 'rxjs/add/operator/concatMap', 'rxjs/add/operator/concatMapTo', 'rxjs/add/operator/count', 'rxjs/add/operator/dematerialize', 'rxjs/add/operator/debounce', 'rxjs/add/operator/debounceTime', 'rxjs/add/operator/defaultIfEmpty', 'rxjs/add/operator/delay', 'rxjs/add/operator/delayWhen', 'rxjs/add/operator/distinct', 'rxjs/add/operator/distinctUntilChanged', 'rxjs/add/operator/distinctUntilKeyChanged', 'rxjs/add/operator/do', 'rxjs/add/operator/exhaust', 'rxjs/add/operator/exhaustMap', 'rxjs/add/operator/expand', 'rxjs/add/operator/elementAt', 'rxjs/add/operator/filter', 'rxjs/add/operator/finally', 'rxjs/add/operator/find', 'rxjs/add/operator/findIndex', 'rxjs/add/operator/first', 'rxjs/add/operator/groupBy', 'rxjs/add/operator/ignoreElements', 'rxjs/add/operator/isEmpty', 'rxjs/add/operator/audit', 'rxjs/add/operator/auditTime', 'rxjs/add/operator/last', 'rxjs/add/operator/let', 'rxjs/add/operator/every', 'rxjs/add/operator/map', 'rxjs/add/operator/mapTo', 'rxjs/add/operator/materialize', 'rxjs/add/operator/max', 'rxjs/add/operator/merge', 'rxjs/add/operator/mergeAll', 'rxjs/add/operator/mergeMap', 'rxjs/add/operator/mergeMapTo', 'rxjs/add/operator/mergeScan', 'rxjs/add/operator/min', 'rxjs/add/operator/multicast', 'rxjs/add/operator/observeOn', 'rxjs/add/operator/onErrorResumeNext', 'rxjs/add/operator/pairwise', 'rxjs/add/operator/partition', 'rxjs/add/operator/pluck', 'rxjs/add/operator/publish', 'rxjs/add/operator/publishBehavior', 'rxjs/add/operator/publishReplay', 'rxjs/add/operator/publishLast', 'rxjs/add/operator/race', 'rxjs/add/operator/reduce', 'rxjs/add/operator/repeat', 'rxjs/add/operator/repeatWhen', 'rxjs/add/operator/retry', 'rxjs/add/operator/retryWhen', 'rxjs/add/operator/sample', 'rxjs/add/operator/sampleTime', 'rxjs/add/operator/scan', 'rxjs/add/operator/sequenceEqual', 'rxjs/add/operator/share', 'rxjs/add/operator/single', 'rxjs/add/operator/skip', 'rxjs/add/operator/skipUntil', 'rxjs/add/operator/skipWhile', 'rxjs/add/operator/startWith', 'rxjs/add/operator/subscribeOn', 'rxjs/add/operator/switch', 'rxjs/add/operator/switchMap', 'rxjs/add/operator/switchMapTo', 'rxjs/add/operator/take', 'rxjs/add/operator/takeLast', 'rxjs/add/operator/takeUntil', 'rxjs/add/operator/takeWhile', 'rxjs/add/operator/throttle', 'rxjs/add/operator/throttleTime', 'rxjs/add/operator/timeInterval', 'rxjs/add/operator/timeout', 'rxjs/add/operator/timeoutWith', 'rxjs/add/operator/timestamp', 'rxjs/add/operator/toArray', 'rxjs/add/operator/toPromise', 'rxjs/add/operator/window', 'rxjs/add/operator/windowCount', 'rxjs/add/operator/windowTime', 'rxjs/add/operator/windowToggle', 'rxjs/add/operator/windowWhen', 'rxjs/add/operator/withLatestFrom', 'rxjs/add/operator/zip', 'rxjs/add/operator/zipAll', 'rxjs/Subscription', 'rxjs/Subscriber', 'rxjs/AsyncSubject', 'rxjs/ReplaySubject', 'rxjs/BehaviorSubject', 'rxjs/observable/ConnectableObservable', 'rxjs/Notification', 'rxjs/util/EmptyError', 'rxjs/util/ArgumentOutOfRangeError', 'rxjs/util/ObjectUnsubscribedError', 'rxjs/util/TimeoutError', 'rxjs/util/UnsubscriptionError', 'rxjs/operator/timeInterval', 'rxjs/operator/timestamp', 'rxjs/testing/TestScheduler', 'rxjs/scheduler/VirtualTimeScheduler', 'rxjs/observable/dom/AjaxObservable', 'rxjs/scheduler/asap', 'rxjs/scheduler/async', 'rxjs/scheduler/queue', 'rxjs/scheduler/animationFrame', 'rxjs/symbol/rxSubscriber', 'rxjs/symbol/iterator', 'rxjs/symbol/observable'], true, function ($__require, exports, module) {
   "use strict";
   /* tslint:disable:no-unused-variable */
   // Subject imported before Observable to bypass circular dependency issue since
   // Subject extends Observable and Observable references Subject in it's
   // definition
 
-  var define,
-      global = this || self,
+  var global = this || self,
       GLOBAL = global;
   var Subject_1 = $__require('rxjs/Subject');
   exports.Subject = Subject_1.Subject;
+  exports.AnonymousSubject = Subject_1.AnonymousSubject;
   /* tslint:enable:no-unused-variable */
   var Observable_1 = $__require('rxjs/Observable');
   exports.Observable = Observable_1.Observable;
@@ -19169,7 +18313,6 @@ System.registerDynamic('rxjs/Rx', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/add/
   $__require('rxjs/add/operator/bufferTime');
   $__require('rxjs/add/operator/bufferToggle');
   $__require('rxjs/add/operator/bufferWhen');
-  $__require('rxjs/add/operator/cache');
   $__require('rxjs/add/operator/catch');
   $__require('rxjs/add/operator/combineAll');
   $__require('rxjs/add/operator/combineLatest');
@@ -19185,7 +18328,6 @@ System.registerDynamic('rxjs/Rx', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/add/
   $__require('rxjs/add/operator/delay');
   $__require('rxjs/add/operator/delayWhen');
   $__require('rxjs/add/operator/distinct');
-  $__require('rxjs/add/operator/distinctKey');
   $__require('rxjs/add/operator/distinctUntilChanged');
   $__require('rxjs/add/operator/distinctUntilKeyChanged');
   $__require('rxjs/add/operator/do');
@@ -19277,8 +18419,6 @@ System.registerDynamic('rxjs/Rx', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/add/
   exports.ReplaySubject = ReplaySubject_1.ReplaySubject;
   var BehaviorSubject_1 = $__require('rxjs/BehaviorSubject');
   exports.BehaviorSubject = BehaviorSubject_1.BehaviorSubject;
-  var MulticastObservable_1 = $__require('rxjs/observable/MulticastObservable');
-  exports.MulticastObservable = MulticastObservable_1.MulticastObservable;
   var ConnectableObservable_1 = $__require('rxjs/observable/ConnectableObservable');
   exports.ConnectableObservable = ConnectableObservable_1.ConnectableObservable;
   var Notification_1 = $__require('rxjs/Notification');
@@ -19289,6 +18429,8 @@ System.registerDynamic('rxjs/Rx', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/add/
   exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError_1.ArgumentOutOfRangeError;
   var ObjectUnsubscribedError_1 = $__require('rxjs/util/ObjectUnsubscribedError');
   exports.ObjectUnsubscribedError = ObjectUnsubscribedError_1.ObjectUnsubscribedError;
+  var TimeoutError_1 = $__require('rxjs/util/TimeoutError');
+  exports.TimeoutError = TimeoutError_1.TimeoutError;
   var UnsubscriptionError_1 = $__require('rxjs/util/UnsubscriptionError');
   exports.UnsubscriptionError = UnsubscriptionError_1.UnsubscriptionError;
   var timeInterval_1 = $__require('rxjs/operator/timeInterval');
@@ -19351,7 +18493,5 @@ System.registerDynamic('rxjs/Rx', ['rxjs/Subject', 'rxjs/Observable', 'rxjs/add/
   };
   exports.Symbol = Symbol;
   
-
-  return module.exports;
 });
 //# sourceMappingURL=rx.js.map

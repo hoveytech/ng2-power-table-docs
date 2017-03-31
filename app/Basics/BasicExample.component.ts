@@ -1,5 +1,3 @@
-/// <reference path="./../../typings/globals/chance/index.d.ts" />
-
 import { Component, OnInit } from '@angular/core';
 import { ITableState, TableDirective } from 'ng2-power-table';
 import { Person } from './../MockData/Person.class';

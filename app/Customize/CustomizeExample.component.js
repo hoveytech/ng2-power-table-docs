@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var Person_class_1 = require("./../MockData/Person.class");
-var ng2_power_table_1 = require("ng2-power-table/ng2-power-table");
-var CustomizeExampleComponent = (function () {
-    function CustomizeExampleComponent() {
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const Person_class_1 = require("./../MockData/Person.class");
+const ng2_power_table_1 = require("ng2-power-table/ng2-power-table");
+let CustomizeExampleComponent = class CustomizeExampleComponent {
+    constructor() {
         this.configuration = ng2_power_table_1.DefaultConfiguration.create();
         this.configuration.ascendingCssClass = 'pt-sort-asc-custom';
         this.configuration.descendingCssClass = 'pt-sort-desc-custom';
@@ -23,8 +24,7 @@ var CustomizeExampleComponent = (function () {
             this.allPeople.push(person);
         }
     }
-    return CustomizeExampleComponent;
-}());
+};
 CustomizeExampleComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

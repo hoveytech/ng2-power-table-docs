@@ -1,11 +1,12 @@
 "use strict";
-var router_1 = require("@angular/router");
-var Basic_component_1 = require("./Basics/Basic.component");
-var Sorting_component_1 = require("./Sorting/Sorting.component");
-var Paging_component_1 = require("./Paging/Paging.component");
-var Server_component_1 = require("./Server/Server.component");
-var Customize_component_1 = require("./Customize/Customize.component");
-var appRoutes = [
+Object.defineProperty(exports, "__esModule", { value: true });
+const router_1 = require("@angular/router");
+const Basic_component_1 = require("./Basics/Basic.component");
+const Sorting_component_1 = require("./Sorting/Sorting.component");
+const Paging_component_1 = require("./Paging/Paging.component");
+const Server_component_1 = require("./Server/Server.component");
+const Customize_component_1 = require("./Customize/Customize.component");
+const appRoutes = [
     { path: '', component: Basic_component_1.BasicComponent },
     { path: 'sorting', component: Sorting_component_1.SortingComponent },
     { path: 'paging', component: Paging_component_1.PagingComponent },

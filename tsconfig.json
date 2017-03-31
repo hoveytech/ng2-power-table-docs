@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
@@ -8,16 +8,15 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [ 
+      "./node_modules/@types/" 
+    ]
   },
   "include": [
-    "app/**/*.ts"
+    "./app/**/*.ts"
   ],
-  "typeRoots": [
-    "node_modules/@types"
-  ],
-  "types": [
-    "core-js",
-    "node"
+  "exclude": [
+    "node_modules"
   ]
 }

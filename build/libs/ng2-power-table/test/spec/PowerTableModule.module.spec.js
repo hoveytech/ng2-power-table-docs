@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var testing_1 = require("@angular/core/testing");
 var component_factory_1 = require("./component.factory");
@@ -37,27 +38,24 @@ TestTableComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], TestTableComponent);
 describe('PowerTableModule tests', function () {
-    function configureModule() {
-        return testing_1.TestBed.configureTestingModule({
+    beforeEach(function () {
+        testing_1.TestBed.configureTestingModule({
             declarations: [TestTableComponent],
             imports: [__1.PowerTableModule]
-        }).compileComponents();
-    }
-    it('does create table and set displayData on consumer', function (done) {
-        var template = '<table [ptTable]="originalData" [(tableState)]="tableState" [(ptDisplayArray)]="displayData"></table>';
-        component_factory_1.SetupComponentFixture(template, [], TestTableComponent);
-        configureModule().then(function () {
-            var fix = component_factory_1.createComponentFixtureAfterSetup(TestTableComponent);
-            var original = new Array();
-            for (var i = 0; i < 40; i++) {
-                original.push(new TestObject(i, "Name " + i));
-            }
-            fix.componentInstance.originalData = original;
-            fix.detectChanges();
-            expect(fix.componentInstance.displayData).toBeDefined();
-            expect(fix.componentInstance.displayData.length).toBe(10);
-            done();
         });
     });
+    it('does create table and set displayData on consumer', testing_1.fakeAsync(function () {
+        var template = '<table [ptTable]="originalData" [(ptTableState)]="tableState" [(ptDisplayArray)]="displayData"></table>';
+        var fix = component_factory_1.createComponentFixture(template, [], TestTableComponent);
+        var original = new Array();
+        for (var i = 0; i < 40; i++) {
+            original.push(new TestObject(i, "Name " + i));
+        }
+        fix.componentInstance.originalData = original;
+        fix.detectChanges();
+        testing_1.tick();
+        expect(fix.componentInstance.displayData).toBeDefined();
+        expect(fix.componentInstance.displayData.length).toBe(10);
+    }));
 });
 //# sourceMappingURL=PowerTableModule.module.spec.js.map

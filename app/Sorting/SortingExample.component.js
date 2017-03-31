@@ -8,17 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var Person_class_1 = require("./../MockData/Person.class");
-var SortingExampleComponent = (function () {
-    function SortingExampleComponent() {
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const Person_class_1 = require("./../MockData/Person.class");
+let SortingExampleComponent = class SortingExampleComponent {
+    constructor() {
         this.allPeople = [];
         for (var i = 0; i < 6; i++) {
             this.allPeople.push(Person_class_1.Person.create());
         }
     }
-    return SortingExampleComponent;
-}());
+};
 SortingExampleComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
